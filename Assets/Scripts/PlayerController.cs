@@ -11,6 +11,16 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+
+
+        playerRodControl.GetComponent<PlayerRodControl>().fishBitingEvent 
+            += (sender, catchFishFunc) => {
+            if (Input.GetButtonDown("CastRod" + playerNumber))
+            {
+                catchFishFunc();
+            }
+        };
+
     }
 
     // Update is called once per frame

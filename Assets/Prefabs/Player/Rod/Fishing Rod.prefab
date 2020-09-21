@@ -299,9 +299,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castForce: 100
-  castDuration: 3
+  castDuration: 1
   lure: {fileID: 5486918608734313258, guid: 00303528276de3a4e8f8481c9efeb7a3, type: 3}
   spawnPos: {fileID: 8667175485376819215}
   castAngle: 45
-  currentInstance: {fileID: 0}
+  hookInstance: {fileID: 0}
   rod: {fileID: 5636445959718233937}

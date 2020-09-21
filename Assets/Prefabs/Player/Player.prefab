@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  speed: 8
+  speed: 15
 --- !u!54 &2061872751522125644
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -235,6 +235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fishing Rod
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077624417443479070, guid: 8f63eb1a38b7d4e48bacb25ae0c37c5e,
+        type: 3}
+      propertyPath: castForce
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f63eb1a38b7d4e48bacb25ae0c37c5e, type: 3}

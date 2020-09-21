@@ -12,15 +12,20 @@ public class PlayerRodControl : MonoBehaviour
     public GameObject lure;
     public Transform spawnPos;
     public float castAngle = 45.0f;
-    public GameObject currentInstance = null;
+    public GameObject hookInstance = null;
+
     public Transform rod;
 
     bool isBeingHeldDown = false;
 
+    public delegate void FishBitingHandler(object sender, Action e);
+
+    public event FishBitingHandler fishBitingEvent;
+
 
     bool Casting()
     {
-        return isBeingHeldDown && currentInstance == null;
+        return isBeingHeldDown && hookInstance == null;
     }
 
     float percentageCasting()
@@ -50,10 +55,10 @@ public class PlayerRodControl : MonoBehaviour
     {
         startTime = Time.time;
 
-        if (currentInstance)
+        if (hookInstance)
         {
-            Destroy(currentInstance);
-            currentInstance = null;
+            Destroy(hookInstance);
+            hookInstance = null;
             isBeingHeldDown = false;
             isBeingHeldDown = false;
         }
@@ -79,7 +84,12 @@ public class PlayerRodControl : MonoBehaviour
 
         spawnPos.GetComponent<KeepLineAttachedTo>().to = instance.transform;
 
-        currentInstance = instance;
+        hookInstance = instance;
+        var catchFish = hookInstance.GetComponent<CatchFish>();
+        catchFish.fishBitingEvent += (sender, catchFishFunc) =>
+        {
+            fishBitingEvent(sender, catchFishFunc);
+        };
 
         var rigid = instance.GetComponent<Rigidbody>();
         rigid.AddForce(force * Vector3.Normalize(transform.forward +
