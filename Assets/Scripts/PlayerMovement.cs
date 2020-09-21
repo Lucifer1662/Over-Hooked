@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
   
-        Vector3 lookDirection = new Vector3(Input.GetAxis("HorizontalLook" + playerNumber),0, Input.GetAxis("VerticalLook" + playerNumber));
+        Vector3 lookDirection = new Vector3(Input.GetAxis("Horizontal" + playerNumber),0, Input.GetAxis("Vertical" + playerNumber));
 
         transform.LookAt(transform.position + lookDirection, Vector3.up);
 
@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Move(Vector3 direction) {
+        direction.Normalize();
         rigidbody.MovePosition(transform.position + direction * Time.deltaTime * speed);
     }
 }
