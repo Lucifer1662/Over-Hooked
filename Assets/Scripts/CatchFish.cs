@@ -7,7 +7,6 @@ public class CatchFish : MonoBehaviour
 {
     public Transform targetParent;
 
-
     public delegate void FishBitingHandler(object sender, Action e);
 
     public event FishBitingHandler fishBitingEvent;
@@ -43,7 +42,7 @@ public class CatchFish : MonoBehaviour
         {
             if (CatchesFish())
             {
-                fishBitingEvent.Invoke(gameObject,
+                fishBitingEvent(gameObject,
                     () =>
                     {
                         other.gameObject.transform.SetParent(targetParent);

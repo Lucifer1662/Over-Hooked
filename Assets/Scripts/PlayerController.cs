@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,17 +8,19 @@ public class PlayerController : MonoBehaviour
     public int playerNumber;
     PlayerMovement playerMovement;
     public PlayerRodControl playerRodControl;
+    public PlayerScore playerScore;
     // Start is called before the first frame update
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
-
+        playerScore = GetComponent<PlayerScore>();
 
         playerRodControl.GetComponent<PlayerRodControl>().fishBitingEvent 
             += (sender, catchFishFunc) => {
             if (Input.GetButtonDown("CastRod" + playerNumber))
             {
                 catchFishFunc();
+                playerScore.AddPoint();
             }
         };
 
