@@ -236,11 +236,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishing Rod
       objectReference: {fileID: 0}
-    - target: {fileID: 8077624417443479070, guid: 8f63eb1a38b7d4e48bacb25ae0c37c5e,
-        type: 3}
-      propertyPath: castForce
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f63eb1a38b7d4e48bacb25ae0c37c5e, type: 3}
 --- !u!4 &5114448192671618604 stripped
