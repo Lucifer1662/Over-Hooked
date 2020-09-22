@@ -83,8 +83,16 @@
 
 			void surf(Input IN, inout SurfaceOutputStandard o)
 			{
+
+				float depth = 1 - tex2D(_MainTex, i.uv).r;
+
+
+				// sample the texture
+				fixed4 col = lerp(_Colour, _DarkColour, depth);
+				col.a = lerp(_Colour, _DarkColour, depth).a;
+
 				// Albedo comes from a texture tinted by color
-				fixed4 c = _Colour;
+				fixed4 c = col;
 				o.Albedo = c.rgb;
 				
 

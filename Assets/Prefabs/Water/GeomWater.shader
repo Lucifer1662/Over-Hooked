@@ -64,22 +64,9 @@
             float _Ambient;
 
             float noiseAt(float3 pos) {
-                //float height = sin(_Time.y + pos.x * _WaveDirection.x / _WaveFrequency + pos.z * _WaveDirection.z / _WaveFrequency);// +v.vertex.z / _WaveFrequency);
-
                 return ((Bcc8NoiseClassic((pos + (float3(_NoiseDisplacementSpeed.x, _NoiseDisplacementSpeed.y, _NoiseDisplacementSpeed.z) * _Time.y)) / _NoiseDisplacementScale) + 1.0f) / 2.0f) * _NoiseIntensity;
             }
 
-            float3 getNormal(float3 pos) {
-                float dx = 0.01f;
-                float dz = 0.01f;
-                float dydx = (noiseAt(pos + float3(dx, 0, 0)) - noiseAt(pos - float3(dx, 0, 0))) / 2;
-                float dydz = (noiseAt(pos + float3(0, 0, dz)) - noiseAt(pos - float3(0, 0, dz))) / 2;
-                float3 v1 = normalize(float3(dx, dydx, 0));
-                float3 v2 = normalize(float3(0, dydz, dz));
-                float3 n = cross(v1, v2);
-                n = normalize(n);
-                return n;
-            }
 
             v2g vert(appdata v)
             {
@@ -87,10 +74,6 @@
                 v.vertex.xyz += v.normal * noiseAt(v.vertex);
                 o.vertex = v.vertex;
                 o.uv = v.uv;
-
-       
-            
-              
 
                 return o;
             }
