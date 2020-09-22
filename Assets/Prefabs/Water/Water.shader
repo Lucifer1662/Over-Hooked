@@ -2,15 +2,15 @@
 {
 	Properties
 	{
-		_Color("Color", Color) = (1,1,1,1)
-		_MainTex("Albedo (RGB)", 2D) = "white" {}
-		_Glossiness("Smoothness", Range(0,1)) = 0.5
-		_Metallic("Metallic", Range(0,1)) = 0.0
 
+		_Colour("Light Color", Color) = (1,1,1,1)
+		_DarkColour("Dark Color", Color) = (1,1,1,1)
+		_MainTex("Texture", 2D) = "white" {}
+		_Ambient("Ambient", Range(0,1)) = 0.5
 		_NoiseIntensity("Noise Intensity", Range(0,100)) = 1
 		_NoiseDisplacementScale("Noise Displacement Scale", Range(0,100)) = 1
 		_NoiseDisplacementSpeed("_Noise Displacement Direction", Vector) = (0.1,1,-0.1)
-
+		_DiffuseFactor("Diffuse Factor", Range(0,1)) = 0.9
 	}
 		SubShader
 		{
@@ -26,7 +26,7 @@
 			#pragma target 3.0
 
 					#include "BCCNoise8.hlsl"
-			sampler2D _MainTex;
+		
 
 			struct Input
 			{
@@ -34,12 +34,15 @@
 				float2 uv_MainTex;
 			};
 
-			half _Glossiness;
-			half _Metallic;
-			fixed4 _Color;
+			sampler2D _MainTex;
+			float4 _Colour;
+			float4 _DarkColour;
+			float4 _MainTex_ST;
 			float _NoiseIntensity;
 			float3 _NoiseDisplacementSpeed;
 			float _NoiseDisplacementScale;
+			float _DiffuseFactor;
+			float _Ambient;
 
 			float noiseAt(float3 pos) {
 				//float height = sin(_Time.y + pos.x * _WaveDirection.x / _WaveFrequency + pos.z * _WaveDirection.z / _WaveFrequency);// +v.vertex.z / _WaveFrequency);
@@ -62,7 +65,8 @@
 
 			void vert(inout appdata_full v) {
 				v.vertex.y += noiseAt(v.vertex);
-				v.normal = getNormal(v.vertex);
+				
+				v.normal = -getNormal(v.vertex);
 			}
 
 			
@@ -80,14 +84,14 @@
 			void surf(Input IN, inout SurfaceOutputStandard o)
 			{
 				// Albedo comes from a texture tinted by color
-				fixed4 c = _Color;
+				fixed4 c = _Colour;
 				o.Albedo = c.rgb;
 				
 
 
 				// Metallic and smoothness come from slider variables
-				o.Metallic = _Metallic;
-				o.Smoothness = _Glossiness;
+				o.Metallic = 0;
+				o.Smoothness = 0;
 				o.Alpha = c.a;
 			}
 			ENDCG
