@@ -37,7 +37,7 @@
 			sampler2D _MainTex;
 			float4 _Colour;
 			float4 _DarkColour;
-			float4 _MainTex_ST;
+			/*float4 _MainTex_ST;*/
 			float _NoiseIntensity;
 			float3 _NoiseDisplacementSpeed;
 			float _NoiseDisplacementScale;
@@ -84,7 +84,7 @@
 			void surf(Input IN, inout SurfaceOutputStandard o)
 			{
 
-				float depth = 1 - tex2D(_MainTex, i.uv).r;
+				float depth = 1 - tex2D(_MainTex, IN.uv_MainTex).r;
 
 
 				// sample the texture
