@@ -51,8 +51,8 @@
 			}
 
 			float3 getNormal(float3 pos) {
-				float dx = 0.01f;
-				float dz = 0.01f;
+				float dx = 0.001f;
+				float dz = 0.001f;
 				float dydx = (noiseAt(pos + float3(dx, 0, 0)) - noiseAt(pos - float3(dx, 0, 0))) / 2;
 				float dydz = (noiseAt(pos + float3(0, 0, dz)) - noiseAt(pos - float3(0, 0, dz))) / 2;
 				float3 v1 = normalize(float3(dx, dydx, 0));
@@ -63,10 +63,13 @@
 			}
 
 
-			void vert(inout appdata_full v) {
+			void vert(inout appdata_full v, out Input o) {
+				UNITY_INITIALIZE_OUTPUT(Input, o);
+				o.vertex = v.vertex;
 				v.vertex.y += noiseAt(v.vertex);
+				v.tangent = float4(1, 0, 0,1);
+				v.normal = float4(0, 1, 0, 1);
 				
-				v.normal = -getNormal(v.vertex);
 			}
 
 			
@@ -84,6 +87,10 @@
 			void surf(Input IN, inout SurfaceOutputStandard o)
 			{
 
+				float3 n = -getNormal(IN.vertex).xyz;
+				n = (n + 1) / 2.0f;
+				o.Normal = UnpackNormal(float4(n, 0));
+
 				float depth = 1 - tex2D(_MainTex, IN.uv_MainTex).r;
 
 
@@ -99,7 +106,7 @@
 
 				// Metallic and smoothness come from slider variables
 				o.Metallic = 0;
-				o.Smoothness = 0;
+				o.Smoothness = 1;
 				o.Alpha = c.a;
 			}
 			ENDCG

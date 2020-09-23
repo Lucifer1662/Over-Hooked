@@ -65,6 +65,8 @@ Shader "Custom/WiggleVertColour"
 			fixed4 c = _Color;
 			o.Albedo = c.rgb;
 			// Metallic and smoothness come from slider variables
+			o.Metallic = 0;
+			o.Smoothness = 0;
 			o.Alpha = c.a;
 		}
 		ENDCG
