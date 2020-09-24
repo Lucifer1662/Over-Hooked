@@ -15,21 +15,13 @@ public class PlayerMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-  
-        Vector3 lookDirection = new Vector3(Input.GetAxis("Horizontal" + playerNumber),0, Input.GetAxis("Vertical" + playerNumber));
-
-        transform.LookAt(transform.position + lookDirection, Vector3.up);
-
-
-      
-    }
 
     public void Move(Vector3 direction) {
         direction.Normalize();
         rigidbody.MovePosition(transform.position + direction * Time.deltaTime * speed);
+    }
+
+    public void Look(Vector3 lookDirection) {
+        transform.LookAt(transform.position + lookDirection, Vector3.up);
     }
 }

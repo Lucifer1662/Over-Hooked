@@ -40,7 +40,9 @@ public class PlayerController : MonoBehaviour
             Input.GetAxis("Horizontal" + playerNumber),
             0,
             Input.GetAxis("Vertical" + playerNumber));
+
         playerMovement.Move(direction);
+        playerMovement.Look(direction);
 
 
         if(Input.GetButtonDown("CastRod" + playerNumber))

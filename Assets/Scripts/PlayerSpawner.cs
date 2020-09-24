@@ -22,7 +22,7 @@ public class PlayerSpawner : MonoBehaviour
         for (int i = 0; i < transform.childCount && i < playerCount; i++)
         {
             var pos = transform.GetChild(i).transform.position;
-            characterParameters[i].number = 0;
+            characterParameters[i].number = i;
             characterParameters[i].spawnPosition = pos;
             SpawnPlayer(characterParameters[i]);
         } 
