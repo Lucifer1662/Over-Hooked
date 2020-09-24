@@ -72,7 +72,7 @@ public class FishSpawn : MonoBehaviour
 
         position.x = randomX;
         position.z = randomZ;
-        position.y = 0;
+        position.y = transform.position.y;
 
         return position;
     }
