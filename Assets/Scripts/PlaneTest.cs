@@ -30,9 +30,6 @@ public class PlaneTest : MonoBehaviour
         int index = (int)(y * vertsInARow + x);
 
 
-        if (index >= vertsInARow * vertsInARow) {
-            int j = 0;
-        }
         return index;
     }
     public void PassTerrainData(Vector3[] verts, int vertsInARow, float maxHeight = 20)

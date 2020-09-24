@@ -43,4 +43,9 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonUp("CastRod" + playerNumber))
             playerRodControl.EndedCasting();
     }
+
+    public void SetPlayerCharacteristics(CharacterParameters characteristics) {
+        playerNumber = characteristics.number;
+        
+    }
 }
