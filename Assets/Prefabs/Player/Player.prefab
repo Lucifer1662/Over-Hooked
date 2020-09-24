@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2061872751522125644}
   - component: {fileID: 2061872751522125643}
   - component: {fileID: 1856813343718932389}
+  - component: {fileID: 8840382726554206189}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -109,6 +110,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+--- !u!114 &8840382726554206189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061872751522125490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe23a71df9cc74b4aa9473f5b63622f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colourGroups:
+  - name: Main
+    materials:
+    - {fileID: 8280779471021116941}
+    - {fileID: 7284440191668480667}
 --- !u!1001 &5856922977189787947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,6 +199,18 @@ PrefabInstance:
 --- !u!4 &6254727028327915200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 64ac110e82a8e4fb0ae49a7ae965874e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5856922977189787947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8280779471021116941 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -6652725513331149018, guid: 64ac110e82a8e4fb0ae49a7ae965874e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5856922977189787947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7284440191668480667 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5453718785326181456, guid: 64ac110e82a8e4fb0ae49a7ae965874e,
     type: 3}
   m_PrefabInstance: {fileID: 5856922977189787947}
   m_PrefabAsset: {fileID: 0}
