@@ -24,6 +24,7 @@ public class FishSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentFish = transform.childCount;
         respawnCountdown -= Time.deltaTime;
         if (respawnCountdown < 0.0f)
         {
@@ -47,7 +48,7 @@ public class FishSpawn : MonoBehaviour
         GameObject newFish = Instantiate(fishPrefab, fishPosition, Quaternion.identity);
         newFish.transform.parent = this.transform;
 
-        currentFish++;
+      //  currentFish++;
     }
 
     // Generate random position outside of island
