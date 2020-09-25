@@ -163,6 +163,7 @@ MonoBehaviour:
     materials:
     - {fileID: 8280779471021116941}
     - {fileID: 7284440191668480667}
+    - {fileID: 5239422826288341494}
 --- !u!1 &8564184494840356184
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +385,12 @@ MeshRenderer:
 --- !u!23 &7284440191668480667 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -5453718785326181456, guid: 64ac110e82a8e4fb0ae49a7ae965874e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5856922977189787947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5239422826288341494 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1869507487355705565, guid: 64ac110e82a8e4fb0ae49a7ae965874e,
     type: 3}
   m_PrefabInstance: {fileID: 5856922977189787947}
   m_PrefabAsset: {fileID: 0}

@@ -12,17 +12,15 @@ public class CharacterParameters {
 
 public class PlayerSpawner : MonoBehaviour
 {
-    public static int playerCount = 4;
     [SerializeField]
-    public List<CharacterParameters> characterParameters = new List<CharacterParameters>();
+    public static List<CharacterParameters> characterParameters = new List<CharacterParameters>();
     public GameObject player;
     
     void Start()
     {
-        for (int i = 0; i < transform.childCount && i < playerCount; i++)
+        for (int i = 0; i < transform.childCount && i < characterParameters.Count; i++)
         {
             var pos = transform.GetChild(i).transform.position;
-            characterParameters[i].number = i;
             characterParameters[i].spawnPosition = pos;
             SpawnPlayer(characterParameters[i]);
         } 

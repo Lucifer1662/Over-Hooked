@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 
 [System.Serializable]
@@ -16,6 +18,9 @@ public class PlayerSelectionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckIfAllReady();
+
+
         for (int i = 0; i < 4; i++)
         {
 
@@ -83,5 +88,24 @@ public class PlayerSelectionController : MonoBehaviour
             }
 
         }
+    }
+
+
+    void CheckIfAllReady()
+    {
+
+        if(playerSelectedControllers.Any((p)=>p.playerCharactersitc != null) && 
+        playerSelectedControllers.All((p) =>  p.playerCharactersitc == null || p.isReady)) {
+            Debug.Log("Load");
+            PlayerSpawner.characterParameters = new List<CharacterParameters>();
+            playerSelectedControllers.ForEach((p) =>
+            {
+                if (p.playerCharactersitc != null)
+                    PlayerSpawner.characterParameters.Add(p.playerCharactersitc);
+            });
+
+            SceneManager.LoadScene("Luke Test Scene", LoadSceneMode.Single);
+        }
+
     }
 }
