@@ -47,7 +47,7 @@ public class PlayerRodControl : MonoBehaviour
     private void Update()
     {
         float newRoadAnglex = Mathf.Lerp(0, -castAngle, percentageCasting());
-        transform.eulerAngles = new Vector3(newRoadAnglex, transform.eulerAngles.y, transform.eulerAngles.z);
+        rod.localEulerAngles = new Vector3(newRoadAnglex, rod.localEulerAngles.y, rod.localEulerAngles.z);
     }
 
 
