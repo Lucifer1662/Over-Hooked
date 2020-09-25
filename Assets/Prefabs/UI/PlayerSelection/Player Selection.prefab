@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.11320752, g: 0.092043936, b: 0.072089694, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -171,6 +171,9 @@ MonoBehaviour:
   - {fileID: 1470293439770899284}
   - {fileID: 7887118863103326620}
   - {fileID: 2732443351034629921}
+  goBack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7278349765217296777
 GameObject:
   m_ObjectHideFlags: 0

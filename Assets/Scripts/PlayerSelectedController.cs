@@ -7,9 +7,11 @@ public class PlayerSelectedController : MonoBehaviour
 {
     [System.NonSerialized]
     public CharacterParameters playerCharactersitc = null;
+    public bool isReady;
 
     public GameObject playerSelected;
     public GameObject notSelected;
+    public GameObject ready;
     private void Start()
     {
 
@@ -18,13 +20,23 @@ public class PlayerSelectedController : MonoBehaviour
     public void Update()
     {
         if (playerCharactersitc == null){
-            playerSelected.SetActive(false);
             notSelected.SetActive(true);
+            ready.SetActive(false);
+            playerSelected.SetActive(false);
         }
         else{
-            playerSelected.SetActive(true);
-            notSelected.SetActive(false);
-            playerSelected.GetComponent<Text>().text = "Join as Controller " + (playerCharactersitc.number+1);
+            if (isReady) {
+                notSelected.SetActive(false);
+                ready.SetActive(true);
+                playerSelected.SetActive(false);
+            }
+            else
+            {
+                notSelected.SetActive(false);
+                ready.SetActive(false);
+                playerSelected.SetActive(true);
+            }
+                
         }
     }
 
