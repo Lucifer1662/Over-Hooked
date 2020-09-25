@@ -7,6 +7,6 @@ public class SetPlayerCount : MonoBehaviour
 {
     public void setPlayerCount() {
        
-        PlayerSpawner.playerCount = (int)GetComponent<Slider>().value;
+        
     }
 }
