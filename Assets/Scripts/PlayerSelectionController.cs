@@ -24,36 +24,15 @@ public class PlayerSelectionController : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
 
-            if (Input.GetButtonDown("CastRod" + i))
-            {
-               
-                for (int j = 0; j < playerSelectedControllers.Count; j++)
-                {
-                    if (playerSelectedControllers[j].playerCharactersitc != null)
-                    {
-                        if (playerSelectedControllers[j].playerCharactersitc.number == i)
-                        {
-                            playerSelectedControllers[j].playerCharactersitc = null;
-                            return;
-                        }
-                    }
-                }
-
-             
-
-            }
-
             if (Input.GetButtonDown("Join"+i)) {
          
           
                 for (int j = 0; j < playerSelectedControllers.Count; j++)
                 {
-                    if (playerSelectedControllers[j].playerCharactersitc == null)
+                    if (!playerSelectedControllers[j].isSelected)
                     {
-                        playerSelectedControllers[j].playerCharactersitc = new CharacterParameters()
-                        {
-                            number = i
-                        };
+                        playerSelectedControllers[j].isSelected = true;
+                        playerSelectedControllers[j].playerCharactersitc.number = i;
                         playerSelectedControllers[j].isReady = false;
 
                         return;
@@ -70,7 +49,7 @@ public class PlayerSelectionController : MonoBehaviour
 
                 for (int j = 0; j < playerSelectedControllers.Count; j++)
                 {
-                    if (playerSelectedControllers[j].playerCharactersitc != null && 
+                    if (playerSelectedControllers[j].isSelected && 
                         playerSelectedControllers[j].playerCharactersitc.number == i)
                     {
                         if (playerSelectedControllers[j].isReady == true)
@@ -78,7 +57,8 @@ public class PlayerSelectionController : MonoBehaviour
                             playerSelectedControllers[j].isReady = false;
                         }
                         else {
-                            playerSelectedControllers[j].playerCharactersitc = null;
+                            playerSelectedControllers[j].isSelected = false;
+
                         }
                         return;
                     }
@@ -94,14 +74,18 @@ public class PlayerSelectionController : MonoBehaviour
     void CheckIfAllReady()
     {
 
-        if(playerSelectedControllers.Any((p)=>p.playerCharactersitc != null) && 
-        playerSelectedControllers.All((p) =>  p.playerCharactersitc == null || p.isReady)) {
-            Debug.Log("Load");
+
+        if(playerSelectedControllers.Any((p) => p.isReady) 
+            && playerSelectedControllers.All((p) =>  !p.isSelected || p.isReady)) {
+
             PlayerSpawner.characterParameters = new List<CharacterParameters>();
             playerSelectedControllers.ForEach((p) =>
             {
-                if (p.playerCharactersitc != null)
+    
+                if (p.isReady)
+                {
                     PlayerSpawner.characterParameters.Add(p.playerCharactersitc);
+                }
             });
 
             SceneManager.LoadScene("Luke Test Scene", LoadSceneMode.Single);
