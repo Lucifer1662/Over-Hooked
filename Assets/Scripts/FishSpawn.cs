@@ -28,8 +28,6 @@ public class FishSpawn : MonoBehaviour
         respawnCountdown -= Time.deltaTime;
         if (respawnCountdown < 0.0f)
         {
-            // Perform a single step to move the swarm across (or down)
-            // Then reset the timer to periodically perform such steps
             GenerateFish();
             
             respawnCountdown = respawnPeriod;
@@ -44,11 +42,8 @@ public class FishSpawn : MonoBehaviour
         }
 
         Vector3 fishPosition = GeneratePosition();
-
-        GameObject newFish = Instantiate(fishPrefab, fishPosition, Quaternion.identity);
+        GameObject newFish = Instantiate(fishPrefab, fishPosition, Quaternion.Euler(GenerateRotation()));
         newFish.transform.parent = this.transform;
-
-      //  currentFish++;
     }
 
     // Generate random position outside of island
@@ -56,6 +51,7 @@ public class FishSpawn : MonoBehaviour
         Vector3 position;
         float randomX;
         float randomZ;
+        
 
         // Random number for X and Z
         // Currently set Y as 0 for testing
@@ -76,5 +72,15 @@ public class FishSpawn : MonoBehaviour
         position.y = transform.position.y;
 
         return position;
+    }
+
+    
+    // Gegenrate random rotation for every new fish
+    private static Vector3 GenerateRotation()
+    {
+        float randomRotationY;
+        randomRotationY = Random.Range(-180, 180);
+
+        return new Vector3(0, randomRotationY, 0);
     }
 }
