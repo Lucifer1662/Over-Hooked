@@ -16,10 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         playerScore = GetComponent<PlayerScore>();
-        var colourer = GetComponent<Colourer>();
-        var colours = new List<ColourName>();
-        colours.Add(new ColourName() { colour = characteristics.color, name = "Main" });
-        colourer.Colour(colours);
+        ApplyColour();
 
         playerRodControl.GetComponent<PlayerRodControl>().fishBitingEvent 
             += (sender, catchFishFunc) => {
@@ -55,7 +52,15 @@ public class PlayerController : MonoBehaviour
     public void SetPlayerCharacteristics(CharacterParameters characteristics) {
         playerNumber = characteristics.number;
         this.characteristics = characteristics;
+        ApplyColour();
 
 
+    }
+
+    void ApplyColour() {
+        var colourer = GetComponent<Colourer>();
+        var colours = new List<ColourName>();
+        colours.Add(new ColourName() { colour = characteristics.color, name = "Main" });
+        colourer.Colour(colours);
     }
 }

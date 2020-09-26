@@ -18,10 +18,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(Vector3 direction) {
         direction.Normalize();
-        rigidbody.MovePosition(transform.position + direction * Time.deltaTime * speed);
+        if(isActiveAndEnabled)
+            rigidbody.MovePosition(transform.position + direction * Time.deltaTime * speed);
     }
 
     public void Look(Vector3 lookDirection) {
-        transform.LookAt(transform.position + lookDirection, Vector3.up);
+        if (isActiveAndEnabled)
+            transform.LookAt(transform.position + lookDirection, Vector3.up);
     }
 }

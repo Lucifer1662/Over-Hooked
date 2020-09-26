@@ -53,6 +53,9 @@ public class PlayerRodControl : MonoBehaviour
 
     public void StartedCasting()
     {
+        if (!isActiveAndEnabled)
+            return;
+
         startTime = Time.time;
 
         if (hookInstance)
