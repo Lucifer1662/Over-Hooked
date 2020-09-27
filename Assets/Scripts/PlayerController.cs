@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    bool movenent = true;
+
     // Update is called once per frame
     void Update()
     {
@@ -38,15 +40,27 @@ public class PlayerController : MonoBehaviour
             0,
             Input.GetAxis("Vertical" + playerNumber));
 
-        playerMovement.Move(direction);
+        if(movenent)
+            playerMovement.Move(direction);
+
         playerMovement.Look(direction);
 
+        if (Input.GetButtonDown("Back" + playerNumber))
+            movenent = !movenent;
+        {
+        }
 
-        if(Input.GetButtonDown("CastRod" + playerNumber))
-            playerRodControl.StartedCasting();
-        
-        if(Input.GetButtonUp("CastRod" + playerNumber))
-            playerRodControl.EndedCasting();
+
+            if (Input.GetButtonDown("CastRod" + playerNumber))
+        {
+            bool didCast = playerRodControl.StartedCasting();
+
+        }
+
+        if (Input.GetButtonUp("CastRod" + playerNumber))
+        {
+            bool finishedCast = playerRodControl.EndedCasting();
+        }
     }
 
     public void SetPlayerCharacteristics(CharacterParameters characteristics) {

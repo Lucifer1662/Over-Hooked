@@ -51,10 +51,10 @@ public class PlayerRodControl : MonoBehaviour
     }
 
 
-    public void StartedCasting()
+    public bool StartedCasting()
     {
         if (!isActiveAndEnabled)
-            return;
+            return false;
 
         startTime = Time.time;
 
@@ -64,18 +64,20 @@ public class PlayerRodControl : MonoBehaviour
             hookInstance = null;
             isBeingHeldDown = false;
             isBeingHeldDown = false;
+            return false;
         }
         else
         {
             isBeingHeldDown = true;
+            return true;
         }
     }
 
-    public void EndedCasting()
+    public bool EndedCasting()
     {
         if (!isBeingHeldDown)
         {
-            return;
+            return false;
         }
 
 
@@ -101,6 +103,8 @@ public class PlayerRodControl : MonoBehaviour
 
 
         isBeingHeldDown = false;
+
+        return true;
 
     }
 }
