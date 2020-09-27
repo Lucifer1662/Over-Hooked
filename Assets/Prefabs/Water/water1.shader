@@ -74,12 +74,10 @@
                 }
 
                 float3 getNormal(float3 pos) {
-                    float dx = 0.001f;
-                    float dz = 0.001f;
-                    float dydx = (noiseAt(pos + float3(dx, 0, 0)) - noiseAt(pos - float3(dx, 0, 0))) / 2;
-                    float dydz = (noiseAt(pos + float3(0, 0, dz)) - noiseAt(pos - float3(0, 0, dz))) / 2;
-                    float3 v1 = normalize(float3(dx, dydx, 0));
-                    float3 v2 = normalize(float3(0, dydz, dz));
+                    float dx = 0.1f;
+                    float3 noise = noiseAt(pos);
+                    float3 v1 = normalize(float3(dx, noise.x, 0));
+                    float3 v2 = normalize(float3(0, noise.z, dx));
                     float3 n = cross(v1, v2);
                     n = normalize(n);
                     return n;
@@ -94,10 +92,10 @@
 
           
                 float3 normal = getNormal(i.vertexWoldPosition);
-                 
+                /*
                 half3 worldNormal = UnityObjectToWorldNormal(-normal);
-                half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
-                float diffuse = nl * _LightColor0 * _DiffuseFactor;
+                half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));*/
+                float diffuse = normal.x;// nl* _LightColor0* _DiffuseFactor;
 
                 // sample the texture
                 fixed4 col = lerp(_Colour,_DarkColour, depth) * saturate(_Ambient + diffuse);
