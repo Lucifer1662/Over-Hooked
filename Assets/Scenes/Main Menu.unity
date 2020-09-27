@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.92, g: 0.56718004, b: 0.5612, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 0.80130917, b: 0.7971698, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -181,17 +181,17 @@ PrefabInstance:
     - target: {fileID: 2382135907743944760, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.99215686
+      value: 0.86666673
       objectReference: {fileID: 0}
     - target: {fileID: 2382135907743944760, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.58431375
+      value: 0.54901963
       objectReference: {fileID: 0}
     - target: {fileID: 2382135907743944760, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.32941177
+      value: 0.49411768
       objectReference: {fileID: 0}
     - target: {fileID: 2382135907743944762, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
@@ -3480,17 +3480,17 @@ PrefabInstance:
     - target: {fileID: 2382135907743944760, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.99215686
+      value: 0.8588236
       objectReference: {fileID: 0}
     - target: {fileID: 2382135907743944760, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.58431375
+      value: 0.54509807
       objectReference: {fileID: 0}
     - target: {fileID: 2382135907743944760, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.32941177
+      value: 0.48235297
       objectReference: {fileID: 0}
     - target: {fileID: 2382135907743944762, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
@@ -3666,17 +3666,17 @@ PrefabInstance:
     - target: {fileID: 2382135907743944760, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.99215686
+      value: 0.8352942
       objectReference: {fileID: 0}
     - target: {fileID: 2382135907743944760, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.5858158
+      value: 0.52156866
       objectReference: {fileID: 0}
     - target: {fileID: 2382135907743944760, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.33038825
+      value: 0.4784314
       objectReference: {fileID: 0}
     - target: {fileID: 2382135907743944760, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
