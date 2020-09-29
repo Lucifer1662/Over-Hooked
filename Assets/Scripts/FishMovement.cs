@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class FishMovement : MonoBehaviour
 {
 
-    public float movementTick = 3;
+    private float initialTick = 3;
     private float tickCountdown;
 
     public float speed;
@@ -18,7 +18,7 @@ public class FishMovement : MonoBehaviour
     void Start()
     {
         // No need to change direction for the first time
-        tickCountdown = movementTick;
+        tickCountdown = initialTick;
     }
 
 
@@ -28,13 +28,15 @@ public class FishMovement : MonoBehaviour
         tickCountdown -= Time.deltaTime;
         if (tickCountdown < 0.0f)
         {
+            tickCountdown = Random.Range(1, 5);
             direction = GenerateRotation();
+            speed = GenerateSpeed();
             this.transform.rotation = Quaternion.Euler(direction);
-            tickCountdown = movementTick;
+            
         }
         // Otherwise continue moving along the old direction
         else{
-            move();
+            move(speed);
         }
         
     }
@@ -49,8 +51,17 @@ public class FishMovement : MonoBehaviour
         return new Vector3(0, randomRotationY, 0);
     }
 
+    // select random speed to make the movement more natural
+    private static float GenerateSpeed()
+    {
+        float randomSpeed;
+        randomSpeed = Random.Range(3, 10);
+
+        return randomSpeed;
+    }
+
     // Move along the new direction
-    void move(){
+    void move(float speed){
         this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
