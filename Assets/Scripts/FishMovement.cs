@@ -17,22 +17,28 @@ public class FishMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // No need to change direction for the first time
+        tickCountdown = movementTick;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        // Time's up, change new direction
         tickCountdown -= Time.deltaTime;
         if (tickCountdown < 0.0f)
         {
-            move(direction);
             direction = GenerateRotation();
             this.transform.rotation = Quaternion.Euler(direction);
-            
             tickCountdown = movementTick;
         }
+        // Otherwise continue moving along the old direction
+        else{
+            move();
+        }
+        
     }
+
 
     // Set new movement direction
     private static Vector3 GenerateRotation()
@@ -44,10 +50,7 @@ public class FishMovement : MonoBehaviour
     }
 
     // Move along the new direction
-    void move(Vector3 direction){
-        //float currentX = this.transform.position.x;
-        //float currentZ = this.transform.position.z;
-
-        this.transform.Translate(Vector3.forward * speed);
+    void move(){
+        this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
