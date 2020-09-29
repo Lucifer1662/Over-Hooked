@@ -9,16 +9,15 @@ public class FishMovement : MonoBehaviour
     public float movementTick = 3;
     private float tickCountdown;
 
-    public float maxDistance;
-    private Vector3 target;
-    private NavMeshAgent nav;
+    public float speed;
+    private Vector3 direction;
 
     
 
     // Start is called before the first frame update
     void Start()
     {
-        nav = gameObject.GetComponent<NavMeshAgent>();
+        
     }
 
     // Update is called once per frame
@@ -27,21 +26,28 @@ public class FishMovement : MonoBehaviour
         tickCountdown -= Time.deltaTime;
         if (tickCountdown < 0.0f)
         {
+            move(direction);
+            direction = GenerateRotation();
+            this.transform.rotation = Quaternion.Euler(direction);
             
-            move();
             tickCountdown = movementTick;
         }
     }
 
-    void move(){
-        float currentX = this.transform.position.x;
-        float currentZ = this.transform.position.z;
+    // Set new movement direction
+    private static Vector3 GenerateRotation()
+    {
+        float randomRotationY;
+        randomRotationY = Random.Range(-180, 180);
 
-        float newX = currentX + Random.Range(-maxDistance, maxDistance);
-        float newZ = currentZ + Random.Range(-maxDistance, maxDistance);
+        return new Vector3(0, randomRotationY, 0);
+    }
 
-        target = new Vector3 (newX, this.transform.position.y, newZ);
+    // Move along the new direction
+    void move(Vector3 direction){
+        //float currentX = this.transform.position.x;
+        //float currentZ = this.transform.position.z;
 
-        nav.SetDestination(target);
+        this.transform.Translate(Vector3.forward * speed);
     }
 }
