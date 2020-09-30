@@ -17,7 +17,6 @@ public class FocusController : MonoBehaviour
     {
         if (EventSystem.current.currentSelectedGameObject == null)
         {
-            Debug.Log("Lost Focus");
             EventSystem.current.SetSelectedGameObject(gameObject);
         }
     }

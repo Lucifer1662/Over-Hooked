@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,22 +12,112 @@ public class PlayerController : MonoBehaviour
     public PlayerRodControl playerRodControl;
     public PlayerScore playerScore;
     public CharacterParameters characteristics;
+    [SerializeField]
+    public InputAction cast;
+    [SerializeField]
+    public InputAction movmentInput;
+    [SerializeField]
+    public InputAction stopInput;
+
+    private Action catchFish = null;
+
+    private Vector3 direction;
+
+    private void Awake()
+    {
+
+        cast.started += (context) =>
+        {
+            if (context.control.device.deviceId == playerNumber)
+            {
+
+                bool didCast = playerRodControl.StartedCasting();
+
+                if (catchFish != null)
+                {
+                    catchFish();
+                    catchFish = null;
+                }
+            }
+
+        };
+
+
+
+        cast.canceled += (context) =>
+        {
+            if (context.control.device.deviceId == playerNumber)
+            {
+                bool finishedCast = playerRodControl.EndedCasting();
+
+            }
+
+        };
+
+
+        stopInput.started += (context) =>
+        {
+            if (context.control.device.deviceId == playerNumber)
+            {
+                movenent = !movenent;
+            }
+        };
+
+        movmentInput.performed += (context) =>
+        {
+            if (context.control.device.deviceId == playerNumber)
+            {
+                
+                var dir = context.ReadValue<Vector2>();
+
+                direction = new Vector3(dir.x, 0, dir.y);
+
+                
+            }
+
+        };
+
+
+
+
+
+    }
+
+    private void OnEnable()
+    {
+        cast.Enable();
+        movmentInput.Enable();
+        stopInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        cast.Disable();
+        movmentInput.Disable();
+        stopInput.Disable();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+
         playerMovement = GetComponent<PlayerMovement>();
         playerScore = GetComponent<PlayerScore>();
         ApplyColour();
 
-        playerRodControl.GetComponent<PlayerRodControl>().fishBitingEvent 
-            += (sender, catchFishFunc) => {
-            if (Input.GetButtonDown("CastRod" + playerNumber))
+
+
+
+        playerRodControl.GetComponent<PlayerRodControl>().fishBitingEvent
+            += (sender, catchFishFunc) =>
             {
-                catchFishFunc();
-                playerScore.AddPoint();
-            }
-        };
+                catchFish = () =>
+                {
+                    catchFishFunc();
+                    playerScore.AddPoint();
+
+                };
+            };
 
     }
 
@@ -34,36 +126,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 direction = new Vector3(
-            Input.GetAxis("Horizontal" + playerNumber),
-            0,
-            Input.GetAxis("Vertical" + playerNumber));
-
-        if(movenent)
+        if (movenent)
             playerMovement.Move(direction);
 
         playerMovement.Look(direction);
 
-        if (Input.GetButtonDown("Back" + playerNumber))
-            movenent = !movenent;
-        {
-        }
-
-
-            if (Input.GetButtonDown("CastRod" + playerNumber))
-        {
-            bool didCast = playerRodControl.StartedCasting();
-
-        }
-
-        if (Input.GetButtonUp("CastRod" + playerNumber))
-        {
-            bool finishedCast = playerRodControl.EndedCasting();
-        }
     }
 
-    public void SetPlayerCharacteristics(CharacterParameters characteristics) {
+    public void SetPlayerCharacteristics(CharacterParameters characteristics)
+    {
         playerNumber = characteristics.number;
         this.characteristics = characteristics;
         ApplyColour();
@@ -71,7 +142,8 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void ApplyColour() {
+    void ApplyColour()
+    {
         var colourer = GetComponent<Colourer>();
         var colours = new List<ColourName>();
         colours.Add(new ColourName() { colour = characteristics.color, name = "Main" });

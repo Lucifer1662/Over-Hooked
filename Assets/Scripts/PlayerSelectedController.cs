@@ -46,7 +46,7 @@ public class PlayerSelectedController : MonoBehaviour
                 notSelected.SetActive(false);
                 ready.SetActive(false);
                 playerSelected.SetActive(true);
-                var horizontal = Input.GetAxis("Horizontal" + playerCharactersitc.number);
+                var horizontal = 0;// Input.GetAxis("Horizontal" + playerCharactersitc.number);
                 if (wasZero)
                 {
                     if (horizontal > 0.5f)

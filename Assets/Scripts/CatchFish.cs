@@ -26,18 +26,22 @@ public class CatchFish : MonoBehaviour
 
     public void OnTriggerLeave(Collider other)
     {
-        OnTriggerStay(other);
+        if (other.tag == "Fish")
+        {
+            if (CatchesFish())
+            {
+                fishBitingEvent(gameObject,
+                    null
+                   );
+                //make you a child of the hook
+
+                //might also want to disable movement script
+            }
+        }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        OnTriggerStay(other);
-    }
-
-
-    public void OnTriggerStay(Collider other)
-    {
-
         if (other.tag == "Fish")
         {
             if (CatchesFish())

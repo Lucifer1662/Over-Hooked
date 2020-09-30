@@ -174,6 +174,38 @@ MonoBehaviour:
   goBack:
     m_PersistentCalls:
       m_Calls: []
+  join:
+    m_Name: Join
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f040417a-3480-42d8-8f0b-9103b961ad54
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b4a51791-4ecf-4907-a78a-861e4cc51677
+      m_Path: <Gamepad>/buttonNorth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Join
+      m_Flags: 0
+  back:
+    m_Name: Back
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 94883216-4f84-45e9-978c-d4fe3cec94bf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a34401b7-37f8-4504-90d9-0143bcb7f9e1
+      m_Path: <Gamepad>/buttonEast
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Back
+      m_Flags: 0
 --- !u!1 &7278349765217296777
 GameObject:
   m_ObjectHideFlags: 0
