@@ -6,16 +6,16 @@ using UnityEngine.UI;
 // Attach me to the textbox you want to display the timer!
 public class Timer : MonoBehaviour
 {
-	public float timeLeft = 0; // in seconds
+	public float timeLeft; // in seconds
 	private Text textBox;
 	private int prevMin;
 	private int prevSec;
 	public Color secondaryColour;
 	public int changeColourAt;
 
-	public void setTimer (int minutes,  int seconds) {
+	/*public void setTimer (int minutes,  int seconds) {
 		timeLeft = (minutes * 60) + seconds + 0.99f;
-	}
+	}*/
 
 	private void Start () {
 		textBox = this.GetComponent<Text> ();
@@ -29,7 +29,7 @@ public class Timer : MonoBehaviour
 		int curSec = (int)timeLeft % 60;
 
 		// change colour to red when timer low
-		if (curSec < changeColourAt && textBox.color != secondaryColour) {
+		if (curSec < changeColourAt && curMin == 0 && textBox.color != secondaryColour) {
 			textBox.color = secondaryColour;
 		}
 
