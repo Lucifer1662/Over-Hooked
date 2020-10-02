@@ -104,7 +104,7 @@ public class FishSpawn : MonoBehaviour
         Vector3 castLocation = new Vector3(newLocation.x, newLocation.y + 100, newLocation.z);
 
         if (Physics.Raycast(castLocation, newLocation - castLocation, out hit, 1000)){
-            Debug.Log("Found an object - distance: " + hit.distance);
+            //Debug.Log("Found an object - distance: " + hit.distance);
         }
         
         // If distance is <100 then position is "inside" terrain
