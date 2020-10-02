@@ -50,9 +50,11 @@ public class FishSpawn : MonoBehaviour
             Debug.Log("Hit the terrain, re-generate the fish position");
         }
 
+        // Instantiate new fish and attach movement script
         GameObject newFish = Instantiate(fishPrefab, fishPosition, Quaternion.Euler(GenerateRotation()));
+        newFish.AddComponent<FishMovement>();
         
-
+        // Set as child object
         newFish.transform.parent = this.transform;
     }
 
@@ -66,18 +68,7 @@ public class FishSpawn : MonoBehaviour
         // Random number for X and Z
         // Currently set Y as 0 for testing
         randomX = Random.Range(-rangeLimit, rangeLimit);
-        /*
-        while ((randomX < islandSize/2)  &&  (randomX > -islandSize/2))
-        {
-            randomX = Random.Range(-rangeLimit, rangeLimit);
-        }*/
-
         randomZ = Random.Range(-rangeLimit, rangeLimit);
-        /*
-        while ((randomZ < islandSize/2)  &&  (randomZ > -islandSize/2))
-        {
-            randomZ = Random.Range(-rangeLimit, rangeLimit);
-        }*/
 
         position.x = randomX;
         position.z = randomZ;
