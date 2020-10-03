@@ -6,6 +6,7 @@ using UnityEngine;
 public class CatchFish : MonoBehaviour
 {
     public Transform targetParent;
+	public SpawnGameObject spawnChompSound;
 
     public delegate void FishBitingHandler(object sender, Action e);
 
@@ -44,6 +45,7 @@ public class CatchFish : MonoBehaviour
     {
         if (other.tag == "Fish")
         {
+			spawnChompSound.SpawnObject ();
             if (CatchesFish())
             {
                 fishBitingEvent(gameObject,
