@@ -47,7 +47,7 @@ public class FishSpawn : MonoBehaviour
         
         while(determineTerrain(fishPosition)){
             fishPosition = GeneratePosition();
-            Debug.Log("Hit the terrain, re-generate the fish position");
+            //Debug.Log("Hit the terrain, re-generate the fish position");
         }
 
         // Instantiate new fish and attach movement script

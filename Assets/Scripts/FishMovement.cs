@@ -82,7 +82,7 @@ public class FishMovement : MonoBehaviour
         // If distance is <100 then position is "inside" terrain
         if(hit.distance < 100){
             terrain = true;
-            Debug.Log("New position is terrain - raycast distance: " + hit.distance);
+            //Debug.Log("New position is terrain - raycast distance: " + hit.distance);
         }
 
         return terrain;
