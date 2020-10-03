@@ -8,7 +8,7 @@ public class FishMovement : MonoBehaviour
     private float initialTick = 3;
     private float tickCountdown;
 
-    public float speed;
+    public float speed = 5;
     private Vector3 direction;
 
     private RaycastHit hit;
@@ -27,19 +27,12 @@ public class FishMovement : MonoBehaviour
         tickCountdown -= Time.deltaTime;
         if (tickCountdown < 0.0f)
         {
-            tickCountdown = Random.Range(1, 5);
+            tickCountdown = Random.Range(3, 7);
             direction = GenerateRotation();
             speed = GenerateSpeed();
             this.transform.rotation = Quaternion.Euler(direction);
             
         }
-        // Change direction to avoid terrain
-        while (determineTerrain(this.transform.position + this.transform.forward * speed * initialTick) == true){
-            direction = GenerateRotation();
-            speed = GenerateSpeed();
-            this.transform.rotation = Quaternion.Euler(direction);
-        }
-        // Otherwise continue moving along the old direction
         move(speed);
         
     }
@@ -58,13 +51,25 @@ public class FishMovement : MonoBehaviour
     private static float GenerateSpeed()
     {
         float randomSpeed;
-        randomSpeed = Random.Range(3, 10);
+        randomSpeed = Random.Range(3, 7);
 
         return randomSpeed;
     }
 
     // Move along the new direction
     void move(float speed){
+
+        // Change direction to avoid terrain
+        Vector3 newPosition = this.transform.position + this.transform.forward * 5;
+        while (determineTerrain(newPosition) == true){
+            //Debug.Log("Hit, current position is: " + transform.position + " increment position is: " + this.transform.forward * 5 + " new position is: " + newPosition);
+            
+            direction = GenerateRotation();
+            speed = GenerateSpeed();
+            this.transform.rotation = Quaternion.Euler(direction);
+            newPosition = this.transform.position + this.transform.forward * speed * 5;
+        }
+
         this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 

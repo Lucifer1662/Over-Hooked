@@ -40,6 +40,8 @@ public class FishSpawn : MonoBehaviour
     void GenerateFish(){
         
         if(currentFish >= maxFish){
+            Debug.Log("All fishes have been spawned.");
+            enabled = false;
             return;
         }
 
@@ -91,12 +93,9 @@ public class FishSpawn : MonoBehaviour
     private bool determineTerrain(Vector3 newLocation)
     {
         bool terrain = false;
-
         Vector3 castLocation = new Vector3(newLocation.x, newLocation.y + 100, newLocation.z);
 
-        if (Physics.Raycast(castLocation, newLocation - castLocation, out hit, 1000)){
-            //Debug.Log("Found an object - distance: " + hit.distance);
-        }
+        Physics.Raycast(castLocation, newLocation - castLocation, out hit, 1000);
         
         // If distance is <100 then position is "inside" terrain
         if(hit.distance < 100){

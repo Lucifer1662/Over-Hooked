@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 6294208608733496569, guid: d1e15a5ae020b47f0a4728d4f8baaf47,
     type: 3}
-  maxFish: 20
+  maxFish: 10
   rangeLimit: 30
   respawnPeriod: 0.5
 --- !u!1001 &1023936610
@@ -2422,7 +2422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064308726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -23.08, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 1956770541}
@@ -2474,7 +2474,7 @@ PrefabInstance:
     - target: {fileID: 8672982424001727623, guid: 7d93a2ab35380488bb4fbed3a8298762,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -23.08
       objectReference: {fileID: 0}
     - target: {fileID: 8672982424001727623, guid: 7d93a2ab35380488bb4fbed3a8298762,
         type: 3}
