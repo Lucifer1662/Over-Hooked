@@ -13,12 +13,14 @@ public class PlayerController : MonoBehaviour
     public PlayerScore playerScore;
     public CharacterParameters characteristics;
     public StickTo cameraStick;
-    [SerializeField]
+	public SpawnGameObject spawnCastSound;
+	[SerializeField]
     public InputAction cast;
     [SerializeField]
     public InputAction movmentInput;
     [SerializeField]
     public InputAction stopInput;
+	
 
     private Action catchFish = null;
 
@@ -106,7 +108,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonUp("Cast"))
         {
             bool finishedCast = playerRodControl.EndedCasting();
-        }
+			spawnCastSound.SpawnObject ();
+		}
 
     }
 
