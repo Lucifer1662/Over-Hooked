@@ -40,8 +40,6 @@ public class FishSpawn : MonoBehaviour
     void GenerateFish(){
         
         if(currentFish >= maxFish){
-            Debug.Log("All fishes have been spawned.");
-            enabled = false;
             return;
         }
 

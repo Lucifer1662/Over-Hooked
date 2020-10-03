@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 6294208608733496569, guid: d1e15a5ae020b47f0a4728d4f8baaf47,
     type: 3}
-  maxFish: 10
+  maxFish: 5
   rangeLimit: 30
   respawnPeriod: 0.5
 --- !u!114 &1070668162 stripped
