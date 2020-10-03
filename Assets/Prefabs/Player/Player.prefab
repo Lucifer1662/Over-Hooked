@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 379823783815652691}
   - component: {fileID: 7362971002235708699}
   - component: {fileID: 839971582255245}
-  - component: {fileID: 2172797469989514712}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -107,7 +106,6 @@ MonoBehaviour:
     number: 0
     spawnPosition: {x: 0, y: 0, z: 0}
   cameraStick: {fileID: 0}
-  spawnCastSound: {fileID: 2172797469989514712}
   cast:
     m_Name: Cast
     m_Type: 0
@@ -317,23 +315,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2172797469989514712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8127633565502532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f8f5f63ca61423b94fd7fd35cfa700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnObject: {fileID: 444691088894739713, guid: e8228b50127f1441c9d7fb78d7076cfd,
-    type: 3}
-  parent: {fileID: 0}
-  position: {x: 0, y: 0, z: 0}
-  useTransformPosition: 1
 --- !u!1 &377440770657434535
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public PlayerScore playerScore;
     public CharacterParameters characteristics;
     public StickTo cameraStick;
-	public SpawnGameObject spawnCastSound;
 	[SerializeField]
     public InputAction cast;
     [SerializeField]
@@ -108,7 +107,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonUp("Cast"))
         {
             bool finishedCast = playerRodControl.EndedCasting();
-			spawnCastSound.SpawnObject ();
 		}
 
     }

@@ -13,8 +13,9 @@ public class PlayerRodControl : MonoBehaviour
     public Transform spawnPos;
     public float castAngle = 45.0f;
     public GameObject hookInstance = null;
+	public SpawnGameObject spawnCastSound;
 
-    public Transform rod;
+	public Transform rod;
 
     bool isBeingHeldDown = false;
 
@@ -80,6 +81,7 @@ public class PlayerRodControl : MonoBehaviour
             return false;
         }
 
+		spawnCastSound.SpawnObject ();
 
         float percent = percentageCasting();
 
@@ -103,6 +105,7 @@ public class PlayerRodControl : MonoBehaviour
 
 
         isBeingHeldDown = false;
+
 
         return true;
 
