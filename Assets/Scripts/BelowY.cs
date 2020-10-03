@@ -12,11 +12,15 @@ public class BelowY : MonoBehaviour
     public BelowYEvent belowYEvent;
 
     public float y;
+    bool called = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y <= y)
+        if (transform.position.y <= y && !called)
+        {
             belowYEvent.Invoke();
+            called = true;
+        }
     }
 }
