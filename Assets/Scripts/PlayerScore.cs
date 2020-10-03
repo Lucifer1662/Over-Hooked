@@ -7,6 +7,7 @@ public class PlayerScore : MonoBehaviour
 {
     public int score;
 	public Text scoreDisplay;
+	public AudioSource collectFishSound;
 
 	private void Start ()
 	{
@@ -16,6 +17,7 @@ public class PlayerScore : MonoBehaviour
 	public void AddPoint() {
         score++;
 		scoreDisplay.text = score.ToString ();
+		collectFishSound.Play ();
 	}
 
     public int GetScore() {
