@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2382135907743944760}
   - component: {fileID: 2382135907743944763}
   - component: {fileID: 2382135907743944742}
+  - component: {fileID: 1757831999270501892}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -131,6 +132,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1757831999270501892}
+        m_MethodName: SpawnObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2382135907743944742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +158,23 @@ MonoBehaviour:
   targets:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &1757831999270501892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2382135907743944765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f8f5f63ca61423b94fd7fd35cfa700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObject: {fileID: 444691088894739713, guid: 68c074c4d9b7241a6b4f51c3ee796fc7,
+    type: 3}
+  parent: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
+  useTransformPosition: 1
 --- !u!1 &5812870064019827621
 GameObject:
   m_ObjectHideFlags: 0
