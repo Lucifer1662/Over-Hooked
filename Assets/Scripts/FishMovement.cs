@@ -11,7 +11,7 @@ public class FishMovement : MonoBehaviour
     public float speed;
     private Vector3 direction;
 
-    
+    private RaycastHit hit;
 
     // Start is called before the first frame update
     void Start()
@@ -33,10 +33,14 @@ public class FishMovement : MonoBehaviour
             this.transform.rotation = Quaternion.Euler(direction);
             
         }
-        // Otherwise continue moving along the old direction
-        else{
-            move(speed);
+        // Change direction to avoid terrain
+        while (determineTerrain(this.transform.position + this.transform.forward * speed * initialTick) == true){
+            direction = GenerateRotation();
+            speed = GenerateSpeed();
+            this.transform.rotation = Quaternion.Euler(direction);
         }
+        // Otherwise continue moving along the old direction
+        move(speed);
         
     }
 
@@ -62,5 +66,25 @@ public class FishMovement : MonoBehaviour
     // Move along the new direction
     void move(float speed){
         this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    }
+
+    // Determine whether the new position is terrain 
+    private bool determineTerrain(Vector3 newLocation)
+    {
+        bool terrain = false;
+
+        Vector3 castLocation = new Vector3(newLocation.x, newLocation.y + 100, newLocation.z);
+
+        if (Physics.Raycast(castLocation, newLocation - castLocation, out hit, 1000)){
+            //Debug.Log("Found an object - distance: " + hit.distance);
+        }
+        
+        // If distance is <100 then position is "inside" terrain
+        if(hit.distance < 100){
+            terrain = true;
+            Debug.Log("New position is terrain - raycast distance: " + hit.distance);
+        }
+
+        return terrain;
     }
 }
