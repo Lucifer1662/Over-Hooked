@@ -72,7 +72,8 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _WiggleFrequency: 0.8
-    - _WiggleSpeed: 0.2
+    - _WiggleIntentsity: 0.2
+    - _WiggleSpeed: 3
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0, a: 1}

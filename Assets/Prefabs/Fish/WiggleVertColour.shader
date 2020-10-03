@@ -8,8 +8,9 @@ Shader "Custom/WiggleVertColour"
 	{
 		_Color("Color", Color) = (1,1,1,1)
 		_WiggleDirection("Wiggel Direction", Vector) = (0,0,1)
-		_WiggleSpeed("Wiggle Speed", Range(0,10)) = 0.1
+		_WiggleIntentsity("Wiggle Intensity", Range(0,10)) = 0.1
 		_WiggleFrequency("Wiggle Frequency", Range(0.00000000001, 5)) = 1
+		_WiggleSpeed("Wiggle Speed", Range(0,10) ) = 1
 	}
 		SubShader
 	{
@@ -33,8 +34,9 @@ Shader "Custom/WiggleVertColour"
 
 		fixed4 _Color;
 		float3 _WiggleDirection;
-		float _WiggleSpeed;
+		float _WiggleIntentsity;
 		float _WiggleFrequency;
+		float _WiggleSpeed;
 
 
 		void vert(inout appdata_full v) {
@@ -42,7 +44,7 @@ Shader "Custom/WiggleVertColour"
 			/*v.vertex.z += _WiggleDirection.z * sin(_Time.y + v.vertex.z/ _WiggleFrequency) * _WiggleSpeed;
 			v.vertex.y += _WiggleDirection.y * sin(_Time.y + v.vertex.y/ _WiggleFrequency) * _WiggleSpeed;*/
 			
-			v.vertex.x += sin( _Time.y +  v.vertex.y / _WiggleFrequency) * _WiggleSpeed;// *abs(v.vertex.x);
+			v.vertex.x += sin( _Time.y * _WiggleSpeed +  v.vertex.y / _WiggleFrequency) * _WiggleIntentsity;// *abs(v.vertex.x);
 			//v.vertex.y += _WiggleDirection.x * sin(_Time.y + v.vertex.x / _WiggleFrequency) * _WiggleSpeed;// *abs(v.vertex.y);
 			//v.vertex.z += _WiggleDirection.x * sin(_Time.y + v.vertex.z / _WiggleFrequency) * _WiggleSpeed * abs(v.vertex.z);
 
