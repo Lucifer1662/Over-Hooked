@@ -38,6 +38,7 @@ Transform:
   - {fileID: 7146341017483564618}
   - {fileID: 1388564107247475318}
   - {fileID: 7980894475503103924}
+  - {fileID: 2182039305187666693}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -201,6 +202,7 @@ MonoBehaviour:
   score: 0
   scoreDisplay: {fileID: 0}
   collectFishSound: {fileID: 7684888977034057756}
+  textParticleSpawner: {fileID: 4270519045237143835}
 --- !u!114 &7362971002235708699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +475,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2982585090026431888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2182039305187666693}
+  - component: {fileID: 4270519045237143835}
+  m_Layer: 0
+  m_Name: Particle Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2182039305187666693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2982585090026431888}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.0817142, y: 3.07, z: 2.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8127633565502907}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4270519045237143835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2982585090026431888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f8f5f63ca61423b94fd7fd35cfa700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObject: {fileID: 4187515718477500232, guid: de016bebc042f4e22813dda83c465d68,
+    type: 3}
+  parent: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
+  useTransformPosition: 1
 --- !u!1 &7663937107691292590
 GameObject:
   m_ObjectHideFlags: 0
