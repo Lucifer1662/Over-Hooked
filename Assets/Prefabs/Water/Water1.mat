@@ -62,7 +62,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DiffuseFactor: 0.164
     - _DstBlend: 0
-    - _FoamScale: 0.1
+    - _FoamScale: 0.001
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -79,7 +79,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour: {r: 0.1432894, g: 0.72538334, b: 0.8679245, a: 0.56078434}
+    - _Colour: {r: 0.5707547, g: 0.9160173, b: 1, a: 0.56078434}
     - _DarkColour: {r: 0.16725051, g: 0.15218942, b: 0.7169812, a: 0.72156864}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NoiseDisplacementSpeed: {r: 0.01, g: 0.01, b: 0.01, a: 1}

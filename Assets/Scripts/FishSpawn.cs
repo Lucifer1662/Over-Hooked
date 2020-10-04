@@ -44,15 +44,17 @@ public class FishSpawn : MonoBehaviour
         }
 
         Vector3 fishPosition = GeneratePosition();
-        
-        while(determineTerrain(fishPosition)){
+
+        int tries = 0;
+        while(determineTerrain(fishPosition) && tries < 20){
             fishPosition = GeneratePosition();
+            tries++;
             //Debug.Log("Hit the terrain, re-generate the fish position");
         }
-
+        
         // Instantiate new fish and attach movement script
         GameObject newFish = Instantiate(fishPrefab, fishPosition, Quaternion.Euler(GenerateRotation()));
-        newFish.AddComponent<FishMovement>();
+      
         
         // Set as child object
         newFish.transform.parent = this.transform;
