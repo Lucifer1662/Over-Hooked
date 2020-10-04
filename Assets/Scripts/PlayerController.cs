@@ -86,15 +86,16 @@ public class PlayerController : MonoBehaviour
             cameraStick.extraOffset = PlayerRodControl.hookInstance.transform.position - transform.position;
         }
         else
+        {
             cameraStick.extraOffset = Vector3.zero;
+        }
+            
 
-
+    
         if (Input.GetButtonDown("Cast"))
         {
 
             bool didCast = playerRodControl.StartedCasting();
-
-           
 
             if (catchFish != null)
             {

@@ -9,6 +9,7 @@ public class FishComeToBait : MonoBehaviour
     public float effectiveRange = 10;
     private GameObject curHook;
     private Vector3 lastHook;
+    private RaycastHit hit;
 
 
 
@@ -25,7 +26,10 @@ public class FishComeToBait : MonoBehaviour
             if(Vector3.Distance(curHook.transform.position, lastHook) < .001f) {
                  
                 distance = Vector3.Distance(curHook.transform.position, transform.position);
-                if (closeEnough(distance)){
+                // if (!outsideTerrain(lastHook)){
+                //     print("!!!!!!!");
+                // }
+                if(closeEnough(distance)){
                     transform.LookAt(curHook.transform);
                     GetComponent<FishMovement>().enabled = false;
                     move(speed);
@@ -55,4 +59,19 @@ public class FishComeToBait : MonoBehaviour
         Vector3 newPosition = this.transform.position + this.transform.forward * 5;
         this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
+
+    // private bool outsideTerrain(Vector3 newLocation)
+    // {
+    //     bool terrain = true;
+    //     Vector3 castLocation = new Vector3(newLocation.x, newLocation.y + 100, newLocation.z);
+
+    //     Physics.Raycast(castLocation, newLocation - castLocation, out hit, 1000);
+        
+    //     // If distance is <100 then position is "inside" terrain
+    //     if(hit.distance < 100){
+    //         terrain = false;
+    //     }
+
+    //     return terrain;
+    // }
 }
