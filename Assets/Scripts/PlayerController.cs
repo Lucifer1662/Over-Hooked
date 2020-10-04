@@ -81,9 +81,9 @@ public class PlayerController : MonoBehaviour
         playerMovement.Look(direction);
 
        
-        if (playerRodControl.hookInstance)
+        if (PlayerRodControl.hookInstance)
         {
-            cameraStick.extraOffset = playerRodControl.hookInstance.transform.position - transform.position;
+            cameraStick.extraOffset = PlayerRodControl.hookInstance.transform.position - transform.position;
         }
         else
             cameraStick.extraOffset = Vector3.zero;
