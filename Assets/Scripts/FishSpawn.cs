@@ -54,8 +54,6 @@ public class FishSpawn : MonoBehaviour
         
         // Instantiate new fish and attach movement script
         GameObject newFish = Instantiate(fishPrefab, fishPosition, Quaternion.Euler(GenerateRotation()));
-      
-        newFish.AddComponent<FishMovement>();
 
         newFish.AddComponent<FishComeToBait>();
         
