@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 1;
     public float Sensitivity;
 
-    private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
     // Start is called before the first frame update
     void Start()
     {

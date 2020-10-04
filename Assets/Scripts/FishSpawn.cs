@@ -54,7 +54,7 @@ public class FishSpawn : MonoBehaviour
         GameObject newFish = Instantiate(fishPrefab, fishPosition, Quaternion.Euler(GenerateRotation()));
         newFish.AddComponent<FishMovement>();
 
-        // newFish.AddComponent<FishComeToBait>();
+        newFish.AddComponent<FishComeToBait>();
         
         // Set as child object
         newFish.transform.parent = this.transform;

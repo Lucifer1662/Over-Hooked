@@ -6,7 +6,7 @@ public class FishComeToBait : MonoBehaviour
 {
     private float distance;
     public float speed = 5;
-    public float effectiveRange = 20;
+    public float effectiveRange = 10;
     private GameObject curHook;
     private Vector3 lastHook;
 
@@ -19,15 +19,15 @@ public class FishComeToBait : MonoBehaviour
         curHook = PlayerRodControl.hookInstance;
         
         if(curHook != null && lastHook != null){
-            print(curHook);
-            Debug.Log(lastHook);
+            // print(curHook);
+            // Debug.Log(lastHook);
 
             if(Vector3.Distance(curHook.transform.position, lastHook) < .001f) {
                  
                 distance = Vector3.Distance(curHook.transform.position, transform.position);
                 if (closeEnough(distance)){
-                    GetComponent<FishMovement>().enabled = false;
                     transform.LookAt(curHook.transform);
+                    GetComponent<FishMovement>().enabled = false;
                     move(speed);
                 }
             }else{
