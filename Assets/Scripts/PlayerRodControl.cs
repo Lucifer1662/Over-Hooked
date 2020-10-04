@@ -12,12 +12,12 @@ public class PlayerRodControl : MonoBehaviour
     public GameObject lure;
     public Transform spawnPos;
     public float castAngle = 45.0f;
-    public GameObject hookInstance = null;
+    public static GameObject hookInstance = null;
 	public SpawnGameObject spawnCastSound;
 
 	public Transform rod;
 
-    bool isBeingHeldDown = false;
+    public bool isBeingHeldDown = false;
 
     public delegate void FishBitingHandler(object sender, Action e);
 
@@ -64,7 +64,6 @@ public class PlayerRodControl : MonoBehaviour
             Destroy(hookInstance);
             hookInstance = null;
             isBeingHeldDown = false;
-            isBeingHeldDown = false;
             return false;
         }
         else
@@ -101,8 +100,6 @@ public class PlayerRodControl : MonoBehaviour
         var rigid = instance.GetComponent<Rigidbody>();
         rigid.AddForce(force * Vector3.Normalize(transform.forward +
             Vector3.up * Mathf.Sin((castAngle / 180.0f) * Mathf.PI)));
-
-
 
         isBeingHeldDown = false;
 
