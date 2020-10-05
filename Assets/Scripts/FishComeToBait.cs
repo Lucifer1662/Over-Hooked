@@ -16,8 +16,8 @@ public class FishComeToBait : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-        curHook = PlayerRodControl.hookInstance;
+
+        curHook = GameObject.FindGameObjectWithTag("Hook");
         
         if(curHook != null && lastHook != null){
             // print(curHook);
