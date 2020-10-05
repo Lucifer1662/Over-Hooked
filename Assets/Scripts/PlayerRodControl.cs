@@ -91,6 +91,7 @@ public class PlayerRodControl : MonoBehaviour
         spawnPos.GetComponent<KeepLineAttachedTo>().to = instance.transform;
 
         hookInstance = instance;
+        hookInstance.gameObject.tag = "Hook";
         var catchFish = hookInstance.GetComponent<CatchFish>();
         catchFish.fishBitingEvent += (sender, catchFishFunc) =>
         {
