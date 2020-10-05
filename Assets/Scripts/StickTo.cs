@@ -5,7 +5,7 @@ using UnityEngine;
 public class StickTo : MonoBehaviour
 {
     public Transform parent;
-    private Vector3 offset;
+    public Vector3 offset;
     public Vector3 extraOffset;
     public float lerpSpeed = 0.5f;
     public float extraLerpSpeed = 0.5f;
