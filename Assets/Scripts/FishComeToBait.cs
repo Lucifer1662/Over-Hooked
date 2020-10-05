@@ -32,7 +32,7 @@ public class FishComeToBait : MonoBehaviour
                 if(closeEnough(distance)){
                     transform.LookAt(curHook.transform);
                     GetComponent<FishMovement>().enabled = false;
-                    move(speed);
+                    transform.position = Vector3.MoveTowards(transform.position, curHook.transform.position, speed * Time.deltaTime);
                 }
             }else{
                 lastHook = curHook.transform.position;
@@ -55,23 +55,4 @@ public class FishComeToBait : MonoBehaviour
         return false;
     }
 
-    void move(float speed){
-        Vector3 newPosition = this.transform.position + this.transform.forward * 5;
-        this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
-
-    // private bool outsideTerrain(Vector3 newLocation)
-    // {
-    //     bool terrain = true;
-    //     Vector3 castLocation = new Vector3(newLocation.x, newLocation.y + 100, newLocation.z);
-
-    //     Physics.Raycast(castLocation, newLocation - castLocation, out hit, 1000);
-        
-    //     // If distance is <100 then position is "inside" terrain
-    //     if(hit.distance < 100){
-    //         terrain = false;
-    //     }
-
-    //     return terrain;
-    // }
 }

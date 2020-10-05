@@ -5,7 +5,7 @@ using UnityEngine;
 public class FishMovement : MonoBehaviour
 {
 
-    private float initialTick = 3;
+    private float initialTick = 6;
     private float tickCountdown;
 
     public float speed = 5;
@@ -27,14 +27,19 @@ public class FishMovement : MonoBehaviour
         tickCountdown -= Time.deltaTime;
         if (tickCountdown < 0.0f)
         {
-            tickCountdown = Random.Range(3, 7);
+            initialTick = Random.Range(6, 13);
+            tickCountdown = initialTick;
             direction = GenerateRotation();
             speed = GenerateSpeed();
             this.transform.rotation = Quaternion.Euler(direction);
             
         }
-        move(speed);
-        
+        // Move after each direction change 
+        // And pause for half tick time
+        else if (tickCountdown > initialTick/2){
+            move(speed);
+        }
+
     }
 
 
