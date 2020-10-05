@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
+
+[System.Serializable]
+public class TimerHitZeroEvent : UnityEvent { }
 
 // Attach me to the textbox you want to display the timer!
 public class Timer : MonoBehaviour
@@ -12,6 +16,8 @@ public class Timer : MonoBehaviour
 	private int prevSec;
 	public Color secondaryColour;
 	public int changeColourAt;
+	[SerializeField]
+	public TimerHitZeroEvent hitZeroEvent;
 
 	/*public void setTimer (int minutes,  int seconds) {
 		timeLeft = (minutes * 60) + seconds + 0.99f;
@@ -39,8 +45,13 @@ public class Timer : MonoBehaviour
 		}
 
 		// don't go below zero
-		if (timeLeft > 0) {
+		if (timeLeft > 0)
+		{
 			timeLeft -= Time.deltaTime;
+		}
+		else {
+			hitZeroEvent.Invoke();
+			enabled = false;
 		}
 
 		

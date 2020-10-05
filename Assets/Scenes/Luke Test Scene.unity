@@ -251,6 +251,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29ffa6274230e2c46be15f380f70da7b, type: 3}
+--- !u!114 &353324468 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 379823783815652691, guid: 78049ef9ea549df47baa2482808ffcd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1809357252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ececa27745d7f8f49a6a69cd003560c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &438914574
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +660,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 9d7d26505b1b749d5abc64c34a02524c, type: 3}
+--- !u!1 &586724366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1243298785878400571, guid: 973a3a60d09e9f44b827845e41775c9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4470145965079447314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &586724368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4470145965079447314}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586724366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa24ded13a4481c4da15fd54e91cff6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &646608278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1108,7 @@ GameObject:
   - component: {fileID: 1598295099}
   - component: {fileID: 1598295098}
   - component: {fileID: 1598295097}
+  - component: {fileID: 1598295100}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1116,9 +1147,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414425bfe360042ec993a0fe931dac97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 60
+  timeLeft: 2
   secondaryColour: {r: 0.754717, g: 0.06763971, b: 0.17684399, a: 1}
   changeColourAt: 10
+  hitZeroEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1598295100}
+        m_MethodName: toggleEnable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586724368}
+        m_MethodName: TestPlayerScoreThreshhold
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1598295098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,6 +1216,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598295095}
   m_CullTransparentMesh: 0
+--- !u!114 &1598295100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598295095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304c42d7d09d60742913f8358164002b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets:
+  - {fileID: 586724366}
 --- !u!1001 &1774199607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1760,20 +1830,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1249208273}
     m_Modifications:
+    - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 353324468}
     - target: {fileID: 1243298785878400571, guid: 973a3a60d09e9f44b827845e41775c9e,
         type: 3}
       propertyPath: m_Name
       value: LevelCompletion
-      objectReference: {fileID: 0}
-    - target: {fileID: 4602094863517014473, guid: 973a3a60d09e9f44b827845e41775c9e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.00018310547
-      objectReference: {fileID: 0}
-    - target: {fileID: 4602094863517014473, guid: 973a3a60d09e9f44b827845e41775c9e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.0008544922
       objectReference: {fileID: 0}
     - target: {fileID: 4865471232078902259, guid: 973a3a60d09e9f44b827845e41775c9e,
         type: 3}
