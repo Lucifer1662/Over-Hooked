@@ -71,11 +71,11 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WiggleFrequency: 0.8
-    - _WiggleIntentsity: 0.2
-    - _WiggleSpeed: 3
+    - _WiggleFrequency: 1.4
+    - _WiggleIntentsity: 0.15
+    - _WiggleSpeed: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.8490566, g: 0.5254754, b: 0.052064814, a: 1}
+    - _Color: {r: 0.8679245, g: 0.38772938, b: 0.1432894, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _WiggleDirection: {r: 1, g: 0, b: 0, a: 0}
