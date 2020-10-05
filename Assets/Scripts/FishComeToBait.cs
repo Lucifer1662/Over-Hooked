@@ -5,11 +5,14 @@ using UnityEngine;
 public class FishComeToBait : MonoBehaviour
 {
     private float distance;
-    public float speed = 5;
+    public float speed = 3;
     public float effectiveRange = 10;
     private GameObject curHook;
     private Vector3 lastHook;
     private RaycastHit hit;
+    private Rigidbody rb;
+
+    private float backwardSpeed = 5;
 
 
 
@@ -26,13 +29,17 @@ public class FishComeToBait : MonoBehaviour
             if(Vector3.Distance(curHook.transform.position, lastHook) < .001f) {
                  
                 distance = Vector3.Distance(curHook.transform.position, transform.position);
-                // if (!outsideTerrain(lastHook)){
-                //     print("!!!!!!!");
-                // }
+
                 if(closeEnough(distance)){
                     transform.LookAt(curHook.transform);
-                    GetComponent<FishMovement>().enabled = false;
-                    transform.position = Vector3.MoveTowards(transform.position, curHook.transform.position, speed * Time.deltaTime);
+                    
+                    GetComponent<moveTowards>().enabled = true;
+
+                    if (Vector3.Distance(curHook.transform.position, transform.position) <= 5){
+                        int attemptTimes = Random.Range(0, 3); // random select times to attempt to bite
+                        attemptToBite(attemptTimes, curHook.transform.position - transform.position);
+                    }
+                    
                 }
             }else{
                 lastHook = curHook.transform.position;
@@ -54,5 +61,19 @@ public class FishComeToBait : MonoBehaviour
         }
         return false;
     }
+
+    void attemptToBite(int times, Vector3 direction){
+        if (times == 0){
+            return;
+        }
+        GetComponent<moveTowards>().enabled = false;
+        direction = -direction;
+        rb = GetComponent<Rigidbody>();
+        rb.AddForce(direction * 0.1f, ForceMode.Impulse);
+        // GetComponent<moveTowards>().enabled = true;
+
+    }
+
+
 
 }

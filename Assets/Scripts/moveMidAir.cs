@@ -21,7 +21,7 @@ public class moveMidAir : MonoBehaviour {
         deltaPos.y = 0;
         deltaPos.x = Mathf.Clamp(deltaPos.x, -6, 6);
         deltaPos.z = Mathf.Clamp(deltaPos.z, -6, 6);
-        Debug.Log(deltaPos);
+        // Debug.Log(deltaPos);
         rb.AddForce(deltaPos * strength);
     }
 }
