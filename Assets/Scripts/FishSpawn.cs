@@ -6,14 +6,18 @@ public class FishSpawn : MonoBehaviour
 {
     public GameObject fishPrefab;
     public int maxFish;
-    public float rangeLimit;
+    public float rangeLimit = 10;
     //public float islandSize;
 
     private int currentFish = 0;
-    public float respawnPeriod = 3;
+    public float respawnPeriod = 1;
     private float respawnCountdown;
 
     private RaycastHit hit;
+    private Color[] colors = {Color.green, Color.red, Color.black, Color.blue, Color.cyan, Color.yellow, Color.white};
+    private int randomColour;
+    Material mat;
+    private int rndColor;
 
 
     // Start is called before the first frame update
@@ -21,6 +25,8 @@ public class FishSpawn : MonoBehaviour
     {
         GenerateFish();
         respawnCountdown = respawnPeriod;
+    
+        
     }
 
     // Update is called once per frame
@@ -54,11 +60,17 @@ public class FishSpawn : MonoBehaviour
         
         // Instantiate new fish and attach movement script
         GameObject newFish = Instantiate(fishPrefab, fishPosition, Quaternion.Euler(GenerateRotation()));
-
-        // newFish.AddComponent<FishComeToBait>();
-        
-        // Set as child object
         newFish.transform.parent = this.transform;
+        int lengthOfColors = colors.Length;  
+        rndColor = Random.Range(0, lengthOfColors);
+        Material[] matArray = newFish.GetComponent<Renderer>().materials;
+        mat = newFish.GetComponent<Renderer>().material;
+        mat.color = colors[rndColor];
+        matArray[1] = mat;
+        newFish.transform.GetChild(6).gameObject.GetComponent<Renderer>().materials = matArray;
+        
+
+        
     }
 
     // Generate random position outside of island
