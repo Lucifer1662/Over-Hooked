@@ -13,7 +13,9 @@ public class FishComeToBait : MonoBehaviour
     private Rigidbody rb;
 
     private float backwardSpeed = 5;
-
+    private float time = 0.0f;
+    public float interpolationPeriod = 3f;
+    private int attemptTimes = 1;
 
 
     // Update is called once per frame
@@ -34,10 +36,21 @@ public class FishComeToBait : MonoBehaviour
                     transform.LookAt(curHook.transform);
                     
                     GetComponent<moveTowards>().enabled = true;
-
+                    rb = GetComponent<Rigidbody>();
                     if (Vector3.Distance(curHook.transform.position, transform.position) <= 5){
-                        int attemptTimes = Random.Range(0, 3); // random select times to attempt to bite
+                        time += Time.deltaTime;
+ 
+                        if (time >= interpolationPeriod) {
+                            time = time - interpolationPeriod;
+                            attemptTimes = Random.Range(0, 2);
+                        }
                         attemptToBite(attemptTimes, curHook.transform.position - transform.position);
+                     
+
+
+                        
+                        // Debug.Log(attemptTimes); // random select times to attempt to bite
+
                     }
                     
                 }
@@ -64,16 +77,24 @@ public class FishComeToBait : MonoBehaviour
 
     void attemptToBite(int times, Vector3 direction){
         if (times == 0){
+            GetComponent<moveTowards>().enabled = true;
             return;
         }
-        GetComponent<moveTowards>().enabled = false;
+        
         direction = -direction;
-        rb = GetComponent<Rigidbody>();
-        rb.AddForce(direction * 0.1f, ForceMode.Impulse);
-        // GetComponent<moveTowards>().enabled = true;
-
+        direction.y = -0.5f;
+        
+        
+        StartCoroutine(waitfor(direction));
     }
 
+    IEnumerator waitfor(Vector3 direction){
+        yield return new WaitForSeconds(1);
+        rb.AddForce(direction * 0.07f, ForceMode.Impulse);
+        yield return new WaitForSeconds(3);
+        GetComponent<moveTowards>().enabled = true;
+
+    }
 
 
 }
