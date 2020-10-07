@@ -8,8 +8,11 @@ public class FishMovement : MonoBehaviour
     private float initialTick = 6;
     private float tickCountdown;
 
-    public float speed = 5;
+    public float speed = 3;
     private Vector3 direction;
+
+    private Vector3 spawnLocation;
+    private float range = 10;
 
     private RaycastHit hit;
 
@@ -18,6 +21,8 @@ public class FishMovement : MonoBehaviour
     {
         // No need to change direction for the first time
         tickCountdown = initialTick;
+        // Store spawning location
+        spawnLocation = transform.position;
     }
 
 
@@ -56,7 +61,7 @@ public class FishMovement : MonoBehaviour
     private static float GenerateSpeed()
     {
         float randomSpeed;
-        randomSpeed = Random.Range(3, 7);
+        randomSpeed = Random.Range(2, 5);
 
         return randomSpeed;
     }
@@ -66,13 +71,15 @@ public class FishMovement : MonoBehaviour
 
         // Change direction to avoid terrain
         Vector3 newPosition = this.transform.position + this.transform.forward * 5;
-        while (determineTerrain(newPosition) == true){
+        
+        // Generate valid new position
+        while ((determineTerrain(newPosition) == true) || (outsideRange(spawnLocation, newPosition, range) == true)){
             //Debug.Log("Hit, current position is: " + transform.position + " increment position is: " + this.transform.forward * 5 + " new position is: " + newPosition);
-            
+
             direction = GenerateRotation();
             speed = GenerateSpeed();
             this.transform.rotation = Quaternion.Euler(direction);
-            newPosition = this.transform.position + this.transform.forward * speed * 5;
+            newPosition = this.transform.position + this.transform.forward * speed;
         }
 
         this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
@@ -96,5 +103,21 @@ public class FishMovement : MonoBehaviour
         }
 
         return terrain;
+    }
+
+    // Check whether the new position is outside restricted range 
+    private bool outsideRange(Vector3 spawnLocation, Vector3 newLocation, float range){
+        bool outside = false;
+
+        if ((newLocation.x > spawnLocation.x+range) || (newLocation.x < spawnLocation.x-range))
+        {
+            return outside = true;
+        }
+        else if ((newLocation.z > spawnLocation.z+range) || (newLocation.z < spawnLocation.z-range))
+        {
+            return outside = true;
+        }
+
+        return outside;
     }
 }
