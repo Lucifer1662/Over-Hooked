@@ -69,6 +69,7 @@ public class FishComeToBait : MonoBehaviour
         GetComponent<moveTowards>().enabled = false;
         direction = -direction;
         rb = GetComponent<Rigidbody>();
+        direction.y = 0;
         rb.AddForce(direction * 0.1f, ForceMode.Impulse);
         // GetComponent<moveTowards>().enabled = true;
 
