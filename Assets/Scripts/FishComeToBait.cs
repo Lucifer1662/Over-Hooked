@@ -13,7 +13,9 @@ public class FishComeToBait : MonoBehaviour
     private Rigidbody rb;
 
     private float backwardSpeed = 5;
-
+    private float time = 0.0f;
+    public float interpolationPeriod = 3f;
+    private int attemptTimes = 1;
 
 
     // Update is called once per frame
@@ -21,33 +23,49 @@ public class FishComeToBait : MonoBehaviour
     {
 
         curHook = GameObject.FindGameObjectWithTag("Hook");
+        Vector3 waterlevelHookPos;
         
         if(curHook != null && lastHook != null){
+            waterlevelHookPos = curHook.transform.position;
+            waterlevelHookPos.y = 0;
             // print(curHook);
             // Debug.Log(lastHook);
 
-            if(Vector3.Distance(curHook.transform.position, lastHook) < .001f) {
+            if(Vector3.Distance(waterlevelHookPos, lastHook) < .001f) {
                  
-                distance = Vector3.Distance(curHook.transform.position, transform.position);
+                distance = Vector3.Distance(waterlevelHookPos, transform.position);
 
                 if(closeEnough(distance)){
                     transform.LookAt(curHook.transform);
                     
                     GetComponent<moveTowards>().enabled = true;
+                    rb = GetComponent<Rigidbody>();
+                    if (Vector3.Distance(waterlevelHookPos, transform.position) <= 5){
+                        time += Time.deltaTime;
+ 
+                        if (time >= interpolationPeriod) {
+                            time = time - interpolationPeriod;
+                            attemptTimes = Random.Range(0, 2);
+                        }
+                        attemptToBite(attemptTimes, waterlevelHookPos - transform.position);
+                     
 
-                    if (Vector3.Distance(curHook.transform.position, transform.position) <= 5){
-                        int attemptTimes = Random.Range(0, 3); // random select times to attempt to bite
-                        attemptToBite(attemptTimes, curHook.transform.position - transform.position);
+
+                        
+                        // Debug.Log(attemptTimes); // random select times to attempt to bite
+
                     }
                     
                 }
             }else{
-                lastHook = curHook.transform.position;
+                lastHook = waterlevelHookPos;
             }
         
         }else{
             if (curHook != null){
-                lastHook = curHook.transform.position; 
+                waterlevelHookPos = curHook.transform.position;
+                waterlevelHookPos.y = 0;
+                lastHook = waterlevelHookPos;
             }
             
             GetComponent<FishMovement>().enabled = true;
@@ -64,9 +82,10 @@ public class FishComeToBait : MonoBehaviour
 
     void attemptToBite(int times, Vector3 direction){
         if (times == 0){
+            GetComponent<moveTowards>().enabled = true;
             return;
         }
-        GetComponent<moveTowards>().enabled = false;
+        
         direction = -direction;
         rb = GetComponent<Rigidbody>();
         direction.y = 0;
@@ -75,6 +94,12 @@ public class FishComeToBait : MonoBehaviour
 
     }
 
+    IEnumerator waitfor(Vector3 direction){
+        yield return new WaitForSeconds(1);
+        rb.AddForce(direction * 0.03f, ForceMode.Impulse);
+        yield return new WaitForSeconds(3);
+        GetComponent<moveTowards>().enabled = true;
 
+    }
 
 }
