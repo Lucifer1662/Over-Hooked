@@ -14,7 +14,10 @@ public class FishSpawn : MonoBehaviour
     private float respawnCountdown;
 
     private RaycastHit hit;
-    private Color[] colors = {Color.green, Color.red, Color.black, Color.blue, Color.cyan, Color.yellow, Color.white};
+    private Color[] colors = {new Color(0.9803922f, 0.5019608f, 0.4509804f),
+							new Color (1f, 0.627451f, 0.482353f),
+							new Color (0.9843138f, 0.6980392f, 0.5490196f),
+							new Color (0.872f, 0.174242f, 0.160448f)};
     private int randomColour;
     Material mat;
     private int rndColor;
@@ -63,18 +66,20 @@ public class FishSpawn : MonoBehaviour
         newFish.transform.parent = this.transform;
         int lengthOfColors = colors.Length;  
         rndColor = Random.Range(0, lengthOfColors);
-        Material[] matArray = newFish.GetComponent<Renderer>().materials;
-        mat = newFish.GetComponent<Renderer>().material;
-        mat.color = colors[rndColor];
-        matArray[1] = mat;
-        newFish.transform.GetChild(6).gameObject.GetComponent<Renderer>().materials = matArray;
-        
+		
+		newFish.transform.GetChild(6).GetComponent<MeshRenderer> ().materials [0].color = colors [rndColor];
+		newFish.transform.GetChild (6).GetComponent<MeshRenderer> ().materials [1].color = new Color (colors [rndColor].r, colors [rndColor].g + 0.2f, colors [rndColor].b + 0.2f);
 
-        
-    }
+		// code that jess replaced above
+		//Material[] matArray = newFish.GetComponent<Renderer>().materials;
+		//mat = newFish.GetComponent<Renderer>().material;
+		//mat.color = colors[rndColor];
+		//matArray[1] = mat;
+		//newFish.transform.GetChild(6).gameObject.GetComponent<Renderer>().materials = matArray;
+	}
 
-    // Generate random position outside of island
-    Vector3 GeneratePosition(){
+	// Generate random position outside of island
+	Vector3 GeneratePosition(){
         Vector3 position;
         float randomX;
         float randomZ;
