@@ -618,6 +618,11 @@ PrefabInstance:
       propertyPath: respawnPeriod
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4451869161167491384, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
+        type: 3}
+      propertyPath: maxFish
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4451869161167491385, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1684,7 +1689,7 @@ PrefabInstance:
     - target: {fileID: 1272293757671424535, guid: 29ffa6274230e2c46be15f380f70da7b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.31
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1272293757671424535, guid: 29ffa6274230e2c46be15f380f70da7b,
         type: 3}

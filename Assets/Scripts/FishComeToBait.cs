@@ -23,28 +23,31 @@ public class FishComeToBait : MonoBehaviour
     {
 
         curHook = GameObject.FindGameObjectWithTag("Hook");
+        Vector3 waterlevelHookPos;
         
         if(curHook != null && lastHook != null){
+            waterlevelHookPos = curHook.transform.position;
+            waterlevelHookPos.y = 0;
             // print(curHook);
             // Debug.Log(lastHook);
 
-            if(Vector3.Distance(curHook.transform.position, lastHook) < .001f) {
+            if(Vector3.Distance(waterlevelHookPos, lastHook) < .001f) {
                  
-                distance = Vector3.Distance(curHook.transform.position, transform.position);
+                distance = Vector3.Distance(waterlevelHookPos, transform.position);
 
                 if(closeEnough(distance)){
                     transform.LookAt(curHook.transform);
                     
                     GetComponent<moveTowards>().enabled = true;
                     rb = GetComponent<Rigidbody>();
-                    if (Vector3.Distance(curHook.transform.position, transform.position) <= 5){
+                    if (Vector3.Distance(waterlevelHookPos, transform.position) <= 5){
                         time += Time.deltaTime;
  
                         if (time >= interpolationPeriod) {
                             time = time - interpolationPeriod;
                             attemptTimes = Random.Range(0, 2);
                         }
-                        attemptToBite(attemptTimes, curHook.transform.position - transform.position);
+                        attemptToBite(attemptTimes, waterlevelHookPos - transform.position);
                      
 
 
@@ -55,12 +58,14 @@ public class FishComeToBait : MonoBehaviour
                     
                 }
             }else{
-                lastHook = curHook.transform.position;
+                lastHook = waterlevelHookPos;
             }
         
         }else{
             if (curHook != null){
-                lastHook = curHook.transform.position; 
+                waterlevelHookPos = curHook.transform.position;
+                waterlevelHookPos.y = 0;
+                lastHook = waterlevelHookPos;
             }
             
             GetComponent<FishMovement>().enabled = true;
@@ -90,7 +95,7 @@ public class FishComeToBait : MonoBehaviour
 
     IEnumerator waitfor(Vector3 direction){
         yield return new WaitForSeconds(1);
-        rb.AddForce(direction * 0.07f, ForceMode.Impulse);
+        rb.AddForce(direction * 0.03f, ForceMode.Impulse);
         yield return new WaitForSeconds(3);
         GetComponent<moveTowards>().enabled = true;
 

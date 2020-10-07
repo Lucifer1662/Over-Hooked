@@ -16,7 +16,14 @@ public class moveTowards : MonoBehaviour
         curHook = GameObject.FindGameObjectWithTag("Hook");
         if (curHook != null){
             GetComponent<FishMovement>().enabled = false;
-            transform.position = Vector3.MoveTowards(transform.position, curHook.transform.position, speed * Time.deltaTime);
+
+            Vector3 waterlevelHookPos = curHook.transform.position;
+            waterlevelHookPos.y = 0;
+            
+            //Debug.Log("Hook position is " + waterlevelHookPos);
+            //Debug.Log("Fish position is " + transform.position);
+            transform.position = Vector3.MoveTowards(transform.position, waterlevelHookPos, speed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         }else{
             GetComponent<FishMovement>().enabled = true;
         }
