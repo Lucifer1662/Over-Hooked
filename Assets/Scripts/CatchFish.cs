@@ -43,8 +43,10 @@ public class CatchFish : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag);
         if (other.tag == "Fish")
         {
+            
 			spawnChompSound.SpawnObject ();
             if (CatchesFish())
             {
