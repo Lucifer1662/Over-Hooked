@@ -69,13 +69,8 @@ public class FishSpawn : MonoBehaviour
 		
 		newFish.transform.GetChild(6).GetComponent<MeshRenderer> ().materials [0].color = colors [rndColor];
 		newFish.transform.GetChild (6).GetComponent<MeshRenderer> ().materials [1].color = new Color (colors [rndColor].r, colors [rndColor].g + 0.2f, colors [rndColor].b + 0.2f);
+        newFish.GetComponent<ChangeScale>();
 
-		// code that jess replaced above
-		//Material[] matArray = newFish.GetComponent<Renderer>().materials;
-		//mat = newFish.GetComponent<Renderer>().material;
-		//mat.color = colors[rndColor];
-		//matArray[1] = mat;
-		//newFish.transform.GetChild(6).gameObject.GetComponent<Renderer>().materials = matArray;
 	}
 
 	// Generate random position outside of island
