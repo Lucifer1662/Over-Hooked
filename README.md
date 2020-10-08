@@ -87,11 +87,13 @@ Skybox from: Customizable skybox by Key Mouse, Unity Asset Store
 Main font used from: Bubble font (free version) by Jazz Create Games, Unity Asset Store
 
 ### Sound effects
-Fishing cast: https://www.youtube.com/watch?v=pjHdbABLkTY and https://www.youtube.com/watch?v=mD58V881Jdk
+Fishing cast: https://www.youtube.com/watch?v=pjHdbABLkTY 
+	and https://www.youtube.com/watch?v=mD58V881Jdk
 Beach ambience: https://freesound.org/people/inchadney/sounds/66046/
 Menu music: https://soundimage.org/quiet-peaceful-mellow/ Key West Sunset
 UI SFX: https://soundimage.org/sfx-ui/
-Collect fish sound: https://freesound.org/people/Wagna/sounds/325805/ and https://freesound.org/people/InspectorJ/sounds/421184/
+Collect fish sound: https://freesound.org/people/Wagna/sounds/325805/ 
+	and https://freesound.org/people/InspectorJ/sounds/421184/
 Chomp: https://www.youtube.com/watch?v=Zm7Sbb9bzi8
 Splash: https://freesound.org/people/InspectorJ/sounds/416710/
 
