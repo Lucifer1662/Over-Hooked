@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FishSpawn : MonoBehaviour
 {
-    public GameObject fishPrefab;
+    public GameObject fishMedium;
+    public GameObject fishSmall;
+    public GameObject fishLarge;
     public int maxFish;
     public float rangeLimit = 10;
     //public float islandSize;
@@ -59,12 +61,26 @@ public class FishSpawn : MonoBehaviour
         }
         
         // Instantiate new fish and attach movement script
-        GameObject newFish = Instantiate(fishPrefab, fishPosition, Quaternion.Euler(GenerateRotation()));
-        newFish.transform.parent = this.transform;
-        newFish.GetComponent<ChangeColour>();
-        newFish.GetComponent<ChangeScale>();
+        int randomFish = Random.Range(0, 3);
+        if (randomFish == 0){
+            createFish(fishSmall, fishPosition);
+        }else if (randomFish == 1){
+            createFish(fishMedium, fishPosition);
+        }else{
+            createFish(fishLarge, fishPosition);
+        }
+        
+        
+        // newFish.GetComponent<ChangeScale>();
 
 	}
+
+    void createFish(GameObject fishSize, Vector3 fishPosition){
+        GameObject newFish = Instantiate(fishSize, fishPosition, Quaternion.Euler(GenerateRotation()));
+        newFish.transform.parent = this.transform;
+        newFish.GetComponent<ChangeColour>();
+
+    }
 
 	// Generate random position outside of island
 	Vector3 GeneratePosition(){
