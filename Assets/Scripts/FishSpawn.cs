@@ -40,22 +40,23 @@ public class FishSpawn : MonoBehaviour
 
     // Generate fishes until reaches max number of fish allowed
     void GenerateFish(){
-        
         if(currentFish >= maxFish){
             return;
         }
 
-        Vector3 fishPosition = GeneratePosition();
+        // Assign fish type
+        int randomFish = Random.Range(0, 3);
 
+        // Allocate spawn location
+        Vector3 fishPosition = GeneratePosition(randomFish);
         int tries = 0;
         while(determineTerrain(fishPosition) && tries < 20){
-            fishPosition = GeneratePosition();
+            fishPosition = GeneratePosition(randomFish);
             tries++;
             //Debug.Log("Hit the terrain, re-generate the fish position");
         }
         
         // Instantiate new fish and attach movement script
-        int randomFish = Random.Range(0, 3);
         if (randomFish == 0){
             createFish(fishSmall, fishPosition);
         }else if (randomFish == 1){
@@ -64,10 +65,9 @@ public class FishSpawn : MonoBehaviour
             createFish(fishLarge, fishPosition);
         }
         
-
-
 	}
 
+    // Instantiate fishes
     void createFish(GameObject fishSize, Vector3 fishPosition){
         GameObject newFish = Instantiate(fishSize, fishPosition, Quaternion.Euler(GenerateRotation()));
         newFish.transform.parent = this.transform;
@@ -75,12 +75,37 @@ public class FishSpawn : MonoBehaviour
 
     }
 
-	// Generate random position outside of island
-	Vector3 GeneratePosition(){
+	// Generate position outside of island
+    // According to different kinds of fish
+	Vector3 GeneratePosition(int fishSize){
+        Vector3 islandCentre = new Vector3(0f, 0f, 0f);
+        Vector3 position = randomPosition();
+
+        // Restricted distance for various kinds of fish
+        if (fishSize == 0){
+            while (Vector3.Distance(position, islandCentre) > 35 || Vector3.Distance(position, islandCentre) < 20){
+                position = randomPosition();
+            }
+        }
+        else if (fishSize == 1){
+            while (Vector3.Distance(position, islandCentre) > 55 || Vector3.Distance(position, islandCentre) < 30){
+                position = randomPosition();
+            }
+        }
+        else {
+            while (Vector3.Distance(position, islandCentre) < 45){
+                position = randomPosition();
+            }
+        }
+
+        return position;
+    }
+
+    // Just generate random positions
+    Vector3 randomPosition(){
         Vector3 position;
         float randomX;
         float randomZ;
-
 
         // Random number for X and Z
         // Currently set Y as 0 for testing
@@ -94,7 +119,6 @@ public class FishSpawn : MonoBehaviour
         return position;
     }
 
-    
     // Gegenrate random rotation for every new fish
     private static Vector3 GenerateRotation()
     {
