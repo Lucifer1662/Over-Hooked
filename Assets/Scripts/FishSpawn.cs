@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FishSpawn : MonoBehaviour
 {
-    public GameObject fishMedium;
     public GameObject fishSmall;
+    public GameObject fishMedium;
     public GameObject fishLarge;
     public int maxFish;
     public float rangeLimit = 10;
