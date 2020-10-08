@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 379823783815652691}
   - component: {fileID: 7362971002235708699}
   - component: {fileID: 839971582255245}
+  - component: {fileID: 4521763761180262018}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -63,13 +64,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8127633565502532}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0f6b1755bc75f94b89d2b9e32402d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  speed: 5
+  speed: 10
   Sensitivity: 0
 --- !u!54 &8127633565502906
 Rigidbody:
@@ -233,7 +234,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6b4e03dedf1794479a958fad5b171e74, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -317,6 +318,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4521763761180262018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127633565502532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bed2f79519a64c909647f8d6bc6cdf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayInterval: 3
+  time: 0
+  loop: 0
+  delayReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8127633565502535}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &377440770657434535
 GameObject:
   m_ObjectHideFlags: 0
