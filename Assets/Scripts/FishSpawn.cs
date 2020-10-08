@@ -8,18 +8,13 @@ public class FishSpawn : MonoBehaviour
     public GameObject fishMedium;
     public GameObject fishLarge;
     public int maxFish;
-    public float rangeLimit = 10;
-    //public float islandSize;
+    private float rangeLimit = 50;
 
     private int currentFish = 0;
     public float respawnPeriod = 1;
     private float respawnCountdown;
 
     private RaycastHit hit;
- 
-    
-    Material mat;
-    
 
 
     // Start is called before the first frame update
@@ -27,7 +22,6 @@ public class FishSpawn : MonoBehaviour
     {
         GenerateFish();
         respawnCountdown = respawnPeriod;
-    
         
     }
 
@@ -70,8 +64,7 @@ public class FishSpawn : MonoBehaviour
             createFish(fishLarge, fishPosition);
         }
         
-        
-        // newFish.GetComponent<ChangeScale>();
+
 
 	}
 
