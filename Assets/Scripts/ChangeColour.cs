@@ -17,7 +17,7 @@ public class ChangeColour : MonoBehaviour
         rndColor = Random.Range(0, lengthOfColors);
 		
 		transform.GetChild(6).GetComponent<MeshRenderer> ().materials [0].color = colors [rndColor];
-		transform.GetChild (6).GetComponent<MeshRenderer> ().materials [1].color = new Color (colors [rndColor].r, colors [rndColor].g + 0.2f, colors [rndColor].b + 0.2f);
+		transform.GetChild (6).GetComponent<MeshRenderer> ().materials [1].color = new Color (colors [rndColor].r + 0.15f, colors [rndColor].g + 0.2f, colors [rndColor].b + 0.1f);
         
     }
 
