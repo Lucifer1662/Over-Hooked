@@ -10,6 +10,7 @@ public class FishMovement : MonoBehaviour
 
     public float speed = 3;
     private Vector3 direction;
+    private Vector3 newPosition;
 
     private Vector3 spawnLocation;
     private float range = 10;
@@ -19,10 +20,13 @@ public class FishMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // No need to change direction for the first time
-        tickCountdown = initialTick;
         // Store spawning location
         spawnLocation = transform.position;
+
+        // No need to change direction for the first time
+        tickCountdown = initialTick;
+        newPosition = GenerateNewPosition();
+        direction = transform.rotation.eulerAngles;
     }
 
 
@@ -34,19 +38,22 @@ public class FishMovement : MonoBehaviour
         {
             initialTick = Random.Range(6, 13);
             tickCountdown = initialTick;
-            direction = GenerateRotation();
-            speed = GenerateSpeed();
-            this.transform.rotation = Quaternion.Euler(direction);
             
+            newPosition = GenerateNewPosition(); 
         }
+        
         // Move after each direction change 
-        // And pause for half tick time
-        else if (tickCountdown > initialTick/2){
-            move(speed);
+        // And pause for 1/3 tick time
+        else if (tickCountdown > initialTick/3){
+            move(speed, newPosition);
         }
 
     }
 
+    // Gradually rotate
+    void changeDirection(Vector3 newRotation){
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(newRotation), Time.deltaTime*3);
+    }
 
     // Set new movement direction
     private static Vector3 GenerateRotation()
@@ -57,7 +64,7 @@ public class FishMovement : MonoBehaviour
         return new Vector3(0, randomRotationY, 0);
     }
 
-    // select random speed to make the movement more natural
+    // Set random speed to make the movement more natural
     private static float GenerateSpeed()
     {
         float randomSpeed;
@@ -66,24 +73,30 @@ public class FishMovement : MonoBehaviour
         return randomSpeed;
     }
 
-    // Move along the new direction
-    void move(float speed){
-
-        // Change direction to avoid terrain
+    // Generate next valid position
+    private Vector3 GenerateNewPosition(){
         Vector3 newPosition = this.transform.position + this.transform.forward * 5;
         
-        // Generate valid new position
+        // Avoid island and stay within the given range
         while ((determineTerrain(newPosition) == true) || (outsideRange(spawnLocation, newPosition, range) == true)){
-            //Debug.Log("Hit, current position is: " + transform.position + " increment position is: " + this.transform.forward * 5 + " new position is: " + newPosition);
-
             direction = GenerateRotation();
             speed = GenerateSpeed();
-            this.transform.rotation = Quaternion.Euler(direction);
-            newPosition = this.transform.position + this.transform.forward * speed;
+            newPosition = this.transform.position + (Quaternion.Euler(direction) * Vector3.forward) * speed;
         }
 
-        this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        return newPosition;
     }
+
+
+    // Move along the new direction
+    void move(float speed, Vector3 newPosition){
+
+        changeDirection(direction);
+        transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
+    }
+
+
+
 
     // Determine whether the new position is terrain 
     private bool determineTerrain(Vector3 newLocation)

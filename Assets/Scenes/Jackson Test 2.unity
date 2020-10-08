@@ -1528,6 +1528,8 @@ MonoBehaviour:
   timeLeft: 60
   secondaryColour: {r: 0.754717, g: 0.06763971, b: 0.17684399, a: 1}
   changeColourAt: 10
+  tickSound: {fileID: 0}
+  whistleSound: {fileID: 0}
   hitZeroEvent:
     m_PersistentCalls:
       m_Calls:
