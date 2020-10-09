@@ -26,7 +26,6 @@ public class FishMovement : MonoBehaviour
         // No need to change direction for the first time
         tickCountdown = initialTick;
         newPosition = this.transform.position + this.transform.forward * 5;
-        //direction = transform.rotation.eulerAngles;
     }
 
 
@@ -54,9 +53,20 @@ public class FishMovement : MonoBehaviour
     void changeDirection(Vector3 newPosition){
         Vector3 newRotation = Vector3.RotateTowards(transform.forward, newPosition, Time.deltaTime, 0.0f);
         
+        // Set rotation speed according to fish type
+        float rotationFactor;
+        if (this.name == "FishSmall(Clone)"){
+            rotationFactor = 5;
+        }
+        else if (this.name == "FishMedium(Clone)"){
+            rotationFactor = 3;
+        }else {
+            rotationFactor = 1;
+        }
+        
         if ((newPosition - transform.position) != Vector3.zero){
             Quaternion rotation = Quaternion.LookRotation(newPosition - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationFactor);
         }
         
     }
