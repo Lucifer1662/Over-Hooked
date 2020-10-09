@@ -26,7 +26,7 @@ public class FishMovement : MonoBehaviour
         // No need to change direction for the first time
         tickCountdown = initialTick;
         newPosition = this.transform.position + this.transform.forward * 5;
-        direction = transform.rotation.eulerAngles;
+        //direction = transform.rotation.eulerAngles;
     }
 
 
@@ -51,8 +51,14 @@ public class FishMovement : MonoBehaviour
     }
 
     // Gradually rotate
-    void changeDirection(Vector3 newRotation){
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(newRotation), Time.deltaTime*3);
+    void changeDirection(Vector3 newPosition){
+        Vector3 newRotation = Vector3.RotateTowards(transform.forward, newPosition, Time.deltaTime, 0.0f);
+        
+        if ((newPosition - transform.position) != Vector3.zero){
+            Quaternion rotation = Quaternion.LookRotation(newPosition - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
+        }
+        
     }
 
     // Set new movement direction
@@ -77,13 +83,13 @@ public class FishMovement : MonoBehaviour
     private Vector3 GenerateNewPosition(){
         direction = GenerateRotation();
         speed = GenerateSpeed();
-        Vector3 newPosition = this.transform.position + (Quaternion.Euler(direction) * Vector3.forward) * speed * (initialTick - initialTick/3);
+        Vector3 newPosition = spawnLocation + (Quaternion.Euler(direction) * Vector3.forward) * Random.Range(0, range);
         
         // Avoid island and stay within the given range
         while ((determineTerrain(newPosition) == true) || (outsideRange(spawnLocation, newPosition, range) == true)){
             direction = GenerateRotation();
             speed = GenerateSpeed();
-            newPosition = this.transform.position + (Quaternion.Euler(direction) * Vector3.forward) * speed * (initialTick - initialTick/3);
+            newPosition = spawnLocation + (Quaternion.Euler(direction) * Vector3.forward) * Random.Range(0, range);
         }
 
         return newPosition;
@@ -93,7 +99,7 @@ public class FishMovement : MonoBehaviour
     // Move along the new direction
     void move(float speed, Vector3 newPosition){
 
-        changeDirection(direction);
+        changeDirection(newPosition);
         transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
     }
 
@@ -124,11 +130,7 @@ public class FishMovement : MonoBehaviour
     private bool outsideRange(Vector3 spawnLocation, Vector3 newLocation, float range){
         bool outside = false;
 
-        if ((newLocation.x > spawnLocation.x+range) || (newLocation.x < spawnLocation.x-range))
-        {
-            return outside = true;
-        }
-        else if ((newLocation.z > spawnLocation.z+range) || (newLocation.z < spawnLocation.z-range))
+        if (Vector3.Distance(spawnLocation, newLocation) > range)
         {
             return outside = true;
         }
