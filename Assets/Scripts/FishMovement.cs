@@ -13,7 +13,7 @@ public class FishMovement : MonoBehaviour
     private Vector3 newPosition;
 
     private Vector3 spawnLocation;
-    private float range = 10;
+    private float range = 15;
 
     private RaycastHit hit;
 
@@ -25,7 +25,7 @@ public class FishMovement : MonoBehaviour
 
         // No need to change direction for the first time
         tickCountdown = initialTick;
-        newPosition = GenerateNewPosition();
+        newPosition = this.transform.position + this.transform.forward * 5;
         direction = transform.rotation.eulerAngles;
     }
 
@@ -36,7 +36,7 @@ public class FishMovement : MonoBehaviour
         tickCountdown -= Time.deltaTime;
         if (tickCountdown < 0.0f)
         {
-            initialTick = Random.Range(6, 13);
+            initialTick = Random.Range(6, 10);
             tickCountdown = initialTick;
             
             newPosition = GenerateNewPosition(); 
@@ -68,20 +68,22 @@ public class FishMovement : MonoBehaviour
     private static float GenerateSpeed()
     {
         float randomSpeed;
-        randomSpeed = Random.Range(2, 5);
+        randomSpeed = Random.Range(1, 5);
 
         return randomSpeed;
     }
 
     // Generate next valid position
     private Vector3 GenerateNewPosition(){
-        Vector3 newPosition = this.transform.position + this.transform.forward * 5;
+        direction = GenerateRotation();
+        speed = GenerateSpeed();
+        Vector3 newPosition = this.transform.position + (Quaternion.Euler(direction) * Vector3.forward) * speed * (initialTick - initialTick/3);
         
         // Avoid island and stay within the given range
         while ((determineTerrain(newPosition) == true) || (outsideRange(spawnLocation, newPosition, range) == true)){
             direction = GenerateRotation();
             speed = GenerateSpeed();
-            newPosition = this.transform.position + (Quaternion.Euler(direction) * Vector3.forward) * speed;
+            newPosition = this.transform.position + (Quaternion.Euler(direction) * Vector3.forward) * speed * (initialTick - initialTick/3);
         }
 
         return newPosition;
