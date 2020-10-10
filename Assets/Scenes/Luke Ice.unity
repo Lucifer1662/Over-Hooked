@@ -1101,6 +1101,11 @@ PrefabInstance:
       propertyPath: scoreDisplay
       value: 
       objectReference: {fileID: 731247910}
+    - target: {fileID: 379823783815652691, guid: 78049ef9ea549df47baa2482808ffcd5,
+        type: 3}
+      propertyPath: goalThreshold
+      value: 
+      objectReference: {fileID: 1871194564}
     - target: {fileID: 4521763761180262018, guid: 78049ef9ea549df47baa2482808ffcd5,
         type: 3}
       propertyPath: delayReached.m_PersistentCalls.m_Calls.Array.size
@@ -2843,7 +2848,7 @@ PrefabInstance:
     - target: {fileID: 8794255658178933233, guid: 8a7849e945ab9430bb918d4825fb442a,
         type: 3}
       propertyPath: timeLeft
-      value: 10
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8794255658178933233, guid: 8a7849e945ab9430bb918d4825fb442a,
         type: 3}
