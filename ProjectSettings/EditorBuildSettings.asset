@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Luke Test Scene.unity
     guid: da364444dcc74464292281cd0c69f933
+  - enabled: 1
+    path: Assets/Scenes/Jackson Test 2.unity
+    guid: 115f897d23c464f738f75bed4d2b7597
   m_configObjects: {}
