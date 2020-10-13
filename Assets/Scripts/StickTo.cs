@@ -19,7 +19,7 @@ public class StickTo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTargetOffset = Vector3.Lerp(currentTargetOffset, extraOffset, extraLerpSpeed * Time.deltaTime);
-        transform.position = Vector3.Lerp(transform.position, parent.position  + currentTargetOffset + offset, lerpSpeed * Time.deltaTime);
+        currentTargetOffset = Vector3.Slerp(currentTargetOffset, extraOffset, extraLerpSpeed * Time.deltaTime);
+        transform.position = Vector3.Slerp(transform.position, parent.position  + currentTargetOffset + offset, lerpSpeed * Time.deltaTime);
     }
 }

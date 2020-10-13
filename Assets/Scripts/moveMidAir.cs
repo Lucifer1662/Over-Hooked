@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class moveMidAir : MonoBehaviour {
-    float strength = 0.01f;
+    public float strength = 0.01f;
     Vector3 deltaPos;
     Rigidbody rb;
 
