@@ -50,7 +50,7 @@ public class FishMovement : MonoBehaviour
     }
 
     // Gradually rotate
-    void changeDirection(Vector3 newPosition){
+    public void changeDirection(Vector3 newPosition){
         Vector3 newRotation = Vector3.RotateTowards(transform.forward, newPosition, Time.deltaTime, 0.0f);
         
         // Set rotation speed according to fish type
@@ -72,7 +72,7 @@ public class FishMovement : MonoBehaviour
     }
 
     // Set new movement direction
-    private static Vector3 GenerateRotation()
+    private Vector3 GenerateRotation()
     {
         float randomRotationY;
         randomRotationY = Random.Range(-180, 180);
@@ -81,7 +81,7 @@ public class FishMovement : MonoBehaviour
     }
 
     // Set random speed to make the movement more natural
-    private static float GenerateSpeed()
+    private float GenerateSpeed()
     {
         float randomSpeed;
         randomSpeed = Random.Range(1, 5);

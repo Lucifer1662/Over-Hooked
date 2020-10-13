@@ -20,7 +20,7 @@ public class moveTowards : MonoBehaviour
 				var target = curHook.transform.position;
 				target.y = transform.position.y;
 				transform.position = Vector3.MoveTowards (transform.position, target, speed * Time.deltaTime);
-				transform.LookAt (target);
+				this.GetComponent<FishMovement>().changeDirection(target);
 			}
 			return;
         }
