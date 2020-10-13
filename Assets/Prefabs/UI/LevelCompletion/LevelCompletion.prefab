@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 1939956447097333782}
   - component: {fileID: 8398714395869816213}
   m_Layer: 5
-  m_Name: HighScore
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,6 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 0}
   threshhold: 10
+  scoreDisplay: {fileID: 6232743913703585496}
   isAbove:
     m_PersistentCalls:
       m_Calls:
@@ -373,7 +374,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   isBelow:
     m_PersistentCalls:
@@ -387,7 +388,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &2259241358101023590
 GameObject:
@@ -400,7 +401,6 @@ GameObject:
   - component: {fileID: 2152180620929826247}
   - component: {fileID: 8617225038492933547}
   - component: {fileID: 6155451505168760744}
-  - component: {fileID: 1851171779}
   m_Layer: 5
   m_Name: Completed
   m_TagString: Untagged
@@ -468,20 +468,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Completed
---- !u!114 &1851171779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2259241358101023590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304c42d7d09d60742913f8358164002b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targets:
-  - {fileID: 2259241358101023590}
 --- !u!1 &3226763525732271239
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +480,7 @@ GameObject:
   - component: {fileID: 2115251916345314553}
   - component: {fileID: 3586382950836062428}
   m_Layer: 5
-  m_Name: Score (1)
+  m_Name: HighScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,7 +784,7 @@ GameObject:
   - component: {fileID: 2883255022379123275}
   - component: {fileID: 4288973822010748238}
   m_Layer: 5
-  m_Name: HighScore
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -874,7 +860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7153800158811139533}
   m_Layer: 5
-  m_Name: HighScore
+  m_Name: HighScore Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,7 +972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 896671993036647801}
   m_Layer: 5
-  m_Name: HighScore (1)
+  m_Name: Score Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1317,7 +1303,7 @@ PrefabInstance:
     - target: {fileID: 2382135907743944765, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Name
-      value: Next (1)
+      value: Retry
       objectReference: {fileID: 0}
     - target: {fileID: 2920610098993390764, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}

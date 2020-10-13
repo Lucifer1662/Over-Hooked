@@ -9,16 +9,23 @@ public class PlayerScore : MonoBehaviour
 	public Text scoreDisplay;
 	public AudioSource collectFishSound;
 	public SpawnGameObject textParticleSpawner;
+	public IfPlayerScore goalThreshold;
+	public PlayerRodControl rodControl;
+	public ValueOfFish valueOfFish;
+	public GameObject textParticlePrefab;
 
 	private void Start ()
 	{
-		scoreDisplay.text = score.ToString ();
+		scoreDisplay.text = score.ToString () + "/" + goalThreshold.threshhold;
 	}
 
 	public void AddPoint() {
-        score++;
-		scoreDisplay.text = score.ToString ();
+		int point = valueOfFish.pointToAdd;
+		
+		score += point;
+		scoreDisplay.text = score.ToString () + "/" + goalThreshold.threshhold;
 		collectFishSound.Play ();
+		textParticlePrefab.GetComponentInChildren<Text> ().text = "+" + point;
 		textParticleSpawner.SpawnObject ();
 	}
 

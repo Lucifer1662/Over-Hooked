@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class FishSpawn : MonoBehaviour
 {
-    public GameObject fishPrefab;
+    public GameObject fishSmall;
+    public GameObject fishMedium;
+    public GameObject fishLarge;
     public int maxFish;
-    public float rangeLimit = 10;
-    //public float islandSize;
+    private float rangeLimit = 50;
 
     private int currentFish = 0;
     public float respawnPeriod = 1;
     private float respawnCountdown;
 
     private RaycastHit hit;
-    private Color[] colors = {new Color(0.9803922f, 0.5019608f, 0.4509804f),
-							new Color (1f, 0.627451f, 0.482353f),
-							new Color (0.9843138f, 0.6980392f, 0.5490196f),
-							new Color (0.872f, 0.174242f, 0.160448f)};
-    private int randomColour;
-    Material mat;
-    private int rndColor;
 
 
     // Start is called before the first frame update
@@ -28,7 +22,6 @@ public class FishSpawn : MonoBehaviour
     {
         GenerateFish();
         respawnCountdown = respawnPeriod;
-    
         
     }
 
@@ -47,43 +40,72 @@ public class FishSpawn : MonoBehaviour
 
     // Generate fishes until reaches max number of fish allowed
     void GenerateFish(){
-        
         if(currentFish >= maxFish){
             return;
         }
 
-        Vector3 fishPosition = GeneratePosition();
+        // Assign fish type
+        int randomFish = Random.Range(0, 3);
 
+        // Allocate spawn location
+        Vector3 fishPosition = GeneratePosition(randomFish);
         int tries = 0;
         while(determineTerrain(fishPosition) && tries < 20){
-            fishPosition = GeneratePosition();
+            fishPosition = GeneratePosition(randomFish);
             tries++;
             //Debug.Log("Hit the terrain, re-generate the fish position");
         }
         
         // Instantiate new fish and attach movement script
-        GameObject newFish = Instantiate(fishPrefab, fishPosition, Quaternion.Euler(GenerateRotation()));
-        newFish.transform.parent = this.transform;
-        int lengthOfColors = colors.Length;  
-        rndColor = Random.Range(0, lengthOfColors);
-		
-		newFish.transform.GetChild(6).GetComponent<MeshRenderer> ().materials [0].color = colors [rndColor];
-		newFish.transform.GetChild (6).GetComponent<MeshRenderer> ().materials [1].color = new Color (colors [rndColor].r, colors [rndColor].g + 0.2f, colors [rndColor].b + 0.2f);
-
-		// code that jess replaced above
-		//Material[] matArray = newFish.GetComponent<Renderer>().materials;
-		//mat = newFish.GetComponent<Renderer>().material;
-		//mat.color = colors[rndColor];
-		//matArray[1] = mat;
-		//newFish.transform.GetChild(6).gameObject.GetComponent<Renderer>().materials = matArray;
+        if (randomFish == 0){
+            createFish(fishSmall, fishPosition);
+        }else if (randomFish == 1){
+            createFish(fishMedium, fishPosition);
+        }else{
+            createFish(fishLarge, fishPosition);
+        }
+        
 	}
 
-	// Generate random position outside of island
-	Vector3 GeneratePosition(){
+    // Instantiate fishes
+    void createFish(GameObject fishSize, Vector3 fishPosition){
+        GameObject newFish = Instantiate(fishSize, fishPosition, Quaternion.Euler(GenerateRotation()));
+        newFish.transform.parent = this.transform;
+        newFish.GetComponent<ChangeColour>();
+
+    }
+
+	// Generate position outside of island
+    // According to different kinds of fish
+	Vector3 GeneratePosition(int fishSize){
+        Vector3 islandCentre = new Vector3(0f, 0f, 0f);
+        Vector3 position = randomPosition();
+
+        // Restricted distance for various kinds of fish
+        if (fishSize == 0){
+            while (Vector3.Distance(position, islandCentre) > 35 || Vector3.Distance(position, islandCentre) < 20){
+                position = randomPosition();
+            }
+        }
+        else if (fishSize == 1){
+            while (Vector3.Distance(position, islandCentre) > 55 || Vector3.Distance(position, islandCentre) < 30){
+                position = randomPosition();
+            }
+        }
+        else {
+            while (Vector3.Distance(position, islandCentre) < 45){
+                position = randomPosition();
+            }
+        }
+
+        return position;
+    }
+
+    // Just generate random positions
+    Vector3 randomPosition(){
         Vector3 position;
         float randomX;
         float randomZ;
-
 
         // Random number for X and Z
         // Currently set Y as 0 for testing
@@ -97,7 +119,6 @@ public class FishSpawn : MonoBehaviour
         return position;
     }
 
-    
     // Gegenrate random rotation for every new fish
     private static Vector3 GenerateRotation()
     {

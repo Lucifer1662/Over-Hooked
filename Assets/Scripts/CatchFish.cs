@@ -7,6 +7,7 @@ public class CatchFish : MonoBehaviour
 {
     public Transform targetParent;
 	public SpawnGameObject spawnChompSound;
+	public ValueOfFish valueOfFish;
 
     public delegate void FishBitingHandler(object sender, Action e);
 
@@ -16,6 +17,11 @@ public class CatchFish : MonoBehaviour
     {
         if (!targetParent)
             targetParent = transform;
+		valueOfFish = GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<ValueOfFish> ();
+
+		if (valueOfFish == null) {
+			Debug.Log ("Please assign your player the 'Player' tag");
+		}
     }
 
     public bool CatchesFish()
@@ -46,7 +52,7 @@ public class CatchFish : MonoBehaviour
         Debug.Log(other.tag);
         if (other.tag == "Fish")
         {
-            
+			valueOfFish.pointToAdd = valueOfFish.GetValue (other.gameObject.name);
 			spawnChompSound.SpawnObject ();
             if (CatchesFish())
             {

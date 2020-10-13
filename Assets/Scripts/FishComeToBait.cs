@@ -48,10 +48,6 @@ public class FishComeToBait : MonoBehaviour
                             attemptTimes = Random.Range(0, 2);
                         }
                         attemptToBite(attemptTimes, waterlevelHookPos - transform.position);
-                     
-
-
-                        
                         // Debug.Log(attemptTimes); // random select times to attempt to bite
 
                     }

@@ -7,7 +7,7 @@ public class moveTowards : MonoBehaviour
 {
     public float speed = 3;
     private GameObject curHook;
-    // Start is called before the first frame update
+	public float distanceOfEffect = 2;
 
 
     // Update is called once per frame
@@ -15,14 +15,22 @@ public class moveTowards : MonoBehaviour
     {
         curHook = GameObject.FindGameObjectWithTag("Hook");
         if (curHook != null){
-            GetComponent<FishMovement>().enabled = false;
-            var target = curHook.transform.position;
-            target.y = transform.position.y;
-            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-            transform.LookAt(target);
-        }else{
-            GetComponent<FishMovement>().enabled = true;
+			if (closeEnough() && curHook.transform.position.y <= 0.7) {
+				GetComponent<FishMovement> ().enabled = false;
+				var target = curHook.transform.position;
+				target.y = transform.position.y;
+				transform.position = Vector3.MoveTowards (transform.position, target, speed * Time.deltaTime);
+				this.GetComponent<FishMovement>().changeDirection(target);
+			}
+			return;
         }
-        
+
+        GetComponent<FishMovement>().enabled = true;
     }
+
+	bool closeEnough()
+	{
+		return Vector2.Distance (new Vector2 (curHook.transform.position.x, curHook.transform.position.y),
+								new Vector2 (transform.position.x, transform.position.y)) < distanceOfEffect;
+	}
 }
