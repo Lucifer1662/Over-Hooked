@@ -22,15 +22,18 @@ public class IfPlayerScore : MonoBehaviour
         scoreDisplay.text = score.score.ToString () + "/" + threshhold;
     }
 
+
     // Update is called once per frame
     public void TestPlayerScoreThreshhold()
     {
         if (score.score >= threshhold)
         {
             isAbove.Invoke();
+            Debug.Log("Score is higher than threshhold");
         }
         else {
             isBelow.Invoke();
+            Debug.Log("Score is lower than threshhold");
         }
     }
 }
