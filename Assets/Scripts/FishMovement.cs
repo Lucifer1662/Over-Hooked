@@ -50,7 +50,7 @@ public class FishMovement : MonoBehaviour
     }
 
     // Gradually rotate
-    public void changeDirection(Vector3 newPosition){
+    void changeDirection(Vector3 newPosition){
         Vector3 newRotation = Vector3.RotateTowards(transform.forward, newPosition, Time.deltaTime, 0.0f);
         
         // Set rotation speed according to fish type
