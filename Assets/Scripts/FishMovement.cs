@@ -56,12 +56,12 @@ public class FishMovement : MonoBehaviour
         // Set rotation speed according to fish type
         float rotationFactor;
         if (this.name == "FishSmall(Clone)"){
-            rotationFactor = 5;
+            rotationFactor = 0.4f;
         }
         else if (this.name == "FishMedium(Clone)"){
-            rotationFactor = 3;
+            rotationFactor = 0.4f;
         }else {
-            rotationFactor = 1;
+            rotationFactor = 0.4f;
         }
         
         if ((newPosition - transform.position) != Vector3.zero){
@@ -110,7 +110,7 @@ public class FishMovement : MonoBehaviour
     void move(float speed, Vector3 newPosition){
 
         changeDirection(newPosition);
-        transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
 
 
