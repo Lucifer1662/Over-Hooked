@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelection : MonoBehaviour
 {
+    public void LevelZero()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
     public void LevelOne()
     {
         SceneManager.LoadScene("Jackson Test 2");
