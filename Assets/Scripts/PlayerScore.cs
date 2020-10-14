@@ -16,14 +16,16 @@ public class PlayerScore : MonoBehaviour
 
 	private void Start ()
 	{
-		scoreDisplay.text = score.ToString () + "/" + goalThreshold.threshhold;
+		if(scoreDisplay)
+			scoreDisplay.text = score.ToString () + "/" + goalThreshold.threshhold;
 	}
 
 	public void AddPoint() {
 		int point = valueOfFish.pointToAdd;
-		
-		score += point;
-		scoreDisplay.text = score.ToString () + "/" + goalThreshold.threshhold;
+
+        score += point;
+		if (scoreDisplay)
+			scoreDisplay.text = score.ToString () + "/" + goalThreshold.threshhold;
 		collectFishSound.Play ();
 		textParticlePrefab.GetComponentInChildren<Text> ().text = "+" + point;
 		textParticleSpawner.SpawnObject ();

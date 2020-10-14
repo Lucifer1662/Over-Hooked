@@ -49,7 +49,6 @@ public class CatchFish : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
         if (other.tag == "Fish")
         {
 			valueOfFish.pointToAdd = valueOfFish.GetValue (other.gameObject.name);
