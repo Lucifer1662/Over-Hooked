@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using System;
 
+using UnityEngine.Events;
+
+[System.Serializable]
+public class CatchedFishEvent : UnityEvent { }
 public class PlayerController : MonoBehaviour
 {
     public int playerNumber;
@@ -13,17 +15,14 @@ public class PlayerController : MonoBehaviour
     public PlayerScore playerScore;
     public CharacterParameters characteristics;
     public StickTo cameraStick;
-	[SerializeField]
-    public InputAction cast;
+
     [SerializeField]
-    public InputAction movmentInput;
-    [SerializeField]
-    public InputAction stopInput;
-	
+    public CatchedFishEvent catchedFish;
 
     private Action catchFish = null;
 
     private Vector3 direction;
+    private bool lookAtFish = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +42,7 @@ public class PlayerController : MonoBehaviour
                 {
                     catchFishFunc();
                     playerScore.AddPoint();
+                    catchedFish.Invoke();
 
                 };
             };
@@ -81,13 +81,19 @@ public class PlayerController : MonoBehaviour
         playerMovement.Look(direction);
 
        
-        if (PlayerRodControl.hookInstance)
+        if (playerRodControl.hookInstance)
         {
-            cameraStick.extraOffset = PlayerRodControl.hookInstance.transform.position - transform.position;
+            if (cameraStick.parent == transform)
+            {
+                lookAtFish = true;
+                cameraStick.extraOffset = playerRodControl.hookInstance.transform.position - transform.position;
+            }
         }
-        else
+        else if (lookAtFish)
         {
+            //re zero the camera but do not constantly override the extra offset
             cameraStick.extraOffset = Vector3.zero;
+            lookAtFish = false;
         }
             
 

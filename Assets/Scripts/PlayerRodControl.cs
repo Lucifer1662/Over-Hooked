@@ -12,7 +12,7 @@ public class PlayerRodControl : MonoBehaviour
     public GameObject lure;
     public Transform spawnPos;
     public float castAngle = 45.0f;
-    public static GameObject hookInstance = null;
+    public GameObject hookInstance = null;
 	public SpawnGameObject spawnCastSound;
 
 	public Transform rod;
