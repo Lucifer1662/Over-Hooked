@@ -20,7 +20,7 @@ public class moveTowards : MonoBehaviour
 				var target = curHook.transform.position;
 				target.y = transform.position.y;
 				transform.position = Vector3.MoveTowards (transform.position, target, speed * Time.deltaTime);
-				this.GetComponent<FishMovement>().changeDirection(target);
+				changeDirection(target);
 			}
 			return;
         }
@@ -33,4 +33,26 @@ public class moveTowards : MonoBehaviour
 		return Vector2.Distance (new Vector2 (curHook.transform.position.x, curHook.transform.position.y),
 								new Vector2 (transform.position.x, transform.position.y)) < distanceOfEffect;
 	}
+
+	// Gradually rotate
+    void changeDirection(Vector3 newPosition){
+        Vector3 newRotation = Vector3.RotateTowards(transform.forward, newPosition, Time.deltaTime, 0.0f);
+        
+        // Set rotation speed according to fish type
+        float rotationFactor;
+        if (this.name == "FishSmall(Clone)"){
+            rotationFactor = 5f;
+        }
+        else if (this.name == "FishMedium(Clone)"){
+            rotationFactor = 4f;
+        }else {
+            rotationFactor = 3f;
+        }
+        
+        if ((newPosition - transform.position) != Vector3.zero){
+            Quaternion rotation = Quaternion.LookRotation(newPosition - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationFactor);
+        }
+        
+    }
 }

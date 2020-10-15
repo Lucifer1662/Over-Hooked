@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelection : MonoBehaviour
 {
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
     public void LevelZero()
     {
         SceneManager.LoadScene("Tutorial");
