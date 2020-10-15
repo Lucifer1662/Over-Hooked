@@ -121,12 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &114872606 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 217449015226586981, guid: 8a7849e945ab9430bb918d4825fb442a,
-    type: 3}
-  m_PrefabInstance: {fileID: 617053355}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &224024939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -498,6 +492,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -7.9508667}
   m_SizeDelta: {x: 0.0000076293945, y: -15.901783}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &590761139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2218657366542508515, guid: 8a7849e945ab9430bb918d4825fb442a,
+    type: 3}
+  m_PrefabInstance: {fileID: 617053355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &617053355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -625,6 +625,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 2218657366542508515, guid: 8a7849e945ab9430bb918d4825fb442a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8794255658178933233, guid: 8a7849e945ab9430bb918d4825fb442a,
         type: 3}
       propertyPath: hitZeroEvent.m_PersistentCalls.m_Calls.Array.size
@@ -633,7 +638,7 @@ PrefabInstance:
     - target: {fileID: 8794255658178933233, guid: 8a7849e945ab9430bb918d4825fb442a,
         type: 3}
       propertyPath: timeLeft
-      value: 120
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8794255658178933233, guid: 8a7849e945ab9430bb918d4825fb442a,
         type: 3}
@@ -793,6 +798,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6294208608733496569, guid: dc12be3d28abb4a2b83ef007bb5bf480,
         type: 3}
+    - target: {fileID: 4451869161167491384, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
+        type: 3}
+      propertyPath: maxFish
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4451869161167491385, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1363,7 +1373,7 @@ PrefabInstance:
         type: 3}
       propertyPath: delayReached.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 114872606}
+      objectReference: {fileID: 590761139}
     - target: {fileID: 4521763761180262018, guid: 78049ef9ea549df47baa2482808ffcd5,
         type: 3}
       propertyPath: delayReached.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1397,12 +1407,12 @@ PrefabInstance:
     - target: {fileID: 4521763761180262018, guid: 78049ef9ea549df47baa2482808ffcd5,
         type: 3}
       propertyPath: delayReached.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Play
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4521763761180262018, guid: 78049ef9ea549df47baa2482808ffcd5,
         type: 3}
       propertyPath: delayReached.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7938309486641454540, guid: 78049ef9ea549df47baa2482808ffcd5,
         type: 3}
