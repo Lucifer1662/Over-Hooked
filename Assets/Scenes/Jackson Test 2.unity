@@ -1379,7 +1379,7 @@ PrefabInstance:
     - target: {fileID: 4451869161167491384, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
         type: 3}
       propertyPath: respawnPeriod
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4451869161167491384, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
         type: 3}
@@ -1402,7 +1402,22 @@ PrefabInstance:
     - target: {fileID: 4451869161167491384, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
         type: 3}
       propertyPath: maxFish
-      value: 30
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451869161167491384, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
+        type: 3}
+      propertyPath: smallFishLimit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451869161167491384, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
+        type: 3}
+      propertyPath: mediumFishLimit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451869161167491384, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
+        type: 3}
+      propertyPath: largeFishLimit
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4451869161167491385, guid: 79aa89d8fcf924f4eb53b6fd0893cd81,
         type: 3}

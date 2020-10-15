@@ -17,6 +17,17 @@ public class FishSpawn : MonoBehaviour
     private RaycastHit hit;
 
 
+    [Range(0, 20)]
+    public int mediumFishLimit;
+    [Range(0, 20)]
+    public int largeFishLimit;
+
+    private int smallFishNumber = 0;
+    private int mediumFishNumber = 0;
+    private int largeFishNumber = 0;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,20 +60,23 @@ public class FishSpawn : MonoBehaviour
 
         // Allocate spawn location
         Vector3 fishPosition = GeneratePosition(randomFish);
-        int tries = 0;
-        while(determineTerrain(fishPosition) && tries < 20){
+        while(determineTerrain(fishPosition)){
             fishPosition = GeneratePosition(randomFish);
-            tries++;
             //Debug.Log("Hit the terrain, re-generate the fish position");
         }
         
-        // Instantiate new fish and attach movement script
-        if (randomFish == 0){
-            createFish(fishSmall, fishPosition);
-        }else if (randomFish == 1){
-            createFish(fishMedium, fishPosition);
-        }else{
+        // Check fish number limit for its type
+        // Instantiate new fish
+        if ((randomFish == 2) && (++largeFishNumber <= largeFishLimit)){
             createFish(fishLarge, fishPosition);
+            //Debug.Log("current large fish number is: " + largeFishNumber + " --- large fish number limit is: " + largeFishLimit);
+        }else if ((randomFish == 1) && (++mediumFishNumber <= mediumFishLimit)){
+            createFish(fishMedium, fishPosition);
+            //Debug.Log("current medium fish number is: " + mediumFishNumber + " --- medium fish number limit is: " + mediumFishLimit);
+        }else{
+            createFish(fishSmall, fishPosition);
+            smallFishNumber++;
+            //Debug.Log("current small fish number is: " + smallFishNumber);
         }
         
 	}
