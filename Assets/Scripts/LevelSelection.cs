@@ -14,16 +14,16 @@ public class LevelSelection : MonoBehaviour
     }
     public void LevelOne()
     {
-        SceneManager.LoadScene("Jackson Test 2");
+        SceneManager.LoadScene("Level 1");
     }
 
     public void LevelTwo()
     {
-        SceneManager.LoadScene("Jackson Test 2");
+        SceneManager.LoadScene("Luke Ice");
     }
 
     public void LevelThree()
     {
-        SceneManager.LoadScene("Jackson Test 2");
+        SceneManager.LoadScene("Night Level");
     }
 }
