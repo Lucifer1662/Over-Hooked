@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4451869161167491385}
   - component: {fileID: 4451869161167491384}
+  - component: {fileID: 8343401175816435885}
   m_Layer: 0
   m_Name: Fish Generator
   m_TagString: Untagged
@@ -43,9 +44,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242138bdd8ae74e0fbe0e97cc7da5b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6294208608733496569, guid: d1e15a5ae020b47f0a4728d4f8baaf47,
+  fishSmall: {fileID: 6294208608733496569, guid: dc12be3d28abb4a2b83ef007bb5bf480,
+    type: 3}
+  fishMedium: {fileID: 6294208608733496569, guid: d1e15a5ae020b47f0a4728d4f8baaf47,
+    type: 3}
+  fishLarge: {fileID: 6294208608733496569, guid: 35ee2da88963d41898e0621fbf654ac0,
     type: 3}
   maxFish: 5
-  rangeLimit: 30
-  islandSize: 10
   respawnPeriod: 3
+--- !u!114 &8343401175816435885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4451869161167491381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d987141972cff4682bf0e71bc3811a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 4451869161167491384}
+  newDistanceOfEffect: 4

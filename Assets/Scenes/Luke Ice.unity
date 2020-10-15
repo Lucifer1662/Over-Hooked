@@ -856,6 +856,21 @@ PrefabInstance:
       propertyPath: min
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 3991651218042233932, guid: 2ceb8d47d4d67644a84aceed4f2deafb,
+        type: 3}
+      propertyPath: width
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991651218042233932, guid: 2ceb8d47d4d67644a84aceed4f2deafb,
+        type: 3}
+      propertyPath: resolution
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991651218042233933, guid: 2ceb8d47d4d67644a84aceed4f2deafb,
+        type: 3}
+      propertyPath: width
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3991651218042233935, guid: 2ceb8d47d4d67644a84aceed4f2deafb,
         type: 3}
       propertyPath: m_CastShadows
