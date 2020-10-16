@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   divisions: 50
-  width: 20
+  width: 40
 --- !u!114 &247972549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10531ae5f22d3d448adb0cd41c07231d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 100
-  resolution: 300
+  width: 500
+  resolution: 400
   waterLevel: 0
   texture: {fileID: 0}
   max: 5
