@@ -587,6 +587,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1260365054193295736, guid: 973a3a60d09e9f44b827845e41775c9e,
+        type: 3}
+      propertyPath: scene
+      value: Main Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 4865471232078902259, guid: 973a3a60d09e9f44b827845e41775c9e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -691,6 +696,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334898283239680104, guid: 973a3a60d09e9f44b827845e41775c9e,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058470326630892606, guid: 973a3a60d09e9f44b827845e41775c9e,
+        type: 3}
+      propertyPath: scene
+      value: Night Level
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
