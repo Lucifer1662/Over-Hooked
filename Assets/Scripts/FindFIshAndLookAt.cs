@@ -22,6 +22,7 @@ public class FindFIshAndLookAt : MonoBehaviour
         var fishes = GameObject.FindGameObjectsWithTag("Fish");
         float minDistance = Mathf.Infinity;
         GameObject closestFish = null;
+        
         foreach (GameObject fish in fishes)
         {
             var distance = Vector3.Distance(transform.position, fish.transform.position);

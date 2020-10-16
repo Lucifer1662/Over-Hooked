@@ -19,21 +19,26 @@ public class Tutorial : MonoBehaviour
     {
 
         var states = new List<GameObject>();
-        for (int i = 0; i < transform.childCount; i++)
+        int i = 0;
+        for ( i = 0; i < transform.childCount; i++)
         {
             states.Add(transform.GetChild(i).gameObject);
         }
 
+        i = 0;
         foreach (GameObject state in states)
         {
-            if(state && state != states[this.state])
+            if(state && this.state != i && (this.state < states.Count || state != states[this.state]))
                 state.SetActive(false);
+            i++;
         }
 
         if (state < states.Count)
         {
-            if(states[state])
+            if (states[state] && !states[state].activeSelf)
+            {
                 states[state].SetActive(true);
+            }
         }
         else if (!calledFinished)
         {

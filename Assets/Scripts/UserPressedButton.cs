@@ -13,13 +13,14 @@ public class UserPressedButton : MonoBehaviour
     public List<string> buttons;
 
     // Update is called once per frame
-    void Update()
+    public void FixedUpdate()
     {
         foreach (string button in buttons)
         {
             var input = Input.GetButtonUp(button);
             if (input)
             {
+                Debug.Log("Presed");
                 userPressedButton.Invoke();
             }
         }

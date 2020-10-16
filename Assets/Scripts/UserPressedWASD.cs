@@ -12,7 +12,7 @@ public class UserPressedWASD : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         var input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if (Mathf.Abs(input.x) > 0.1 || Mathf.Abs(input.y) > 0.1) {

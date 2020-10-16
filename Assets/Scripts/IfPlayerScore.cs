@@ -29,11 +29,9 @@ public class IfPlayerScore : MonoBehaviour
         if (score.score >= threshhold)
         {
             isAbove.Invoke();
-            Debug.Log("Score is higher than threshhold");
         }
         else {
             isBelow.Invoke();
-            Debug.Log("Score is lower than threshhold");
         }
     }
 }

@@ -2,7 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+[System.Serializable]
+public class CastedEvent : UnityEvent { }
+
+[System.Serializable]
+public class ReeledIn : UnityEvent { }
 public class PlayerRodControl : MonoBehaviour
 {
     public float castForce = 1;
@@ -22,6 +28,10 @@ public class PlayerRodControl : MonoBehaviour
     public delegate void FishBitingHandler(object sender, Action e);
 
     public event FishBitingHandler fishBitingEvent;
+    [SerializeField]
+    public CastedEvent castedEvent;
+    [SerializeField]
+    public ReeledIn reeledInEvent;
 
 
     bool Casting()
@@ -64,6 +74,7 @@ public class PlayerRodControl : MonoBehaviour
             Destroy(hookInstance);
             hookInstance = null;
             isBeingHeldDown = false;
+            reeledInEvent.Invoke();
             return false;
         }
         else
@@ -103,7 +114,7 @@ public class PlayerRodControl : MonoBehaviour
             Vector3.up * Mathf.Sin((castAngle / 180.0f) * Mathf.PI)));
 
         isBeingHeldDown = false;
-
+        castedEvent.Invoke();
 
         return true;
 
