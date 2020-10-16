@@ -10,7 +10,7 @@ public class OnUpdate : MonoBehaviour
     [SerializeField]
     public OnUpdateEvent onUpdate;
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         onUpdate.Invoke();
     }
