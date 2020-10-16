@@ -109,86 +109,9 @@ MonoBehaviour:
     number: 0
     spawnPosition: {x: 0, y: 0, z: 0}
   cameraStick: {fileID: 0}
-  cast:
-    m_Name: Cast
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 024805ab-c751-4a9a-be1a-8e0e398ff114
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 8d333e70-f804-448c-95c4-3d702a6cb2d7
-      m_Path: <Gamepad>/buttonSouth
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Cast
-      m_Flags: 0
-  movmentInput:
-    m_Name: Movment Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0cc26b38-f206-4d9d-a7db-e22ab6294cf8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: d93c3c17-c480-4737-aaff-f07f6d18bbad
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movment Input
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 1f6d129f-d015-47b2-bb3e-c42772529ba0
-      m_Path: <Gamepad>/leftStick/up
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movment Input
-      m_Flags: 8
-    - m_Name: down
-      m_Id: c33476d6-9ce3-46ec-ae97-28872c3b9e36
-      m_Path: <Gamepad>/leftStick/down
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movment Input
-      m_Flags: 8
-    - m_Name: left
-      m_Id: e28811a2-bb08-4583-90fd-0671859bb856
-      m_Path: <Gamepad>/leftStick/left
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movment Input
-      m_Flags: 8
-    - m_Name: right
-      m_Id: a8b69d81-d280-4566-992e-c1ab4bbf1580
-      m_Path: <Gamepad>/leftStick/right
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movment Input
-      m_Flags: 8
-  stopInput:
-    m_Name: Stop Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 6375858a-c274-4d19-a676-5df3d4a24ac9
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 7e63aff8-a972-4354-9493-54e0d70bc816
-      m_Path: <Gamepad>/buttonEast
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Stop Input
-      m_Flags: 0
+  catchedFish:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &379823783815652691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +348,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 192492db9ddc84551bd31a591bfa88d5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2a886bfe61f6e45659eeeb8773df33c3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.555
   m_Pitch: 1
@@ -557,6 +480,7 @@ MonoBehaviour:
   smallFishValue: 1
   mediumFishValue: 2
   largeFishValue: 3
+  pointToAdd: 0
 --- !u!1 &2982585090026431888
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,7 +52,12 @@ public class CatchFish : MonoBehaviour
         if (other.tag == "Fish")
         {
 			valueOfFish.pointToAdd = valueOfFish.GetValue (other.gameObject.name);
-			spawnChompSound.SpawnObject ();
+
+			// only spawn chomp sound in if there are no other chomp sounds
+			if (GameObject.FindGameObjectsWithTag ("Chomp").Length == 0) {
+				spawnChompSound.SpawnObject ();
+			}
+
             if (CatchesFish())
             {
                 fishBitingEvent(gameObject,

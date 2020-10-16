@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4240579852564472708}
   m_Layer: 0
   m_Name: Chomp
-  m_TagString: Untagged
+  m_TagString: Chomp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,9 +43,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f55a53e3e9658480387c435f82ca446e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a6cd0c35ec15246b08c6ba2d08129091, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bed2f79519a64c909647f8d6bc6cdf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayInterval: 2
+  delayInterval: 0.5
   time: 0
   loop: 0
   delayReached:

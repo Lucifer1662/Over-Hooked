@@ -71,6 +71,20 @@ public class FishMovement : MonoBehaviour
         
     }
 
+    // Quickly rotate
+    void quickChangeDirection(Vector3 newPosition){
+        Vector3 newRotation = Vector3.RotateTowards(transform.forward, newPosition, Time.deltaTime, 0.0f);
+        
+        // Set ratiation factor very high to rotate quickly
+        float rotationFactor = 3;;
+        
+        if ((newPosition - transform.position) != Vector3.zero){
+            Quaternion rotation = Quaternion.LookRotation(newPosition - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationFactor);
+        }
+        
+    }
+
     // Set new movement direction
     private Vector3 GenerateRotation()
     {
@@ -109,6 +123,11 @@ public class FishMovement : MonoBehaviour
     // Move along the new direction
     void move(float speed, Vector3 newPosition){
 
+        // Rotate quickly if front is terrian
+        if (determineTerrain(transform.position + transform.forward * 2) == true){
+            quickChangeDirection(newPosition);
+        }
+        // Rotate towards new position while moving
         changeDirection(newPosition);
         transform.position += transform.forward * speed * Time.deltaTime;
     }
