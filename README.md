@@ -41,7 +41,9 @@ Then, select which level you would like to play. At the start, only one level wi
 
 When you are in the level, it is time to start catching some fish. Keep an eye on the timer, because if not enough fish are caught by the time the clock reaches zero then you fail the level. The amount of fish that need to be caught can be seen in the top left of the screen (the number on the right), as well as the number of fish you have currently caught (the number on the left).
 
-**insert photo of level**
+<p align="center">
+  <img src="Gifs/In Game.png"  width="400" >
+</p>
 
 In order to catch fish you may want to move the player to get a better look at the water. Use the WASD keys to move and point with the mouse the direction you want to look at. If you are looking in the direction of a fish, then left click, hold, and release to cast the fishing rod. The longer you hold down left click the further out the line will be cast. Once the fish bites (when you hear the sound effect) then click again to pull the fish back in.
 
@@ -50,13 +52,21 @@ If you catch the required number of fish before the timer ends, the level comple
 **insert photo of level completion**
 
 ### How objects and entities were modelled
-Overall, our vision for the aesthetic of the game was for it to be simple, calming and possibly cartoony. We decided to stick to a low poly style as best as we could, since it has the potential to look really good and it is not as taxing on the computer (due to smaller vertex counts). Furthermore, if certain assets we wanted were not avaliable online then modelling our own (with unfortunately limited artistic skills) was an option because of the simplicity of the style. 
+Overall, our vision for the aesthetic of the game was a simple cartoony style. We decided to stick to a low poly style as best as we could, since it has the potential to look really good and it is not as taxing on the computer (due to smaller vertex counts). Furthermore, if certain assets we wanted were not avaliable online then modelling our own (with unfortunately limited artistic skills) was an option because of the simplicity of the style. 
 
 The following objects were modelled (by Jess) from scratch in Blender: The fish, the player, the fishing rod, and the island shape.
 
-**insert photo of each object here **
+<p align="center">
+  <img src="Gifs/Player.png"  width="300" >
+</p>
+<p align="center">
+  <img src="Gifs/Fish.png"  width="300" >
+</p>
+<p align="center">
+  <img src="Gifs/Island.png"  width="300" >
+</p>
 
-The modelling process for these objects began with creating primitive meshes in blender such as cylinders, planes and spheres. They were then sculpted into the desired shape using Blender's intuitive sculpting tools. The final trick to making the models low-poly was to apply the 'Decimate' modifier. This removes some amount of verticies and condenses the mesh into simpler shapes. The models were then exported out of blender as a .fbx and imported into Unity. Since .fbx files contain material data as well, the colours of the models could then be adjusted in Unity as desired by modifying the material colour for each mesh. We decided to go with very natural colours like brown, green and blue because not only is our game set outdoors in nature, but those colours are also calming which is one of our aesthetic goals. 
+The modelling process for these objects began with creating primitive meshes in blender such as cylinders, planes and spheres. They were then sculpted into the desired shape using Blender's intuitive sculpting tools. The final trick to making the models low-poly was to apply the 'Decimate' modifier. This removes some amount of verticies and condenses the mesh into simpler shapes. The models were then exported out of blender as a .fbx and imported into Unity. Since .fbx files contain material data as well, the colours of the models could then be adjusted in Unity as desired by modifying the material colour for each mesh. We decided to go with very natural colours like brown, green and blue because not only is our game set outdoors in nature, but those colours are also calming to look at. 
 
 The lighting was another important factor that helped to tie objects in the whole scene together. By setting the ambient light to a light pink colour, this got rid of muddy shadows and gave the screen a slight cool tint. A directional light in each scene helped provide some soft shadows for a bit of extra detail.
 
@@ -83,6 +93,10 @@ The sound effects/music were mostly sourced from the internet (see references) p
 
 ### How the shaders work
 The fish wiggle shader displaces the vertices of the fish to make it look like it is swimming. This is done by using `_Time` in a sin function. It was parametrised to take a speed, intensity and frequency value for the movement. **explain why using GPU was better than CPU**
+
+<p align="center">
+  <img src="Gifs/Fish Wiggle.gif"  width="300" >
+</p>
 
 ## Querying and evaluation
 Description of the querying and observational methods used, including: description of the participants (how many, demographics), description of the methodology (which techniques did you use, what did you have participants do, how did you record the data), and feedback gathered.
