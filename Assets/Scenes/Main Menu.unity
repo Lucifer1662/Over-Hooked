@@ -796,6 +796,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
       value: Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 6686550331834644316, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1944516698}
+    - target: {fileID: 6686550331834644316, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SpawnObject
+      objectReference: {fileID: 0}
     - target: {fileID: 6686550331834644317, guid: f3cdef3e4213d91498c1eb9d29ae1297,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1126,12 +1136,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aaba666817bdb246895f5e4eba46cbd, type: 3}
---- !u!82 &311672605 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5144894189640336778, guid: 8aaba666817bdb246895f5e4eba46cbd,
-    type: 3}
-  m_PrefabInstance: {fileID: 2382135907404912918}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &485020659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,6 +1587,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1192336257}
+--- !u!114 &1012222258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012222251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f8f5f63ca61423b94fd7fd35cfa700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObject: {fileID: 444691088894739713, guid: 68c074c4d9b7241a6b4f51c3ee796fc7,
+    type: 3}
+  parent: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
+  useTransformPosition: 1
 --- !u!114 &1012222259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2966,6 +2987,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1192336257}
+--- !u!114 &1944516698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944516691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f8f5f63ca61423b94fd7fd35cfa700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObject: {fileID: 444691088894739713, guid: 68c074c4d9b7241a6b4f51c3ee796fc7,
+    type: 3}
+  parent: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
+  useTransformPosition: 1
 --- !u!82 &2011512321 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 5144894189640336778, guid: 8aaba666817bdb246895f5e4eba46cbd,
@@ -3367,11 +3405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 311672605}
+      objectReference: {fileID: 1012222258}
     - target: {fileID: 2382135907743944763, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Play
+      value: SpawnObject
       objectReference: {fileID: 0}
     - target: {fileID: 2382135907743944763, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}

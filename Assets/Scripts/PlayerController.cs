@@ -57,8 +57,9 @@ public class PlayerController : MonoBehaviour
 
         direction.x = Input.GetAxis("Horizontal");
         direction.z = Input.GetAxis("Vertical");
-        if (movenent)
-            playerMovement.Move(direction);
+		if (movenent) {
+			playerMovement.Move (direction);
+		}
 
 
 
