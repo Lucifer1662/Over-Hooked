@@ -1648,7 +1648,7 @@ PrefabInstance:
     - target: {fileID: 1260365054193295736, guid: 973a3a60d09e9f44b827845e41775c9e,
         type: 3}
       propertyPath: scene
-      value: Luke Ice
+      value: Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 4865471232078902259, guid: 973a3a60d09e9f44b827845e41775c9e,
         type: 3}
