@@ -60,9 +60,14 @@ public class FishSpawn : MonoBehaviour
 
         // Allocate spawn location
         Vector3 fishPosition = GeneratePosition(randomFish);
-        while(determineTerrain(fishPosition)){
+        int tries = 0;
+        const int maxTries = 10;
+        while(determineTerrain(fishPosition) && tries < maxTries){
             fishPosition = GeneratePosition(randomFish);
-            //Debug.Log("Hit the terrain, re-generate the fish position");
+            tries++;
+        }
+        if (tries >= maxTries) {
+            return;
         }
         
         // Check fish number limit for its type
