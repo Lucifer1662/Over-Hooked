@@ -936,8 +936,56 @@ PrefabInstance:
       propertyPath: m_Text
       value: ' Back '
       objectReference: {fileID: 0}
+    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 232962965}
+    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ResetScores
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3cdef3e4213d91498c1eb9d29ae1297, type: 3}
+--- !u!1 &232962964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8080853051076362886, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+    type: 3}
+  m_PrefabInstance: {fileID: 232962963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &232962965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232962964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b4d667d930f4f02aa6d93608d7b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &247423131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4800307798065241491, guid: f3cdef3e4213d91498c1eb9d29ae1297,
