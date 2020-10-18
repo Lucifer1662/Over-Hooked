@@ -806,7 +806,7 @@ PrefabInstance:
       objectReference: {fileID: 1933972139}
     - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
       propertyPath: threshhold
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1243298785878400571, guid: 973a3a60d09e9f44b827845e41775c9e,
         type: 3}
@@ -2011,6 +2011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: delayReached.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521763761180262018, guid: 78049ef9ea549df47baa2482808ffcd5,
+        type: 3}
+      propertyPath: delayInterval
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7938309486641454540, guid: 78049ef9ea549df47baa2482808ffcd5,
         type: 3}

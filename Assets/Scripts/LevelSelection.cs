@@ -4,26 +4,46 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelection : MonoBehaviour
 {
-    public void MainMenu()
+	private ChangeSceneWithDelay sceneChanger;
+	public GameObject fader;
+
+	private void Start ()
+	{
+		sceneChanger = GetComponent<ChangeSceneWithDelay> ();
+	}
+
+	public void MainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+		changeTo ("Main Menu");
+        //SceneManager.LoadScene("Main Menu");
     }
     public void LevelZero()
     {
-        SceneManager.LoadScene("Tutorial");
-    }
+		changeTo ("Tutorial");
+		//SceneManager.LoadScene("Tutorial");
+	}
     public void LevelOne()
     {
-        SceneManager.LoadScene("Level 1");
+		changeTo ("Level 1");
+		//SceneManager.LoadScene("Level 1");
     }
 
     public void LevelTwo()
     {
-        SceneManager.LoadScene("Level 2");
+		changeTo ("Level 2");
+		//SceneManager.LoadScene("Level 2");
     }
 
     public void LevelThree()
     {
-        SceneManager.LoadScene("Night Level");
+		changeTo ("Night Level");
+		//SceneManager.LoadScene("Night Level");
     }
+
+	private void changeTo (string name)
+	{
+		sceneChanger.scene = name;
+		sceneChanger.changeScene ();
+		fader.SetActive (true);
+	}
 }
