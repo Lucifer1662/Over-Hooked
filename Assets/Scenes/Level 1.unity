@@ -2066,6 +2066,11 @@ PrefabInstance:
       propertyPath: delayReached.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4521763761180262018, guid: 78049ef9ea549df47baa2482808ffcd5,
+        type: 3}
+      propertyPath: delayInterval
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7938309486641454540, guid: 78049ef9ea549df47baa2482808ffcd5,
         type: 3}
       propertyPath: useTransformPosition
