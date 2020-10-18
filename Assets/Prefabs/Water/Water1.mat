@@ -35,6 +35,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DisplacementTex:
+        m_Texture: {fileID: 2800000, guid: 957edcf5a1caf264fa66745b3fae63cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -69,7 +73,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NoiseDisplacementScale: 0.06
-    - _NoiseIntensity: 0.005
+    - _NoiseIntensity: 0.05
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
