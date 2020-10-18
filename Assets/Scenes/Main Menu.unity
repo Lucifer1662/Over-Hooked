@@ -631,10 +631,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800307797578185989, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4800307797787004949, guid: f3cdef3e4213d91498c1eb9d29ae1297,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4800307798065241490, guid: f3cdef3e4213d91498c1eb9d29ae1297,
         type: 3}
@@ -756,6 +761,11 @@ PrefabInstance:
       propertyPath: fader
       value: 
       objectReference: {fileID: 29806125}
+    - target: {fileID: 6393363934423438367, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6686550331834644289, guid: f3cdef3e4213d91498c1eb9d29ae1297,
         type: 3}
       propertyPath: targets.Array.data[1]
