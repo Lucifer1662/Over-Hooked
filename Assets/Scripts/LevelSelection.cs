@@ -19,7 +19,7 @@ public class LevelSelection : MonoBehaviour
 
     public void LevelTwo()
     {
-        SceneManager.LoadScene("Luke Ice");
+        SceneManager.LoadScene("Level 2");
     }
 
     public void LevelThree()
