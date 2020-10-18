@@ -12,6 +12,9 @@ public class ChangeWaterAlpha : MonoBehaviour
 	private float initialIntensity;
 	private float initialAlpha;
 	private float initialDarkAlpha;
+	[Space]
+	public float maxAlpha = 0.9f;
+	public float minAlpha = 0.6f;
 
 
 	// Start is called before the first frame update
@@ -37,23 +40,18 @@ public class ChangeWaterAlpha : MonoBehaviour
 
 	public void changeWaterOpacity(float amount)
 	{
+		// set light colour
 		Color lightColour = rnderer.material.GetColor ("_Colour");
 		lightColour.a = initialAlpha + amount;
 
-		// safeguard
-		if (lightColour.a > 1) {
-			lightColour.a = 1;
-		}
-
+		lightColour.a = Mathf.Clamp (lightColour.a, minAlpha, maxAlpha);
 		rnderer.material.SetColor ("_Colour", lightColour);
+
+		// set dark colour
 		Color darkColour = rnderer.material.GetColor ("_DarkColour");
 		darkColour.a = initialDarkAlpha + amount;
 
-		// safeguard
-		if (darkColour.a > 1) {
-			darkColour.a = 1;
-		}
-
+		lightColour.a = Mathf.Clamp (lightColour.a, minAlpha, maxAlpha);
 		rnderer.material.SetColor ("_DarkColour", darkColour);
 	}
 }
