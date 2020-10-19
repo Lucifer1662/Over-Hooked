@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Group 54
-  productName: Over Hooked
+  companyName: DefaultCompany
+  productName: Overhooked
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -266,7 +266,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 2016c39150e3d495bb0932aa2af1891a, type: 3}
+      m_Icon: {fileID: 2800000, guid: 98c23040ccc0e4accad7fe9d9c60f6d4, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
