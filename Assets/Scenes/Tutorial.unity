@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 1923108409}
-  threshhold: 3
+  threshhold: 5
   scoreDisplay: {fileID: 768817405}
   isAbove:
     m_PersistentCalls:
@@ -767,7 +767,7 @@ PrefabInstance:
     - target: {fileID: 3615769857014861851, guid: 6737c23b663334160ba3135fc6678286,
         type: 3}
       propertyPath: m_Text
-      value: 0/3
+      value: 0/5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6737c23b663334160ba3135fc6678286, type: 3}
