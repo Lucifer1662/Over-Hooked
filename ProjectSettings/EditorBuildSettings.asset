@@ -15,18 +15,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Luke Test Scene.unity
     guid: da364444dcc74464292281cd0c69f933
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 5a49877575a3d5f41944b7925b53b326
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 9427002f6c51d4cbbadb35ce139e4626
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 8cad9e38be22ce94b8ae0e167709d9fd
   - enabled: 0
     path: Assets/Scenes/Jackson Test 2.unity
     guid: 115f897d23c464f738f75bed4d2b7597
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 5a49877575a3d5f41944b7925b53b326
-  - enabled: 1
-    path: Assets/Scenes/Night Level.unity
+    path: Assets/Scenes/Level 3.unity
     guid: d89c34731b50346c69ac63ee3b7bfcc1
-  - enabled: 1
-    path: Assets/Scenes/Level 2.unity
-    guid: 8cad9e38be22ce94b8ae0e167709d9fd
   m_configObjects: {}
