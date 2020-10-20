@@ -10,6 +10,7 @@ public class HighScore : MonoBehaviour
     private int currentScore;
 	public Text highScoreDisplay;
 
+    private static readonly string TutorialHignScoreName = "TutorialHighScore";
     private static readonly string LevelOneHignScoreName = "LevelOneHighScore";
     private static readonly string LevelTwoHignScoreName = "LevelTwoHighScore";
     private static readonly string LevelThreeHignScoreName = "LevelThreeHighScore";
@@ -23,7 +24,13 @@ public class HighScore : MonoBehaviour
 
     private void checkHighScore(){
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "Level 1"){
+        if (scene.name == "Tutorial"){
+            if (currentScore > GetLevelHighScore("Tutorial")){
+                SetLevelHighScore("Tutorial", currentScore);
+            }
+            highScoreDisplay.text = GetLevelHighScore("Tutorial").ToString();
+        }
+        else if (scene.name == "Level 1"){
             if (currentScore > GetLevelHighScore("Level 1")){
                 SetLevelHighScore("Level 1", currentScore);
             }
@@ -46,7 +53,10 @@ public class HighScore : MonoBehaviour
 
 
     public void SetLevelHighScore(string levelName, int highScore) {
-        if (levelName == "Level 1"){
+        if (levelName == "Tutorial"){
+           PlayerPrefs.SetInt(TutorialHignScoreName, highScore);
+        }
+        else if (levelName == "Level 1"){
            PlayerPrefs.SetInt(LevelOneHignScoreName, highScore);
         }
         else if (levelName == "Level 2"){
@@ -59,7 +69,10 @@ public class HighScore : MonoBehaviour
     }
 
     public static int GetLevelHighScore(string levelName) {
-        if (levelName == "Level 1"){
+        if (levelName == "Tutorial"){
+           return PlayerPrefs.GetInt(TutorialHignScoreName);
+        }
+        else if (levelName == "Level 1"){
            return PlayerPrefs.GetInt(LevelOneHignScoreName);
         }
         else if (levelName == "Level 2"){
