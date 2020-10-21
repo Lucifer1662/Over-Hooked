@@ -16,10 +16,12 @@ public class moveTowards : MonoBehaviour
         curHook = GameObject.FindGameObjectWithTag("Hook");
         if (curHook != null){
 			if (closeEnough() && curHook.transform.position.y <= 0.7) {
+                Debug.Log("Go Towards");
 				GetComponent<FishMovement> ().enabled = false;
 				var target = curHook.transform.position;
 				target.y = transform.position.y;
-				transform.position = Vector3.MoveTowards (transform.position, target, speed * Time.deltaTime);
+                if(notTooClose())
+				transform.position += transform.forward * speed * Time.deltaTime;
 				changeDirection(target);
 			}
 			return;
@@ -30,9 +32,14 @@ public class moveTowards : MonoBehaviour
 
 	bool closeEnough()
 	{
-		return Vector2.Distance (new Vector2 (curHook.transform.position.x, curHook.transform.position.y),
-								new Vector2 (transform.position.x, transform.position.y)) < distanceOfEffect;
+		return Vector2.Distance (new Vector2 (curHook.transform.position.x, curHook.transform.position.z),
+								new Vector2 (transform.position.x, transform.position.z)) < distanceOfEffect;
 	}
+
+    bool notTooClose() {
+        return Vector2.Distance(new Vector2(curHook.transform.position.x, curHook.transform.position.z),
+                                    new Vector2(transform.position.x, transform.position.z)) >= 0.1f;
+    }
 
 	// Gradually rotate
     void changeDirection(Vector3 newPosition){
