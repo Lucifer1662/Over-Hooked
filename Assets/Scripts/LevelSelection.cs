@@ -36,7 +36,7 @@ public class LevelSelection : MonoBehaviour
 
     public void LevelThree()
     {
-		changeTo ("Night Level");
+		changeTo ("Level 3");
 		//SceneManager.LoadScene("Night Level");
     }
 

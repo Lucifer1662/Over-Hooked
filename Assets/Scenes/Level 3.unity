@@ -1155,7 +1155,7 @@ PrefabInstance:
     - target: {fileID: 9058470326630892606, guid: 973a3a60d09e9f44b827845e41775c9e,
         type: 3}
       propertyPath: scene
-      value: Night Level
+      value: Level 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
