@@ -33,11 +33,15 @@ This game is a 3rd-person top-down fishing game with a few different levels. The
 ### How to use it (especially the user interface aspects)
 This game is intended to be played with a keyboard and mouse. Once the main menu appears, click start to play. You can also view the instructions of the game or quit the application.
 
-**insert photo of main menu**
+<p align="center">
+  <img src="Gifs/Main Menu.png"  width="400" >
+</p>
 
 Then, select which level you would like to play. At the start, only one level will be avaliable to select. The other levels become unlocked as you progress through the game.
 
-**insert photo of level selection**
+<p align="center">
+  <img src="Gifs/Level Selection.gif"  width="400" >
+</p>
 
 When you are in the level, it is time to start catching some fish. Keep an eye on the timer, because if not enough fish are caught by the time the clock reaches zero then you fail the level. The amount of fish that need to be caught can be seen in the top left of the screen (the number on the right), as well as the number of fish you have currently caught (the number on the left).
 
@@ -70,9 +74,9 @@ The modelling process for these objects began with creating primitive meshes in 
 
 The lighting was another important factor that helped to tie objects in the whole scene together. By setting the ambient light to a light pink colour, this got rid of muddy shadows and gave the screen a slight cool tint. A directional light in each scene helped provide some soft shadows for a bit of extra detail.
 
-The water, sadly, was one of the exeptions to the low poly aesthetic because we could not get crisp, hard edges without using the **i forgot what it is called** shader, which is not supported on some Macs. 
+The water, sadly, was one of the exeptions to the low poly aesthetic because although possible to create required the geometry shader, which is not always supported, for example on Macs, the water shader will be discussed in detail later. 
 
-The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and nice colours. 
+The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and  colours. 
 
 **insert photo of island here**
 
@@ -87,12 +91,43 @@ The sound effects/music were mostly sourced from the internet (see references) p
 ### How the graphics pipeline and camera motion was handled
 
 ## Camera motion
+The camera was positioned above looking down on the the main focus of the scene, eg the player or the hook.
+The camera movement was then smoothed when the target moved or switched from one object to another, this gives the player more intution about how things are placed in the world. An example of this use is in the Tutorial scenes where the camera looks at a fish and then pans back to the player, allowing them to know which direction the fish is in.
+This was create using an automatic camera control method. The method was to have an target Transform, eg the Player, and the initial offset from that transform and the camera was used as the offset to then aim for. Then the camera position is Lerped towards target position (transforms position + offset) creating a smooth movement.
+
+Our reasoning behind using an automatic control, was to guide the player on what they should be currently looking at, creating more intutive expirience.
 
 ## Graphics pipeline
-**explain why the things we have are done at the right stages**
+
 
 ### How the shaders work
-The fish wiggle shader displaces the vertices of the fish to make it look like it is swimming. This is done by using `_Time` in a sin function. It was parametrised to take a speed, intensity and frequency value for the movement. **explain why using GPU was better than CPU**
+#### Water Shader
+This shader does a variety of effects to achieve the look of water.
+##### Diffuse Colouring
+The colouring of the water is broken up into shallow and deep, these colours are used to change the colour of the water depending on the depth provided by the height map.
+
+##### Waves Displacement
+With the use of a third party noise function "Bcc8NoiseClassic" provided by Keijiro, a displacement to the water is added in the vertex shader. This was parameterised by its intensity, frequency and movement direction.
+
+##### Foam Waves
+This effect creates a wave of foam that rocks up onto the shore. This was create by taking slices of the height map and then moving the slices up over time. Then a texture was overlayed ontop to create a bit of visual interest, lastly the strength of this effect was increase as the water got shallower.
+
+##### Height Map
+The height map was an integral part of making this shader work, although it was implement as a Script. At the start of the scene the HeightMapGenerator Script shoots a grid of raycasts down on the terrain to deduce its height, this is then mapped into an image for the shader to use. 
+
+#### Why a Shader?
+The main reason for this to be done on the shader was for effiecency and quality. If dynamic water was to be implemented in a Script it would require us to create/alter a new texture every frame, that would stretch accross all the water, this would require a massive texture to no look grainy. Instead with the use of a shader, this can be done in parallel, and done in screen space, only requiring the pixels that will be visible in the camera frustrum to be computed, giving higher performance and better quality.  
+
+### Wiggle Shader
+#### Displacement
+The fish wiggle shader displaces the vertices of the fish to make it look like it is swimming. This is done by using `_Time` in a sin function. It was parametrised to take a speed, intensity and frequency value for the movement.
+
+### Why a Shader?
+The reason we opted to have this be done on the GPU instead of CPU was for effiecency. Since there may be many objects all with this shader, all displacing each of their vertices, it makes practical sense to have all these done in parrallel, as each vertex displacement is independent of one another.
+
+### Its purpose
+The use of this shader in this scene does 2 important things. 1 it brings the fish model to life, and helps convey the message that these are fish. 2 It can be reused on many different models without the use rigging each model individually, saving time.
+
 
 <p align="center">
   <img src="Gifs/Fish Wiggle.gif"  width="300" >
@@ -154,5 +189,7 @@ Level fail tune: https://freesound.org/people/florianreichelt/sounds/412427/ \
 
 ### Code/Scripts
 Camera depth of focus/vignette shader effect from: POLY STYLE Vegetation Pack by Singularity Art Studio, Unity Asset Store
+Bcc8NoiseClassic from <a href="https://github.com/keijiro/NoiseShader">Noise Shader Library for Unity<a/>
+
 
 
