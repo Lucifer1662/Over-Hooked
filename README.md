@@ -142,31 +142,6 @@ Document the changes made to your game based on the information collected during
 Project is created with:
 * Unity 2019.4.3f1
 
-## Using Images
-
-You can use images/gif by adding them to a folder in your repo:
-
-<p align="center">
-  <img src="Gifs/Q1-1.gif"  width="300" >
-</p>
-
-To create a gif from a video you can follow this [link](https://ezgif.com/video-to-gif/ezgif-6-55f4b3b086d4.mov).
-
-## Code Snippets 
-
-You can include a code snippet here, but make sure to explain it! 
-Do not just copy all your code, only explain the important parts.
-
-```c#
-public class firstPersonController : MonoBehaviour
-{
-    //This function run once when Unity is in Play
-     void Start ()
-    {
-      standMotion();
-    }
-}
-```
 ## References
 
 ### Models
