@@ -42,11 +42,11 @@ public class HighScore : MonoBehaviour
             }
             highScoreDisplay.text = GetLevelHighScore("Level 2").ToString();
         }
-        else if (scene.name == "Night Level"){
-            if (currentScore > GetLevelHighScore("Night Level")){
-                SetLevelHighScore("Night Level", currentScore);
+        else if (scene.name == "Level 3"){
+            if (currentScore > GetLevelHighScore("Level 3")){
+                SetLevelHighScore("Level 3", currentScore);
             }
-            highScoreDisplay.text = GetLevelHighScore("Night Level").ToString();
+            highScoreDisplay.text = GetLevelHighScore("Level 3").ToString();
         }
         
     }
@@ -62,7 +62,7 @@ public class HighScore : MonoBehaviour
         else if (levelName == "Level 2"){
            PlayerPrefs.SetInt(LevelTwoHignScoreName, highScore);
         }
-        else if (levelName == "Night Level"){
+        else if (levelName == "Level 3"){
            PlayerPrefs.SetInt(LevelThreeHignScoreName, highScore);
         }
         
