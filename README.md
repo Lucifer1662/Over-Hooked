@@ -22,10 +22,10 @@ You can add a link to your Gameplay Video here but you must have already submit 
 
 | Name | Tasks | State |
 | :---         |     :---:      |          ---: |
-| Xiaochen Hou    | Fish movement      |  Done |
-| Jackson Hu    | Fish spawning, level selection menu      |  Done |
-| Luke Hawkins    | fishing mechanics, player movement, camera movement, shaders      |  Done |
-| Jessica Hammer  | sound, UI, design, particle effects     |  Done |
+| Xiaochen Hou    | Fish Movement      |  Done |
+| Jackson Hu    | Fish Spawning, Level Selection Menu      |  Done |
+| Luke Hawkins    | Fishing, Player and Camera Movement, Shaders, Level Complete UI     |  Done |
+| Jessica Hammer  | Sound, Main Menu, Score and Timer, Design, Particle Effects     |  Done |
 
 ## Explanation of the game
 This game is a 3rd-person top-down fishing game with a few different levels. The aim of the game is to catch a certain amount of fish within the time limit, and progress through the levels.
