@@ -7,7 +7,7 @@ public class moveTowards : MonoBehaviour
 {
     public float speed = 3;
     private GameObject curHook;
-	public float distanceOfEffect = 2;
+	public float distanceOfEffect = 6;
 
 
     // Update is called once per frame
@@ -20,9 +20,13 @@ public class moveTowards : MonoBehaviour
 				GetComponent<FishMovement> ().enabled = false;
 				var target = curHook.transform.position;
 				target.y = transform.position.y;
-                if(notTooClose())
-				transform.position += transform.forward * speed * Time.deltaTime;
-				changeDirection(target);
+                if(notTooClose()){
+                    transform.position += transform.forward * speed * Time.deltaTime;
+				    changeDirection(target);
+                }else {
+                    Debug.Log("Too close, stop moving");
+                }
+				
 			}
 			return;
         }
@@ -38,7 +42,7 @@ public class moveTowards : MonoBehaviour
 
     bool notTooClose() {
         return Vector2.Distance(new Vector2(curHook.transform.position.x, curHook.transform.position.z),
-                                    new Vector2(transform.position.x, transform.position.z)) >= 0.1f;
+                                    new Vector2(transform.position.x, transform.position.z)) >= 0.4f;
     }
 
 	// Gradually rotate
