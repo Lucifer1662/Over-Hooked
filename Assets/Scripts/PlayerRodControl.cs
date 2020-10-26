@@ -20,6 +20,7 @@ public class PlayerRodControl : MonoBehaviour
     public float castAngle = 45.0f;
     public GameObject hookInstance = null;
 	public SpawnGameObject spawnCastSound;
+	public AudioSource powerupSound;
 
 	public Transform rod;
 
@@ -80,6 +81,9 @@ public class PlayerRodControl : MonoBehaviour
         else
         {
             isBeingHeldDown = true;
+			if (!powerupSound.isPlaying) {
+				powerupSound.Play ();
+			}
             return true;
         }
     }
@@ -91,12 +95,12 @@ public class PlayerRodControl : MonoBehaviour
             return false;
         }
 
+		// stop powerup sound and play casting sound
 		spawnCastSound.SpawnObject ();
+		powerupSound.Stop ();
 
         float percent = percentageCasting();
-
         float force = percent * castForce;
-
         var instance = Instantiate(lure, spawnPos.position, Quaternion.identity);
 
         spawnPos.GetComponent<KeepLineAttachedTo>().to = instance.transform;

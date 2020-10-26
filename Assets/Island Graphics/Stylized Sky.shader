@@ -1,4 +1,6 @@
-﻿Shader "Stylized/Sky"
+﻿// THIS SHADER IS FROM THE UNITY ASSET STORE
+
+Shader "Stylized/Sky"
 {
     Properties
     {
