@@ -34,4 +34,8 @@ public class PlayerScore : MonoBehaviour
     public int GetScore() {
         return score;
     }
+
+	public void SetScore(int score) {
+		this.score = score;
+	}
 }

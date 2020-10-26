@@ -119,4 +119,9 @@ public class PlayerRodControl : MonoBehaviour
         return true;
 
     }
+
+    public void ForceReelIn() {
+        if (hookInstance)
+            StartedCasting();
+    }
 }
