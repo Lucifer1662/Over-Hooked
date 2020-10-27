@@ -482,6 +482,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1752502784}
     m_Modifications:
+    - target: {fileID: 1267695239, guid: c945641a67acadb409ebf7f1e67c823f, type: 3}
+      propertyPath: currentScoreDisplay
+      value: 
+      objectReference: {fileID: 1896079397}
     - target: {fileID: 1246964824249551522, guid: c945641a67acadb409ebf7f1e67c823f,
         type: 3}
       propertyPath: m_Name
@@ -2932,6 +2936,16 @@ PrefabInstance:
       propertyPath: threshhold
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1931582421257093965, guid: cb2d6edfad1b9264d85d42f75de63ca3,
+        type: 3}
+      propertyPath: scoreDisplay
+      value: 
+      objectReference: {fileID: 1896079397}
+    - target: {fileID: 1931582421257093965, guid: cb2d6edfad1b9264d85d42f75de63ca3,
+        type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1933972139}
     - target: {fileID: 3880785044271357967, guid: cb2d6edfad1b9264d85d42f75de63ca3,
         type: 3}
       propertyPath: m_LocalPosition.x
