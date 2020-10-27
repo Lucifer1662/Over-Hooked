@@ -137,6 +137,27 @@ The use of this shader in this scene does 2 important things. 1 it brings the fi
 Description of the querying and observational methods used, including: description of the participants (how many, demographics), description of the methodology (which techniques did you use, what did you have participants do, how did you record the data), and feedback gathered.
 
 Document the changes made to your game based on the information collected during the evaluation.
+| Solution | Problem | State |
+| :---         |     :---:      |          ---: |
+|Balance levels by chaning number of fish, time limit, distance to fish| Could not complete level 2 but finsihed level 3 in first go |
+|Fix fish spinning| Fish would spin arounnd when biting hook | Done |
+|Night level intro text| The user got confused why they could not see the fish | |
+|Iceberg level intro text| The user got confused when they feel off iceberg| |
+|Need visual cue for bite (particle effect splash)| The user didn't hear biting sound | |
+|Add buttons for tutorial popups, instead of timers and button queues| The users broke or missed parts of the tutorial from clicking to early |  |
+|Change name of level 0 to tutorial| Was confused what level 0 meant | |
+|Show Casting power by making the forward direction indicator grow| Control of rod distance was difficult | |
+|Casting power up sound effect| Control of rod distance was difficult | |
+|Pop up for “keep going to get the best high score”| Player stopped playing once level threshold was reached | |
+|Goto to deep in water, respawn| Player was confused why they couldn't walk in water and then confused about that they could fall off iceberg| |
+|Pop up saying you can’t swim when fall in water| Player confused what happened when they fell off iceberg| |
+|Make pause and button more consistent | The button did not change colour when hovered over and user didn't think they were buttons| |
+|Return button as home icon| Was confused at what the home button did from the icon| |
+|Make a celebration / credit scene| Felt unexcited when game finished and went back to main menu| |
+|Check hook y pos lines up with water| The hook went underwater and the player thought the fish wasn't biting the hook| |
+|Reeling in mechanic| The player felt that the reeling in was jarring and that the game was to hard| |
+|Confirmation to go back to home| The player accidentally clicked the back button instead of pause| |
+
 	
 ## Technologies
 Project is created with:
