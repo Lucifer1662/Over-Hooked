@@ -221,10 +221,10 @@ RectTransform:
   m_Father: {fileID: 3477078091514843623}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.15300001, y: 0.215}
+  m_AnchorMax: {x: 0.825836, y: 0.785}
+  m_AnchoredPosition: {x: 0.5699997, y: 0.16999817}
+  m_SizeDelta: {x: 1.2882004, y: 0.7486763}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1246964824265521709
 CanvasRenderer:
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ee3ad39f4b1fc4eedb38ef3ec7425d84, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9645757f7640849678c26986ca710cdf, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -295,10 +295,10 @@ RectTransform:
   m_Father: {fileID: 3477078092131903091}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -12, y: -18}
+  m_AnchorMin: {x: 0.18077102, y: 0.3155747}
+  m_AnchorMax: {x: 0.80651253, y: 0.72752875}
+  m_AnchoredPosition: {x: 0.47999954, y: -0.22148132}
+  m_SizeDelta: {x: 20.741173, y: 19.853012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1246964825063585373
 CanvasRenderer:
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7580627255bab446295b3f4f0a6acc95, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b420bf11279e44b5a133a44636561d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1304,6 +1304,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2382135907743944763, guid: 8aaba666817bdb246895f5e4eba46cbd,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 1246964825063585362}
     - target: {fileID: 2382135907743944765, guid: 8aaba666817bdb246895f5e4eba46cbd,
         type: 3}
       propertyPath: m_Name
