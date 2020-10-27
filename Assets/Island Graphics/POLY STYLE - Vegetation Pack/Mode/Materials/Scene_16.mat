@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Scene_16
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: af9a7ba94534534428b7bff4756c6a8b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -72,8 +72,12 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _WiggleFrequency: 1
+    - _WiggleIntentsity: 0.03
+    - _WiggleSpeed: 1
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.43382353, g: 0.3738538, b: 0.28389922, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
+    - _WiggleDirection: {r: 1, g: 0, b: 0, a: 1}

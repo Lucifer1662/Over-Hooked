@@ -40,7 +40,7 @@ public class PlayerRodControl : MonoBehaviour
         return isBeingHeldDown && hookInstance == null;
     }
 
-    float percentageCasting()
+    public float percentageCasting()
     {
         if (Casting())
         {
