@@ -19,7 +19,7 @@ public class IfPlayerScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //scoreDisplay.text = score.score.ToString () + "/" + threshhold;
+        scoreDisplay.text = score.score.ToString () + "/" + threshhold;
     }
 
 
