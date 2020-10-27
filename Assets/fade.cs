@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class fade : MonoBehaviour
 {
     void Start(){
+        // GetComponent<TextMesh>().text = "Hello World";
         StartCoroutine(fadeInAndOut(gameObject, false, 5f));
     }
+
     IEnumerator fadeInAndOut(GameObject objectToFade, bool fadeIn, float duration) {
     float counter = 0f;
 
