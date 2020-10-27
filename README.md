@@ -56,7 +56,9 @@ In order to catch fish you may want to move the player to get a better look at t
 
 If you catch the required number of fish before the timer ends, the level completion menu will pop up. Click the 'next' button to go to the next level, or 'retry' if you want to try and beat your record.
 
-**insert photo of level completion**-----------------------------------
+<p align="center">
+  <img src="Gifs/Level Completion.png"  width="400" >
+</p>
 
 ## How objects and entities were modelled
 Overall, our vision for the aesthetic of the game was a simple cartoony style. We decided to stick to a low poly style as best as we could, since it has the potential to look really good and it is not as taxing on the computer (due to smaller vertex counts). Furthermore, if certain assets we wanted were not avaliable online then modelling our own (with unfortunately limited artistic skills) was an option because of the simplicity of the style. 
