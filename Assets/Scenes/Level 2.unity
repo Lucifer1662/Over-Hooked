@@ -658,6 +658,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScoreDisplay: {fileID: 586270703}
   highScoreDisplay: {fileID: 419104977}
+--- !u!114 &419104980 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6232743913703585496, guid: 973a3a60d09e9f44b827845e41775c9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 419104976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &494095978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1131,16 @@ PrefabInstance:
       propertyPath: threshhold
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1931582421257093965, guid: cb2d6edfad1b9264d85d42f75de63ca3,
+        type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 966319014}
+    - target: {fileID: 1931582421257093965, guid: cb2d6edfad1b9264d85d42f75de63ca3,
+        type: 3}
+      propertyPath: scoreDisplay
+      value: 
+      objectReference: {fileID: 419104980}
     - target: {fileID: 3880785044271357967, guid: cb2d6edfad1b9264d85d42f75de63ca3,
         type: 3}
       propertyPath: m_LocalPosition.x
