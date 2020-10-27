@@ -134,6 +134,33 @@ The use of this shader in this scene does 2 important things. 1 it brings the fi
 </p>
 
 ## Querying and evaluation
+### Querying and observational methods
+#### Obersvational Method: Cooperative Evaluation
+We chose Cooperative Evaluation for our Oberservational Method. We figure that this technique would have advatanges over Think Aloud as this gave us the ability to clarify and have a dialog about the game, it was also easier to use which we needed as a lot of our testers were over zoom.  We used a mix of recording data styles, we recorded the screen and audio, used paper and pencil for notes if there was time.
+
+The testing procedure went as follows: 
+1. Send them a copy of the game (if online)
+2. Started a zoom session and recorded the zoom session (if online)
+3. They started to play the game, while we watched and occasionally asked questions
+4. What the player did in the game that was of interest was noted.
+5. What the player said was also noted.
+6. If the user was unable to complete a level, we showed them to the "Unlock All" button. This turned out to be a huge success, as some players could not complete level 2 but could complete level 3.
+7. The recording and notes were uploaded to shared google drive.
+
+
+#### Querying Method: Interviews
+We chose Interviews for our Querying Method. This we chose over Questionairs as it required less work for the tester and we did not need any other documents sent to them. This
+
+The testing procedure went as follows: 
+1. Send them a copy of the game (if online)
+2. Started a zoom session and recorded the zoom session (if online)
+3. They started to play the game, while we didn't watch.
+6. If we came back and saw they were stuck we told them about the "Unlock All" button.
+7. Afterwards we used predetermined questions to ask them and noted down there answers
+8. The conversation was allowed to stray from the questions, and we noted these down as well.
+9. After the tester left, the recording was watched again and anything of interest was noted.
+8. The recording and notes were uploaded to shared google drive.
+
 Description of the querying and observational methods used, including: description of the participants (how many, demographics), description of the methodology (which techniques did you use, what did you have participants do, how did you record the data), and feedback gathered.
 
 Document the changes made to your game based on the information collected during the evaluation.
