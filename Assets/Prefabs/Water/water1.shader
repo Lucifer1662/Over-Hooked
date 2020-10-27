@@ -44,7 +44,7 @@
 					float2 uv : TEXCOORD0;
 					float3 vertexWoldPosition :TEXCOORD1;
 
-					UNITY_FOG_COORDS(1)
+					UNITY_FOG_COORDS(2)
 				};
 
 				#include "BCCNoise8.hlsl"
@@ -73,7 +73,7 @@
 				v2g vert(appdata v)
 				{
 					v2g o;
-					v.vertex.xyz += v.normal * noiseAtVert(v.vertex);
+					v.vertex.xyz += v.normal *noiseAtVert(v.vertex);
 					o.vertex = UnityObjectToClipPos(v.vertex);
 					o.uv = v.uv;
 					o.vertexWoldPosition = v.vertex;
