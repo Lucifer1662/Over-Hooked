@@ -102,6 +102,15 @@ Our reasoning behind using an automatic control, was to guide the player on what
 ## How the shaders work
 ### Water Shader
 This shader does a variety of effects to achieve the look of water.
+
+<p align="center">
+  <img src="Gifs/Waves.gif"  width="400" >
+</p>
+
+<p align="center">
+  <img src="Gifs/Waves top down.gif"  width="400" >
+</p>
+
 #### Diffuse Colouring
 The colouring of the water is broken up into shallow and deep, these colours are used to change the colour of the water depending on the depth provided by the height map.
 
@@ -119,16 +128,20 @@ The main reason for this to be done on the shader was for effiecency and quality
 
 ### Wiggle Shader
 #### Displacement
-The fish wiggle shader displaces the vertices of the fish to make it look like it is swimming. This is done by using `_Time` in a sin function. It was parametrised to take a speed, intensity and frequency value for the movement.
+The wiggle shader displaces the vertices of the model to make it look like it is wiggling/swimming. This is done by using `_Time` in a sin function. It was parametrised to take a speed, intensity and frequency value for the movement.
 
 #### Why a Shader?
 The reason we opted to have this be done on the GPU instead of CPU was for effiecency. Since there may be many objects all with this shader, all displacing each of their vertices, it makes practical sense to have all these done in parrallel, as each vertex displacement is independent of one another.
 
 #### Its purpose
-The use of this shader in this scene does 2 important things. 1 it brings the fish model to life, and helps convey the message that these are fish. 2 It can be reused on many different models without the use rigging each model individually, saving time.
+The use of this shader in this scene does 2 important things. 1 it brings the fish model to life, and helps convey the message that these are fish. 2 It can be reused on many different models without the use rigging each model individually, saving time, eg the trees.
 
 <p align="center">
-  <img src="Gifs/Fish Wiggle.gif"  width="300" >
+  <img src="Gifs/Fish Wiggle.gif"  width="400" >
+</p>
+
+<p align="center">
+  <img src="Gifs/TreeWiggle.gif"  width="400" >
 </p>
 
 ## Querying and evaluation
