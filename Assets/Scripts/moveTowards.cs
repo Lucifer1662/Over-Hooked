@@ -42,7 +42,7 @@ public class moveTowards : MonoBehaviour
 
     bool notTooClose() {
         return Vector2.Distance(new Vector2(curHook.transform.position.x, curHook.transform.position.z),
-                                    new Vector2(transform.position.x, transform.position.z)) >= 0.4f;
+                                    new Vector2(transform.position.x, transform.position.z)) >= 0.15f;
     }
 
 	// Gradually rotate

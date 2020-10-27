@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FishSpawn : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class FishSpawn : MonoBehaviour
     public GameObject fishMedium;
     public GameObject fishLarge;
     public int maxFish;
-    private float rangeLimit = 50;
+    private float rangeLimit = 60;
+    private float landSize;
 
     private int currentFish = 0;
     public float respawnPeriod = 1;
@@ -97,22 +99,30 @@ public class FishSpawn : MonoBehaviour
 	// Generate position outside of island
     // According to different kinds of fish
 	Vector3 GeneratePosition(int fishSize){
+        Scene scene = SceneManager.GetActiveScene();
         Vector3 islandCentre = new Vector3(0f, 0f, 0f);
         Vector3 position = randomPosition();
+        
+        if (scene.name == "Level 2") {
+            landSize = 10;
+        }else {
+            landSize = 25;
+        }
+        float validRange = rangeLimit - landSize;
 
         // Restricted distance for various kinds of fish
         if (fishSize == 0){
-            while (Vector3.Distance(position, islandCentre) > 35 || Vector3.Distance(position, islandCentre) < 20){
+            while (Vector3.Distance(position, islandCentre) > (landSize + validRange * 0.3) || Vector3.Distance(position, islandCentre) < landSize){
                 position = randomPosition();
             }
         }
         else if (fishSize == 1){
-            while (Vector3.Distance(position, islandCentre) > 55 || Vector3.Distance(position, islandCentre) < 30){
+            while (Vector3.Distance(position, islandCentre) > (landSize + validRange / 2 + validRange * 0.3) || Vector3.Distance(position, islandCentre) < (landSize + validRange / 2 - validRange * 0.3)){
                 position = randomPosition();
             }
         }
         else {
-            while (Vector3.Distance(position, islandCentre) < 45){
+            while (Vector3.Distance(position, islandCentre) < (landSize + validRange / 2 + validRange * 0.2)){
                 position = randomPosition();
             }
         }
