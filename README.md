@@ -41,7 +41,7 @@ This game is a 3rd-person top-down fishing game with a few different levels. The
 This game is intended to be played with a keyboard and mouse. Once the main menu appears, click start to play. You can also view the instructions of the game or quit the application.
 
 <p align="center">
-  <img src="Gifs/Main Menu.png"  width="400" >
+  <img src="Gifs/Main Menu.gif"  width="400" >
 </p>
 
 Then, select which level you would like to play. At the start, only one level will be avaliable to select. The other levels become unlocked as you progress through the game.
