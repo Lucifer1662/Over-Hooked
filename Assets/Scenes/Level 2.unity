@@ -2765,6 +2765,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 2001778421}
+    - target: {fileID: 6394038353052689061, guid: c945641a67acadb409ebf7f1e67c823f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 28.69757
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c945641a67acadb409ebf7f1e67c823f, type: 3}
 --- !u!224 &1630230627 stripped
@@ -3464,7 +3469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 763e064b4f4d3914e94c3e4bedf59a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantSwimText: {fileID: 0}
+  cantSwimText: {fileID: 249949356113993828, guid: 45f85aa1517534fe3959d6f8edd9998a,
+    type: 3}
 --- !u!114 &1814981608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3717,7 +3723,7 @@ PrefabInstance:
     - target: {fileID: 5413566375055543934, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.031105042
+      value: 0.031097412
       objectReference: {fileID: 0}
     - target: {fileID: 5413566375055543934, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
@@ -3937,7 +3943,7 @@ PrefabInstance:
     - target: {fileID: 5789759156664794815, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.1277008
+      value: -1.1276855
       objectReference: {fileID: 0}
     - target: {fileID: 5789759156664794815, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
@@ -3957,7 +3963,7 @@ PrefabInstance:
     - target: {fileID: 5789759156664794815, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5789759156664794815, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
@@ -4102,6 +4108,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2018882798}
     m_Modifications:
+    - target: {fileID: 217449015226586981, guid: 8a7849e945ab9430bb918d4825fb442a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Timer
+      objectReference: {fileID: 0}
     - target: {fileID: 2218657366469676410, guid: 8a7849e945ab9430bb918d4825fb442a,
         type: 3}
       propertyPath: hitZeroEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
