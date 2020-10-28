@@ -20,6 +20,8 @@ public class BelowY : MonoBehaviour
     {
         if (transform.position.y <= y && !called)
         {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+
             belowYEvent.Invoke();
             if(!repeat)
                 called = true;

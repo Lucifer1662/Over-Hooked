@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 8697209468562377078}
   - component: {fileID: -5226594125321903617}
   - component: {fileID: 980826879150322155}
+  - component: {fileID: -1538564697213754892}
   m_Layer: 9
   m_Name: Hook
   m_TagString: Hook
@@ -341,6 +342,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -5226594125321903617}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 980826879150322155}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   y: 0.4
   repeat: 0
 --- !u!114 &2272404184250797406
@@ -358,6 +381,7 @@ MonoBehaviour:
   targetParent: {fileID: 0}
   spawnChompSound: {fileID: 8697209468562377078}
   valueOfFish: {fileID: 0}
+  stopMoving: 0
 --- !u!135 &7952117582359852597
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -408,11 +432,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5486918608734313258}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d929784488cf4223886f9269a00e940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1538564697213754892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5486918608734313258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1690786e06518564faea921616055fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &7930366186590584459
 GameObject:
   m_ObjectHideFlags: 0
