@@ -85,11 +85,13 @@ The lighting was another important factor that helped to tie objects in the whol
 
 The water, sadly, was one of the exceptions to the low poly aesthetic because although possible to create, it required the geometry shader to look good, which is not always supported (for example on Macs). The water shader will be discussed in detail later. 
 
-The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and  colours. 
+The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and  colours. <b>Talk about how these assets make the world feel real and makes it more emmersive<b/>
 
 We also made our own panels for the UI since we wanted the buttons to have a round shape which feels more natural. We chose to stick with a brown theme for the UI since is is a neutral colour that is found often in nature.
 
-The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. 
+<b>Talk about why we choose a light colour background and dark coloured text, or why this colour is not a common colour blind colour, it does not cause eye fatigue</b>
+
+The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. <b>talk about how sounds coney actions or events<b/>
 
 ## How the graphics pipeline and camera motion was handled
 
