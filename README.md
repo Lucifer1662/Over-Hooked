@@ -206,7 +206,7 @@ Then, we put the information in a table and ordered it by priority. We prioritis
 |Iceberg level intro text| The user got confused when they feel off iceberg| Done |
 |Need visual cue for bite (particle effect splash)| The user didn't hear biting sound | Done |
 |Add buttons for tutorial popups, instead of timers and button queues| The users broke or missed parts of the tutorial from clicking to early | Done |
-|Change name of level 0 to tutorial| Was confused what level 0 meant | |
+|Change name of level 0 to tutorial| Was confused what level 0 meant | Done |
 |Show Casting power by making the forward direction indicator grow| Control of rod distance was difficult | Done |
 |Casting power up sound effect| Control of rod distance was difficult | Done |
 |Pop up for “keep going to get the best high score”| Player stopped playing once level threshold was reached | Done |
@@ -217,7 +217,7 @@ Then, we put the information in a table and ordered it by priority. We prioritis
 |Make a celebration / credit scene| Felt unexcited when game finished and went back to main menu| |
 |Check hook y pos lines up with water| The hook went underwater and the player thought the fish wasn't biting the hook| Done |
 |Reeling in mechanic| The player felt that the reeling in was jarring and that the game was to hard| |
-|Confirmation to go back to home| The player accidentally clicked the back button instead of pause| |
+|Confirmation to go back to home| The player accidentally clicked the back button instead of pause| Done |
 
 ## Technologies
 Project is created with:
