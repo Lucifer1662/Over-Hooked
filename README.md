@@ -38,7 +38,7 @@ Everyone took part in the user evaluation process, general testing, coming up wi
 This game is a 3rd-person top-down fishing game with a few different levels. The aim of the game is to catch a certain amount of fish within the time limit, and progress through the levels.
 
 ### How to use it
-This game is intended to be played with a keyboard and mouse. Once the main menu appears, click start to play. You can also view the instructions of the game or quit the application.
+This game is intended to be played with a keyboard and mouse. Once the main menu appears, click `Start` to play. You can also view the instructions of the game or quit the application.
 
 <p align="center">
   <img src="Gifs/Main Menu.gif"  width="400" >
@@ -50,17 +50,24 @@ Then, select which level you would like to play. At the start, only one level wi
   <img src="Gifs/Level Selection.gif"  width="400" >
 </p>
 
-When you are in the level, it is time to start catching some fish. Keep an eye on the timer, because if not enough fish are caught by the time the clock reaches zero then you fail the level. The amount of fish that need to be caught can be seen in the top left of the screen (the number on the right), as well as the number of fish you have currently caught (the number on the left).
+When you are in the level, it is time to start catching some fish. Keep an eye on the timer, because if not enough fishing score you get by the time the clock reaches zero then you fail the level. The fishing score can be seen in the top left of the screen (the number on the right), as well as the fishing score you've currently got (the number on the left).
 
 <p align="center">
   <img src="Gifs/In Game.png"  width="400" >
 </p>
 
-In order to catch fish you may want to move the player to get a better look at the water. Use the WASD keys to move and point with the mouse the direction you want to look at. If you are looking in the direction of a fish, then left click, hold, and release to cast the fishing rod. The longer you hold down left click the further out the line will be cast. Once the fish bites (when you hear the sound effect) then click again to pull the fish back in.
-
-If you catch the required number of fish before the timer ends, the level completion menu will pop up. Click the 'next' button to go to the next level, or 'retry' if you want to try and beat your record.
+In order to catch fish you may want to move the player to get a better look at the water. Use the `WASD` keys to move and point with the `Mouse` the direction you want to look at. If you are looking in the direction of a fish, then left click, hold, and release to cast the fishing rod. The longer you hold down left click the further out the line will be cast. Once the fish bites (when you hear the sound effect) then click again to pull the fish back in.
 
 <p align="center">
+  <img src="Gifs/Rod Casting.gif"  width="400" >
+  <img src="Gifs/Catch Fish.gif"  width="400" >
+</p>
+
+* If you didn't catch the required number of fish before the timer ends, the menu will pop up telling you failed to complete the current level and unable to unlock the next level. Feel free to click the `Retry` button to have another shot.
+* Otherwise, the level completion menu will pop up. Click the `Next` button to go to the next level, or `Retry` if you want to try again and beat your record.
+
+<p align="center">
+  <img src="Gifs/Level Failed.png"  width="400" >
   <img src="Gifs/Level Completion.png"  width="400" >
 </p>
 
@@ -85,13 +92,13 @@ The lighting was another important factor that helped to tie objects in the whol
 
 The water, sadly, was one of the exceptions to the low poly aesthetic because although possible to create, it required the geometry shader to look good, which is not always supported (for example on Macs). The water shader will be discussed in detail later. 
 
-The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and  colours. <b>Talk about how these assets make the world feel real and makes it more emmersive<b/>
+The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and  colours. **Talk about how these assets make the world feel real and makes it more emmersive**
 
 We also made our own panels for the UI since we wanted the buttons to have a round shape which feels more natural. We chose to stick with a brown theme for the UI since is is a neutral colour that is found often in nature.
 
-<b>Talk about why we choose a light colour background and dark coloured text, or why this colour is not a common colour blind colour, it does not cause eye fatigue</b>
+**Talk about why we choose a light colour background and dark coloured text, or why this colour is not a common colour blind colour, it does not cause eye fatigue**
 
-The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. <b>talk about how sounds coney actions or events<b/>
+The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. **Talk about how sounds coney actions or events**
 
 ## How the graphics pipeline and camera motion was handled
 
