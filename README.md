@@ -102,7 +102,7 @@ This was create using an automatic camera control method. The method was to have
 
 Our reasoning behind using an automatic control, was to guide the player on what they should be currently looking at, creating more intuitive experience.
 
-### Graphics pipeline????????
+
 
 
 ## How the shaders work
@@ -131,6 +131,9 @@ The height map was an integral part of making this shader work, although it was 
 
 #### Why a Shader?
 The main reason for this to be done on the shader was for efficiency and quality. If dynamic water was to be implemented in a Script it would require us to create/alter a new texture every frame, that would stretch across all the water, this would require a massive texture to not look grainy. Instead, with the use of a shader, this can be done in parallel and in screen space, only requiring the pixels that will be visible in the camera frustum to be computed, resulting in higher performance and better quality.  
+
+#### FlatShaded Water (old)
+
 
 ### Wiggle Shader
 #### Displacement
