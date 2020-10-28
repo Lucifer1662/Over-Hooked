@@ -28,7 +28,11 @@ You can add a link to your Gameplay Video here but you must have already submit 
 | Luke Hawkins    | Fishing, Player and Camera Movement, Shaders, Level Complete UI     |  Done |
 | Jessica Hammer  | Sound Effects, Main Menu, Score and Timer, Island Layout, Particle Effects     |  Done |
 
-Everyone took part in the user evaluation process.
+Everyone took part in the user evaluation process, general testing, coming up with ideas/solutions to problems. During the whole process we used a Trello board to keep track of the things that needed to be done, and who is doing them. Here is a screenshot of the board when we were nearing completion with the game:
+
+<p align="center">
+  <img src="Gifs/Trello.png"  width="600" >
+</p>
 
 ## Explanation of the game
 This game is a 3rd-person top-down fishing game with a few different levels. The aim of the game is to catch a certain amount of fish within the time limit, and progress through the levels.
