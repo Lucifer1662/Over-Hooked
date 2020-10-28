@@ -12,6 +12,7 @@ public class CatchFish : MonoBehaviour
     public delegate void FishBitingHandler(object sender, Action e);
 
     public event FishBitingHandler fishBitingEvent;
+    public bool stopMoving = false;
 
     public void Start()
     {
@@ -60,6 +61,7 @@ public class CatchFish : MonoBehaviour
 
             if (CatchesFish())
             {
+                stopMoving = true;
                 fishBitingEvent(gameObject,
                     () =>
                     {

@@ -199,11 +199,11 @@ GameObject:
   - component: {fileID: 5705111357159361560}
   - component: {fileID: 8372956558979679054}
   - component: {fileID: 4066291128386674412}
-  - component: {fileID: 4139926937408616848}
   - component: {fileID: 2272404184250797406}
   - component: {fileID: 7952117582359852597}
   - component: {fileID: 8697209468562377078}
   - component: {fileID: -5226594125321903617}
+  - component: {fileID: 980826879150322155}
   m_Layer: 9
   m_Name: Hook
   m_TagString: Hook
@@ -319,7 +319,7 @@ MonoBehaviour:
   belowYEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4139926937408616848}
+      - m_Target: {fileID: 0}
         m_MethodName: freezeRigidbody
         m_Mode: 1
         m_Arguments:
@@ -329,7 +329,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 3986238471575060379}
         m_MethodName: SpawnObject
         m_Mode: 1
@@ -343,18 +343,6 @@ MonoBehaviour:
         m_CallState: 2
   y: 0.4
   repeat: 0
---- !u!114 &4139926937408616848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5486918608734313258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc10849a1a84b0e48a20adaa91cfa625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2272404184250797406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +400,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b793a6c47de2f45d78e8ad9b96d579f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 0.01
+  strength: 0.02
+--- !u!114 &980826879150322155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5486918608734313258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d929784488cf4223886f9269a00e940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7930366186590584459
 GameObject:
   m_ObjectHideFlags: 0

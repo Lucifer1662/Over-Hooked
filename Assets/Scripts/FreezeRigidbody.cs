@@ -6,6 +6,7 @@ public class FreezeRigidbody : MonoBehaviour
 {
 
     public void freezeRigidbody() {
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
     }
 }
