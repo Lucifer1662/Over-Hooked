@@ -46,7 +46,9 @@ public class CheckGamePass : MonoBehaviour
                 TitleFadeIn(2);
                 MenuFadeIn(2);
 
-                if (title.GetComponent<Image>().color.a == 255) {
+                if (title.GetComponent<Image>().color.a >= 1) {
+                    // Skip the credit scene when main menu is called from elsewhere
+                    this.GetComponent<SaveGamePass>().SetGamePass(2);
                     this.gameObject.SetActive(false);
                 }
             }
