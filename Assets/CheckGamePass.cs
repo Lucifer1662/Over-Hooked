@@ -33,24 +33,25 @@ public class CheckGamePass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        delay -= Time.deltaTime;
-        // Title fading out
-        if (delay <= 10 && delay > 0) {
-            TitleFadeOut(2);
-		}
-        // Main menu comes back after the credit
-		if (delay <= 0) {
-            credit.SetActive(false);
-            menu.SetActive(true);
-            TitleFadeIn(2);
-            MenuFadeIn(2);
+        if (this.GetComponent<SaveGamePass>().GetGamePass() == 1){
+            delay -= Time.deltaTime;
+            // Title fading out
+            if (delay <= 10 && delay > 0) {
+                TitleFadeOut(2);
+            }
+            // Main menu comes back after the credit
+            if (delay <= 0) {
+                credit.SetActive(false);
+                menu.SetActive(true);
+                TitleFadeIn(2);
+                MenuFadeIn(2);
 
-            if (title.GetComponent<Image>().color.a == 255) {
-                this.gameObject.SetActive(false);
-		    }
-		}
-        
-        
+                if (title.GetComponent<Image>().color.a == 255) {
+                    this.gameObject.SetActive(false);
+                }
+            }
+        }
+ 
     }
 
 
