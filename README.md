@@ -93,9 +93,29 @@ The rest of the main assets (skybox, trees, grass, shells, font) were from the a
 The lighting was another important factor that helped to tie objects in the whole scene together. By setting the ambient light to a light pink colour, this got rid of muddy shadows and gave the screen a slight cool tint. A directional light in each scene then provided some shadows for a bit of extra dimension.
 
 ### UI
-We also made our own panels for the UI since we wanted the buttons to have a round shape which feels more natural. We chose to stick with a brown theme for the UI since is is a neutral colour that is found often in nature. 
+**Colour**  
+We also made our own panels for the UI since we wanted the buttons to have a round shape which feels more natural. We chose to stick with a brown theme for the UI since it is a neutral colour that is also consistent with the environment (island) colour. The colour combination we chose for the UI elements are basically light brown as background and dark brown for the contents and border which avoided any colours may cause eye fatigue (e.g. green & red).
 
-**Talk about why we choose a light colour background and dark coloured text, or why this colour is not a common colour blind colour, it does not cause eye fatigue**
+<p align="center">
+  <img src="Gifs/Main Menu.png"  width="400" >
+  <img src="Gifs/Level Selection.png"  width="400" >
+  <img src="Gifs/Level Completion.png"  width="400" >
+</p>
+
+For the buttons and pop-up windows, we implemented round shape and highlighted colour. Contrast colour was used to indicate the element is interactable, for instance, the text will turn to primrose yellow when the cursor is hovering over the button. The `Timer` would also turn to red when the time reaches ten or less. The red colour is really suitable to attract player's attention and send a warning about time limit.
+
+**Game Design Convention**  
+We followed the conventions of game design for our UI elements. The `Pause` and `Home` buttons were represented with pause icon on player and home icon to avoid any misunderstanding. A few `Fish icons` were embeded near the fishing score to convey clear information to the player as well.
+
+<p align="center">
+  <img src="Gifs/Fish Score.png"  width="200" >
+  <img src="Gifs/Timer.png"  width="200" >
+  <img src="Gifs/Pause and Home.png"  width="200" >
+</p>
+
+**Element Layout**  
+In order to prevent the player from clicking the `Home` button during the game accidently, we implemented a pop-up window asking for the confirmation. This was one of the improvements we made after the user evaluation process because several testers clicked the `Home` button by mistake and the level should start over again. 
+The buttons in the Main Menu and Level Selection were placed at the left side under the game title. The right side was the preview of our island which makes it very clear to the player where the buttons are. Also the camera transition and animations on the background provided an enjoyable and immersive experience. The button layout during the game was at the corner of screen. For example, the `Pause` and `Home` buttons were placed on the upper right corner which is easy to reach.
 
 ### Sound
 The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. **Talk about how sounds convey actions or events**
