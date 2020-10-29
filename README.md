@@ -120,6 +120,8 @@ The other main particle effect is the +1 particle effect (it can do other number
   <img src="Gifs/+1.gif"  height="200" >
 </p>
 
+This particle effect has a separate camera that is looking at a text object somewhere in the scene, and then a ```RenderTexture``` is made from that, and that is what the particle effect uses for its material. This way the text is still a text object, NOT a photo, and so its text can be edited to any number we like. The purpose of this particle effect is to clearly indicate that the player's score increases, and with different amounts for different fish.
+
 ## How the graphics pipeline and camera motion was handled
 
 ### Camera motion
