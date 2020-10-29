@@ -99,10 +99,13 @@ We also made our own panels for the UI since we wanted the buttons to have a rou
 <p align="center">
   <img src="Gifs/Main Menu.png"  width="400" >
   <img src="Gifs/Level Selection.png"  width="400" >
-  <img src="Gifs/Level Completion.png"  width="400" >
 </p>
 
 For the buttons and pop-up windows, we implemented round shape and highlighted colour. Contrast colour was used to indicate the element is interactable, for instance, the text will turn to primrose yellow when the cursor is hovering over the button. The `Timer` would also turn to red when the time reaches ten or less. The red colour is really suitable to attract player's attention and send a warning about time limit.
+
+<p align="center">
+  <img src="Gifs/Level Completion.png"  width="400" >
+</p>
 
 **Game Design Convention**  
 We followed the conventions of game design for our UI elements. The `Pause` and `Home` buttons were represented with pause icon on player and home icon to avoid any misunderstanding. A few `Fish icons` were embeded near the fishing score to convey clear information to the player as well.
