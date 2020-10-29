@@ -20,7 +20,7 @@ public class CheckGamePass : MonoBehaviour
     void Start()
     {
         // Set the status of game pass, for testing only
-        this.GetComponent<SaveGamePass>().SetGamePass(testSwitch);
+        //this.GetComponent<SaveGamePass>().SetGamePass(testSwitch);
 
         if (this.GetComponent<SaveGamePass>().GetGamePass() == 1){
             Debug.Log(this.GetComponent<SaveGamePass>().GetGamePass());
