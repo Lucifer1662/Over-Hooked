@@ -29,6 +29,9 @@ public class ReelBack : MonoBehaviour
             Mathf.Clamp(transform.position.y, 0.2f, 10f);
             rb.AddForce((player.transform.position - transform.position).normalized * -d);
         }
+        if (GetComponent<CatchFish>().stopMoving){
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
 
         var pos = transform.position;
         pos.y = 0.4f;
