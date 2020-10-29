@@ -23,8 +23,8 @@ You can add a link to your Gameplay Video here but you must have already submit 
 
 | Name | Tasks | State |
 | :---         |     :---:      |          ---: |
-| Xiaochen Hou    | Fish Movement      |  Done |
-| Jackson Hu    | Fish Spawning, Level Selection Menu, Pause Button, Gameplay Video      |  Done |
+| Xiaochen Hou    | Fish Movements and Hook Detection, Hook Operations, Player Spawning     |  Done |
+| Jackson Hu    | Fish Spawning, Level Selection Menu, Pause Button, Gameplay Video     |  Done |
 | Luke Hawkins    | Fishing, Player and Camera Movement, Shaders, Level Complete UI     |  Done |
 | Jessica Hammer  | Sound Effects, Main Menu, Score and Timer, Island Layout, Particle Effects     |  Done |
 
