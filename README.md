@@ -74,31 +74,51 @@ In order to catch fish you may want to move the player to get a better look at t
 ## How objects and entities were modelled
 Overall, our vision for the aesthetic of the game was a simple cartoony style. We decided to stick to a low poly style as best as we could, since it has the potential to look really good and it is not as taxing on the computer (due to smaller vertex counts). Furthermore, if certain assets we wanted were not available online then modelling our own (with unfortunately limited artistic skills) was an option because of the simplicity of the style. 
 
+### Models
 The following objects were modelled (by Jess) from scratch in Blender: The fish, the player, the fishing rod, and the island shape.
 
 <p align="center">
-  <img src="Gifs/Player.png"  width="300" >
-</p>
-<p align="center">
-  <img src="Gifs/Fish.png"  width="300" >
-</p>
-<p align="center">
-  <img src="Gifs/Island.png"  width="300" >
+  <img src="Gifs/Player.png"  height="200" >
+  <img src="Gifs/Fish.png"  height="200" >
+  <img src="Gifs/Island.png"  height="200" >
 </p>
 
 The modelling process for these objects began with creating primitive meshes in blender such as cylinders, planes and spheres. They were then sculpted into the desired shape using Blender's intuitive sculpting tools. The final trick to making the models low-poly was to apply the 'Decimate' modifier. This removes some amount of vertices and condenses the mesh into simpler shapes. The models were then exported out of blender as a .fbx and imported into Unity. Since .fbx files contain material data as well, the colours of the models could then be adjusted in Unity as desired by modifying the material colour for each mesh. For example, the fish adjust their colour at runtime to create some variation in the models. We decided to go with very natural colours like brown, green and blue because not only is our game set outdoors in nature, but those colours are also calming to look at. 
 
-The lighting was another important factor that helped to tie objects in the whole scene together. By setting the ambient light to a light pink colour, this got rid of muddy shadows and gave the screen a slight cool tint. A directional light in each scene helped provide some soft shadows for a bit of extra detail.
-
 The water, sadly, was one of the exceptions to the low poly aesthetic because although possible to create, it required the geometry shader to look good, which is not always supported (for example on Macs). The water shader will be discussed in detail later. 
 
-The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and  colours. **Talk about how these assets make the world feel real and makes it more emmersive**
+The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and colours. **Talk about how these assets make the world feel real and makes it more emmersive**
 
-We also made our own panels for the UI since we wanted the buttons to have a round shape which feels more natural. We chose to stick with a brown theme for the UI since is is a neutral colour that is found often in nature.
+### Lighting
+The lighting was another important factor that helped to tie objects in the whole scene together. By setting the ambient light to a light pink colour, this got rid of muddy shadows and gave the screen a slight cool tint. A directional light in each scene then provided some shadows for a bit of extra dimension.
+
+### UI
+We also made our own panels for the UI since we wanted the buttons to have a round shape which feels more natural. We chose to stick with a brown theme for the UI since is is a neutral colour that is found often in nature. 
 
 **Talk about why we choose a light colour background and dark coloured text, or why this colour is not a common colour blind colour, it does not cause eye fatigue**
 
-The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. **Talk about how sounds coney actions or events**
+### Sound
+The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. **Talk about how sounds convey actions or events**
+
+### Particle effects
+ The first particle effects we added are bubbles and splashes. These both help to really convey the feeling of water.
+
+<p align="center">
+  <img src="Gifs/Splash.gif"  height="200" >
+  <img src="Gifs/Bubbles.gif"  height="200" >
+</p>
+
+The bubbles shoot particles behind the fish to give them some extra life and also so it is slightly easier to see them (for example on the night level). The direction of the particles changes automatically with the fishes direction since the particle system is a child of the fish it is attached to. The particles have negative gravity so they slowly rise upwards and they are set to generate in world space so it leaves more of a trail.
+
+The splash is used when the hook lands in the water, and when the fish bites, giving clear visual feedback to the player that an interaction has happened between these objects. An accompanying splash sound is also played to complete the effect. The splash was made by setting the particle system to generating particles in a cone shape while being affected by gravity, then tweaking the values until it looked right. We also feel it is appropriate to mention how and why we spawned in the splash effect the way we did. We could have attached the particle effect as a child to the hook object, and then controlled the play and pause from a script, but this turned out to have multiple problems associated with it. This is because the hook gameobject gets deleted when the player reels in, but the splash should still continue on. So instead the splash particle effect (and sound) was made in to a prefab, and when the hook hits the water it spawns in this prefab game object in the position of the hook but NOT as a child. The particle effect and sound are set to play on start. Then the prefab has a ```Delay``` and ```DestroyGameobject``` script attached so it can self-delete when it is done playing the particle effect. This way, not only are the issues from before solved but it is also incredibly versatile and re-useable. This technique of spawning in prefabs and having them self-delete was also used for some other object such as the +1 particle effect.
+
+We used the same sprite for both effects: the default square sprite. This was chosen because the hard edges matched with our style the best (rather than a soft circle). In both effects the opacity was faded out nearing the end of their lifespan so there was a smooth transition for when the effect dissapeared.
+
+The other main particle effect is the +1 particle effect (it can do other numbers too!).
+
+<p align="center">
+  <img src="Gifs/+1.gif"  height="200" >
+</p>
 
 ## How the graphics pipeline and camera motion was handled
 
