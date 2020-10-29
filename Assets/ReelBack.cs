@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ReelBack : MonoBehaviour
 {
+    public float scrollFactor = 1f;
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class ReelBack : MonoBehaviour
     void FixedUpdate()
     {
 
-        var d = Input.GetAxis("Mouse ScrollWheel") * 5.0f;
+        var d = Input.GetAxis("Mouse ScrollWheel") * scrollFactor;
         rb.drag = 1;
         //scroll down
         if (d < 0f)
