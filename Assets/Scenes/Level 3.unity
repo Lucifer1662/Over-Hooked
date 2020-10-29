@@ -1216,12 +1216,44 @@ PrefabInstance:
     m_TransformParent: {fileID: 1016705009}
     m_Modifications:
     - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
+      propertyPath: isAbove.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
       propertyPath: score
       value: 
       objectReference: {fileID: 1933972139}
     - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
       propertyPath: threshhold
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
+      propertyPath: isAbove.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
+      propertyPath: isAbove.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
+      propertyPath: isAbove.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
+      propertyPath: isAbove.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1056456346}
+    - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
+      propertyPath: isAbove.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetGamePass
+      objectReference: {fileID: 0}
+    - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
+      propertyPath: isAbove.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 586724368, guid: 973a3a60d09e9f44b827845e41775c9e, type: 3}
+      propertyPath: isAbove.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1243298785878400571, guid: 973a3a60d09e9f44b827845e41775c9e,
         type: 3}
@@ -1486,6 +1518,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1056456346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056456339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf20568303b4494982345db01dcfb37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1137922640
