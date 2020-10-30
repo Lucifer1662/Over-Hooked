@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Group 54
   productName: Overhooked
-  defaultCursor: {fileID: 2800000, guid: ac31d00584d5147d3b5c59f28a2ccb1e, type: 3}
+  defaultCursor: {fileID: 2800000, guid: f03b68163413f43d1a6d2d76013c0d96, type: 3}
   cursorHotspot: {x: 1, y: 1}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -126,7 +126,6 @@ PlayerSettings:
     Others: 1
   bundleVersion: 1.0
   preloadedAssets:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

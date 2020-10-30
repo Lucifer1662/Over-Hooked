@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3958396328534594599}
   m_Layer: 0
   m_Name: DontSwimText
-  m_TagString: Untagged
+  m_TagString: DontSwim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4244527117669257282}
-  m_Text: I FORGOT I CAN'T SWIM
+  m_Text: "FINAL WARNING! \nSTOP GOING INTO THE SEA!"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

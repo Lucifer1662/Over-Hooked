@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CheckGamePass : MonoBehaviour
 {
-    private float delay = 18;
+    private float delay = 15;
     public GameObject credit;
     public GameObject title;
     public GameObject menu;
@@ -14,10 +14,22 @@ public class CheckGamePass : MonoBehaviour
     public GameObject InstructionButton;
     public GameObject quitButton;
     private List<GameObject> buttons;
+    public int testSwitch;
     
     // Start is called before the first frame update
     void Start()
     {
+        // Test switch code for testing purpose only
+        // Put in 0 to turn credit off
+        // Put in 1 to turn it on
+        // Otherwise won't affect the regular process
+        if (testSwitch == 0){
+            this.GetComponent<SaveGamePass>().SetGamePass(0);
+        }
+        else if (testSwitch == 1){
+            this.GetComponent<SaveGamePass>().SetGamePass(1);
+        }
+
         buttons = new List<GameObject>{startButton, InstructionButton, quitButton};
 
         // Check if the player has passed all levels
@@ -36,7 +48,7 @@ public class CheckGamePass : MonoBehaviour
         if (this.GetComponent<SaveGamePass>().GetGamePass() == 1){
             delay -= Time.deltaTime;
             // Title fading out
-            if (delay <= 10 && delay > 0) {
+            if (delay <= 8 && delay > 0) {
                 TitleFadeOut(2);
             }
             // Main menu comes back after the credit

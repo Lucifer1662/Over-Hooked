@@ -2690,6 +2690,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3128265831110764441, guid: c945641a67acadb409ebf7f1e67c823f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.16412354
+      objectReference: {fileID: 0}
     - target: {fileID: 3477078091514843622, guid: c945641a67acadb409ebf7f1e67c823f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -3703,7 +3708,8 @@ PrefabInstance:
     - target: {fileID: 5413566375055543933, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
       propertyPath: m_Text
-      value: Be careful of falling off the iceberg!
+      value: Welcome to the world of ice and snow! Watch your steps when moving,
+        trust me, it does not feel good in that freezing water!
       objectReference: {fileID: 0}
     - target: {fileID: 5413566375055543933, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}

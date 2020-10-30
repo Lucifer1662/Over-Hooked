@@ -108,7 +108,7 @@ For the buttons and pop-up windows, we implemented round shape and highlighted c
 </p>
 
 **Game Design Convention**  
-We followed the conventions of game design for our UI elements. The `Pause` and `Home` buttons were represented with pause icon on player and home icon to avoid any misunderstanding. A few `Fish icons` were embeded near the fishing score to convey clear information to the player as well.
+We followed the conventions of game design for our UI elements. The `Pause` and `Home` buttons were represented with pause icon on music player and home icon to avoid any misunderstanding. A few `Fish icons` were embeded near the fishing score to convey clear information to the player as well.
 
 <p align="center">
   <img src="Gifs/Fish Score.png"  width="200" >
@@ -210,6 +210,8 @@ The use of this shader in this scene does 2 important things. 1 it brings the fi
 #### Observational Method: Cooperative Evaluation
 We chose Cooperative Evaluation for our Observational Method. We figure that this technique would have advantanges over Think Aloud as this gave us the ability to clarify and have a dialog about the game, it was also easier to use which we needed as a lot of our testers were over Zoom.  We used a mix of recording data styles; we recorded the screen and audio and used paper and pencil for notes if there was time.
 
+7 participants:
+
 The testing procedure went as follows: 
 1. Send them a copy of the game (if online)
 2. Started a zoom session and recorded the zoom session (if online)
@@ -221,6 +223,8 @@ The testing procedure went as follows:
 
 #### Querying Method: Interviews
 We chose Interviews for our Querying Method. This we chose over Questionnaires as it required less work for the tester and we did not need any other documents sent to them. This
+
+6 particpants
 
 The testing procedure went as follows: 
 1. Send them a copy of the game (if online)

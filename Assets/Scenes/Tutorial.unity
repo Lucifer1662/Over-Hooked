@@ -338,11 +338,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You can also reel in slowly by scrolling down.
+  m_Text: 'You can also reel in slowly by [scrolling down].
 
 
-    You can catch a fish
-    by left clicking when it bites.'
+    You can catch a
+    fish by [left clicking] when it bites.'
 --- !u!222 &303197842
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1798,6 +1798,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3128265831110764441, guid: c945641a67acadb409ebf7f1e67c823f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.16412354
+      objectReference: {fileID: 0}
     - target: {fileID: 3477078091514843622, guid: c945641a67acadb409ebf7f1e67c823f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1877,6 +1882,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394038353052689061, guid: c945641a67acadb409ebf7f1e67c823f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 28.69751
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c945641a67acadb409ebf7f1e67c823f, type: 3}
@@ -2936,7 +2946,7 @@ PrefabInstance:
     - target: {fileID: 2461178447711595263, guid: 34dc7cd99ccbb4c779e3f7c97c73e8aa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.6000061
+      value: 0.5999756
       objectReference: {fileID: 0}
     - target: {fileID: 2461178447711595263, guid: 34dc7cd99ccbb4c779e3f7c97c73e8aa,
         type: 3}
@@ -3023,12 +3033,34 @@ PrefabInstance:
       propertyPath: onStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 880752549}
+    - target: {fileID: 1149572525154061236, guid: 69a9b10cd99c3304f9bc99b3d281f223,
+        type: 3}
+      propertyPath: m_Text
+      value: Move the mouse to look around
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305701979286542712, guid: 69a9b10cd99c3304f9bc99b3d281f223,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Great!
+
+        Now it''s time for fishing!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305701979286542712, guid: 69a9b10cd99c3304f9bc99b3d281f223,
+        type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305701979286542712, guid: 69a9b10cd99c3304f9bc99b3d281f223,
+        type: 3}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1947609226715283779, guid: 69a9b10cd99c3304f9bc99b3d281f223,
         type: 3}
       propertyPath: m_Text
-      value: 'You see this fish?
+      value: 'You see the fish?
 
-        Lets go catch it or any other fish!'
+        Let''s go catch one, any one you like!'
       objectReference: {fileID: 0}
     - target: {fileID: 2303472200350607682, guid: 69a9b10cd99c3304f9bc99b3d281f223,
         type: 3}
@@ -3064,6 +3096,25 @@ PrefabInstance:
         type: 3}
       propertyPath: userPressedButton.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065659066862083597, guid: 69a9b10cd99c3304f9bc99b3d281f223,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065659066862083597, guid: 69a9b10cd99c3304f9bc99b3d281f223,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Press [WASD] to move around
+
+        [W], up
+
+        [S], down
+
+        [A],
+        left
+
+        [D], right'
       objectReference: {fileID: 0}
     - target: {fileID: 3895667236991373965, guid: 69a9b10cd99c3304f9bc99b3d281f223,
         type: 3}
@@ -3245,6 +3296,25 @@ PrefabInstance:
       propertyPath: onStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 880752549}
+    - target: {fileID: 7329614791950900761, guid: 69a9b10cd99c3304f9bc99b3d281f223,
+        type: 3}
+      propertyPath: m_Text
+      value: Pro tip! You can control your hook mid air by moving your [mouse] in
+        that diretion
+      objectReference: {fileID: 0}
+    - target: {fileID: 7998482180431660176, guid: 69a9b10cd99c3304f9bc99b3d281f223,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Look, the score at the top-left has increased
+
+        Catch more fish
+        to increase your score and reach the goal!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804216476081420569, guid: 69a9b10cd99c3304f9bc99b3d281f223,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4877893185596062270, guid: 69a9b10cd99c3304f9bc99b3d281f223, type: 3}
     - {fileID: 352130491, guid: 69a9b10cd99c3304f9bc99b3d281f223, type: 3}
