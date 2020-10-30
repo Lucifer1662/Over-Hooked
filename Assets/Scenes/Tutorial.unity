@@ -3023,6 +3023,13 @@ PrefabInstance:
       propertyPath: onStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 880752549}
+    - target: {fileID: 1947609226715283779, guid: 69a9b10cd99c3304f9bc99b3d281f223,
+        type: 3}
+      propertyPath: m_Text
+      value: 'You see this fish?
+
+        Lets go catch it or any other fish!'
+      objectReference: {fileID: 0}
     - target: {fileID: 2303472200350607682, guid: 69a9b10cd99c3304f9bc99b3d281f223,
         type: 3}
       propertyPath: delayInterval
