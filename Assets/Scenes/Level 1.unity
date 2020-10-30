@@ -2951,10 +2951,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5413566375055543933, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
+        type: 3}
+      propertyPath: m_Text
+      value: Sunshine, beach, abundant fish! Enjoy your fishing here but avoid going
+        too deep in the sea. Challenge yourself to catch as many fish as possible.
+        Good Luck!
+      objectReference: {fileID: 0}
     - target: {fileID: 5413566375055543934, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.5
+      value: -240
       objectReference: {fileID: 0}
     - target: {fileID: 5413566375055543934, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
@@ -2989,7 +2996,7 @@ PrefabInstance:
     - target: {fileID: 5413566375055543935, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5552767427836693520, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
@@ -3169,7 +3176,7 @@ PrefabInstance:
     - target: {fileID: 5789759156664794815, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.5
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5789759156664794815, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
@@ -3189,7 +3196,7 @@ PrefabInstance:
     - target: {fileID: 5789759156664794815, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.6659546
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5789759156664794815, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
