@@ -16,7 +16,7 @@ public class ReelBack : MonoBehaviour
     void FixedUpdate()
     {
 
-        var d = Input.mouseScrollDelta.y * scrollFactor;
+        var d = Input.GetAxis("Mouse ScrollWheel") * scrollFactor;
         rb.drag = 1;
         //scroll down
         if (d < 0f)
@@ -27,7 +27,7 @@ public class ReelBack : MonoBehaviour
             rb.constraints = RigidbodyConstraints.None;
             rb.constraints = RigidbodyConstraints.FreezeRotation;
             Mathf.Clamp(transform.position.y, 0.2f, 10f);
-            rb.AddForce((player.transform.position - transform.position).normalized * -d);
+            rb.AddForce((player.transform.position - transform.position).normalized * - Mathf.Clamp(d,-1,100));
         }
         if (GetComponent<CatchFish>().stopMoving){
             rb.constraints = RigidbodyConstraints.FreezeAll;
