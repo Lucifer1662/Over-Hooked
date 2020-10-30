@@ -16,7 +16,7 @@ public class ReelBack : MonoBehaviour
     void FixedUpdate()
     {
 
-        var d = Input.GetAxis("Mouse ScrollWheel") * scrollFactor;
+        var d = Input.mouseScrollDelta.y * scrollFactor;
         rb.drag = 1;
         //scroll down
         if (d < 0f)
