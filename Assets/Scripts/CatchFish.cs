@@ -31,8 +31,7 @@ public class CatchFish : MonoBehaviour
     }
 
 
-
-    public void OnTriggerLeave(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.tag == "Fish")
         {
@@ -52,7 +51,7 @@ public class CatchFish : MonoBehaviour
     {
         if (other.tag == "Fish")
         {
-			valueOfFish.pointToAdd = valueOfFish.GetValue (other.gameObject.name);
+			
 
 			// only spawn chomp sound in if there are no other chomp sounds
 			if (GameObject.FindGameObjectsWithTag ("Chomp").Length == 0) {
@@ -66,6 +65,7 @@ public class CatchFish : MonoBehaviour
                     () =>
                     {
                         other.gameObject.transform.SetParent(targetParent);
+                        valueOfFish.pointToAdd = valueOfFish.GetValue(other.gameObject.name);
                     }
                    );
                 //make you a child of the hook

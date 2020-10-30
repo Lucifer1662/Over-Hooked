@@ -22,6 +22,7 @@ public class PlayerScore : MonoBehaviour
 
 	public void AddPoint() {
 		int point = valueOfFish.pointToAdd;
+		valueOfFish.pointToAdd = 0;
 
         score += point;
 		if (scoreDisplay)
