@@ -102,9 +102,18 @@ public class MoveBackToStart : MonoBehaviour
     }
 
     void createPopUp(){
-        var before = Instantiate(cantSwimText, transform.position, Quaternion.Euler(90, 0, 0));
-        var after = before.GetComponent<TextMesh>();
-        after.text = text;
+        var preText = GameObject.FindWithTag("DontSwim");
+        if (preText == null){
+            popUp();
+        }else{
+            Destroy(preText);
+            popUp();
+        } 
+    }
+
+    void popUp(){
+        cantSwimText.GetComponent<TextMesh>().text = text;
+        Instantiate(cantSwimText, transform.position, Quaternion.Euler(90, 0, 0));
     }
 
     void gameOver(){

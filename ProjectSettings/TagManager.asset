@@ -8,6 +8,7 @@ TagManager:
   - Hook
   - Chomp
   - Timer
+  - DontSwim
   layers:
   - Default
   - TransparentFX

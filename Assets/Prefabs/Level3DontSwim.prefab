@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6050062904780881567}
   m_Layer: 0
   m_Name: Level3DontSwim
-  m_TagString: Untagged
+  m_TagString: DontSwim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
