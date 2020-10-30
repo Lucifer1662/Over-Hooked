@@ -6,11 +6,17 @@ using UnityEngine.UI;
 public class fade : MonoBehaviour
 {
     void Start(){
-        StartCoroutine(fadeInAndOut(gameObject, false, 5f));
+        StartCoroutine(fadeInAndOut(gameObject, false, 2f));
     }
 
     IEnumerator fadeInAndOut(GameObject objectToFade, bool fadeIn, float duration) {
     float counter = 0f;
+    
+    if (objectToFade.GetComponent<TextMesh>().text == "OKAY...YOU WIN\nI CAN'T STAND IT ANY MORE!\nJUST GO AND LEAVE ME ALONE!\nBUT DON'T TELL THOSE\n[CARELESS DEVELOPERS]\nI LEFT A BACKDOOR!"){
+        yield return new WaitForSeconds(6);
+    }else{
+        yield return new WaitForSeconds(3);
+    }
 
     //Set Values depending on if fadeIn or fadeOut
     float a, b;
