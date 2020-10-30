@@ -1966,14 +1966,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1297967386}
-  - component: {fileID: 1297967387}
+  - component: {fileID: 1297967388}
   m_Layer: 5
   m_Name: Credit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1297967386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1990,30 +1990,23 @@ RectTransform:
   m_Father: {fileID: 200887986}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.0078125, y: 0.16644444}
+  m_AnchorMin: {x: 0.0078125, y: 0}
   m_AnchorMax: {x: 0.5552917, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1092}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1297967387
-Animator:
-  serializedVersion: 3
+--- !u!114 &1297967388
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297967385}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eaa4c052eb97343d9b5e794b860fe981, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5fb193dab1ba494892b051a46672439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1315638689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,7 +2039,7 @@ RectTransform:
   m_Father: {fileID: 1820674808}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5314463, y: 0.11000001}
+  m_AnchorMin: {x: 0.5314463, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -2075,12 +2068,12 @@ MonoBehaviour:
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 0
+    m_MinSize: 3
     m_MaxSize: 80
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
   m_Text: 'Luke Hawkins
@@ -2659,7 +2652,7 @@ RectTransform:
   m_Father: {fileID: 1820674808}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.11000001}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.47800002, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -2693,7 +2686,7 @@ MonoBehaviour:
     m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
   m_Text: 'Chief Programmer
@@ -3048,7 +3041,7 @@ RectTransform:
   m_Father: {fileID: 1297967386}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.23200001}
   m_AnchorMax: {x: 1, y: 0.81589293}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -3504,7 +3497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24821739, y: 0.26080993}
   m_AnchorMax: {x: 0.6814348, y: 0.6976484}
-  m_AnchoredPosition: {x: -1.3001404, y: 0.7374878}
+  m_AnchoredPosition: {x: -1.3000793, y: 0.7374878}
   m_SizeDelta: {x: -5.829468, y: -0.5249939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1931488157

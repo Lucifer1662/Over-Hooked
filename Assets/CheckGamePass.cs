@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CheckGamePass : MonoBehaviour
 {
-    private float delay = 18;
+    private float delay = 15;
     public GameObject credit;
     public GameObject title;
     public GameObject menu;
@@ -48,7 +48,7 @@ public class CheckGamePass : MonoBehaviour
         if (this.GetComponent<SaveGamePass>().GetGamePass() == 1){
             delay -= Time.deltaTime;
             // Title fading out
-            if (delay <= 10 && delay > 0) {
+            if (delay <= 8 && delay > 0) {
                 TitleFadeOut(2);
             }
             // Main menu comes back after the credit
