@@ -108,7 +108,7 @@ For the buttons and pop-up windows, we implemented round shape and highlighted c
 </p>
 
 **Game Design Convention**  
-We followed the conventions of game design for our UI elements. The `Pause` and `Home` buttons were represented with pause icon on player and home icon to avoid any misunderstanding. A few `Fish icons` were embeded near the fishing score to convey clear information to the player as well.
+We followed the conventions of game design for our UI elements. The `Pause` and `Home` buttons were represented with pause icon on music player and home icon to avoid any misunderstanding. A few `Fish icons` were embeded near the fishing score to convey clear information to the player as well.
 
 <p align="center">
   <img src="Gifs/Fish Score.png"  width="200" >
