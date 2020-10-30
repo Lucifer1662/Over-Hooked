@@ -437,6 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d929784488cf4223886f9269a00e940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollFactor: 1
 --- !u!114 &-1538564697213754892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,9 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1690786e06518564faea921616055fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 1024
+  mask: 0
 --- !u!1 &7930366186590584459
 GameObject:
   m_ObjectHideFlags: 0
