@@ -7,7 +7,7 @@ public class MoveBackToStart : MonoBehaviour
     public GameObject cantSwimText;
     private Vector3 position;
     private Quaternion rotation;
-    private int deadCount = 7;
+    private int deadCount = 0;
     private string text = "placeHolder";
     private GameObject player;
     private void Start()
