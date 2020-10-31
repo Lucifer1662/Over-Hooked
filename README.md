@@ -71,6 +71,21 @@ In order to catch fish you may want to move the player to get a better look at t
   <img src="Gifs/Level Completion.png"  width="400" >
 </p>
 
+### Unique hook operations to enhance the gameing experience
+
+**Hook moves in the air**
+This functionality is specifically design for this game, the hook could change its direction according to the position of your mouse, it makes the game looks more natural since you could adjust the direction in the real world. Meanwhile, moving the hook in the air let the player get involved at all time, not just "waiting" after casting the hook, besides, it largely lower the difficulty of the game, and the design greatly increases the fault tolerance rate of aiming, makes it suitable for everyone to play.
+
+The Delta value between the position of the mouse in the world and the hook desides which direction should the hook moves, accleration also invloved to make the game closer to the reality.
+
+(GIFs here)
+
+**Reeling back**
+This desgin is particularly added according to the feedbacks and evaluation of testings nearly at the end of the game development, it makes the flexibility of the game to another level, despite you could move the hook in the air, you can also reel it back after it falls into water. We choose to use the `scroll wheel` to achieve this function, rather than keys or buttons, keep the players' attention on the mouse, also mimic the reeling movement in the real world, the stepless adjustment using the `scroll wheel` further improves the player's control and interaction with the game.
+
+(GIFs here)
+
+
 ## How objects and entities were modelled
 Overall, our vision for the aesthetic of the game was a simple cartoony style. We decided to stick to a low poly style as best as we could, since it has the potential to look really good and it is not as taxing on the computer (due to smaller vertex counts). Furthermore, if certain assets we wanted were not available online then modelling our own (with unfortunately limited artistic skills) was an option because of the simplicity of the style. 
 
