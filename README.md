@@ -185,7 +185,12 @@ The height map was an integral part of making this shader work, although it was 
 The main reason for this to be done on the shader was for efficiency and quality. If dynamic water was to be implemented in a Script it would require us to create/alter a new texture every frame, that would stretch across all the water, this would require a massive texture to not look grainy. Instead, with the use of a shader, this can be done in parallel and in screen space, only requiring the pixels that will be visible in the camera frustum to be computed, resulting in higher performance and better quality.  
 
 #### FlatShaded Water (old)
+This shader was originally designed to produce water similar to the current version with the main difference of having sharp edges. However since we were displacing the vertices in the vertex shader, the normals needed to be recaculated, this had to be done in the ```Geometry Shader```, as flat shaded normals need all three vertices that make up a triangle to have the same normal vector, as well as triangles not sharing vertices. The problem we ran into was not all GPU's support the geometry shader. This forced us to make a fallback shader for this instance. After discussion we decided to just use the fallback shader and not have to worry about two different versions of water being present. 
 
+<p align="center">
+  <img src="Gifs/Old Water.gif" width="400" >
+</p>
+Note that since this shader was created early at the beginning of the project and was abandoned, it does not have the polish of waves or correct colouring.
 
 ### Wiggle Shader
 #### Displacement
