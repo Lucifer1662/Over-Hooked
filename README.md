@@ -102,14 +102,14 @@ The modelling process for these objects began with creating primitive meshes in 
 
 The water, sadly, was one of the exceptions to the low poly aesthetic because although possible to create, it required the geometry shader to look good, which is not always supported (for example on Macs). The water shader will be discussed in detail later. 
 
-The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and colours. **Talk about how these assets make the world feel real and makes it more emmersive**
+The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and colours. These assets help to construct a little world for the player to play the levels in, making it feel more real and immersive.
 
 ### Lighting
 The lighting was another important factor that helped to tie objects in the whole scene together. By setting the ambient light to a light pink colour, this got rid of muddy shadows and gave the screen a slight cool tint. A directional light in each scene then provided some shadows for a bit of extra dimension.
 
 ### UI
 **Colour**  
-We also made our own panels for the UI since we wanted the buttons to have a round shape which feels more natural. We chose to stick with a brown theme for the UI since it is a neutral colour that is also consistent with the environment (island) colour. The colour combination we chose for the UI elements are basically light brown as background and dark brown for the contents and border which avoided any colours may cause eye fatigue (e.g. green & red).
+We also made our own panels for the UI since we wanted the buttons to have a round shape which feels more natural. We chose to stick with a brown theme for the UI since it is a neutral colour that is harmonious with the environment (island) colour. The colour combination we chose for the UI elements are basically light brown as backing and dark brown for the contents and border which avoided any colours may cause eye fatigue (e.g. green & red).
 
 <p align="center">
   <img src="Gifs/Main Menu.png"  width="400" >
@@ -136,7 +136,7 @@ In order to prevent the player from clicking the `Home` button during the game a
 The buttons in the Main Menu and Level Selection were placed at the left side under the game title. The right side was the preview of our island which makes it very clear to the player where the buttons are. Also the camera transition and animations on the background provided an enjoyable and immersive experience. The button layout during the game was at the corner of screen. For example, the `Pause` and `Home` buttons were placed on the upper right corner which is easy to reach.
 
 ### Sound
-The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. **Talk about how sounds convey actions or events**
+The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. A few notable sound effects include splashes, which help to convey clear interactions with the water, UI sound effects, which give clear response to the player that an interaction has happened between them and a button, and timer sound effects, which draw the players attention to the timer when it is low/ended. Other sounds effects like the waves in the background just add ambience to create a more immersive world.
 
 ### Particle effects
  The first particle effects we added are bubbles and splashes. These both help to really convey the feeling of water.
@@ -168,8 +168,6 @@ The camera movement was then smoothed when the target moved or switched from one
 This was create using an automatic camera control method. The method was to have a target Transform, eg the Player, and the initial offset from that transform and the camera was used as the offset to then aim for. Then the camera position is Lerped towards target position (transforms position + offset) creating a smooth movement.
 
 Our reasoning behind using an automatic control, was to guide the player on what they should be currently looking at, creating more intuitive experience.
-
-
 
 
 ## How the shaders work
@@ -242,7 +240,7 @@ The testing procedure went as follows:
 7. The recording and notes were uploaded to shared google drive.
 
 #### Querying Method: Interviews
-We chose Interviews for our Querying Method. This we chose over Questionnaires as it required less work for the tester and we did not need any other documents sent to them. This
+We chose Interviews for our Querying Method. This we chose over Questionnaires as it required less work for the tester and we did not need any other documents sent to them.
 
 6 particpants: 
 
