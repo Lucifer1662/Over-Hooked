@@ -205,7 +205,7 @@ The use of this shader in this scene does 2 important things. 1 it brings the fi
   <img src="Gifs/TreeWiggle.gif"  width="400" >
 </p>
 
-## Querying and evaluation
+## Querying and evaluation (Demographics required)
 ### Querying and observational methods
 #### Observational Method: Cooperative Evaluation
 We chose Cooperative Evaluation for our Observational Method. We figure that this technique would have advantanges over Think Aloud as this gave us the ability to clarify and have a dialog about the game, it was also easier to use which we needed as a lot of our testers were over Zoom.  We used a mix of recording data styles; we recorded the screen and audio and used paper and pencil for notes if there was time.
@@ -224,7 +224,7 @@ The testing procedure went as follows:
 #### Querying Method: Interviews
 We chose Interviews for our Querying Method. This we chose over Questionnaires as it required less work for the tester and we did not need any other documents sent to them. This
 
-6 particpants
+6 particpants: 
 
 The testing procedure went as follows: 
 1. Send them a copy of the game (if online)
@@ -235,8 +235,6 @@ The testing procedure went as follows:
 8. The conversation was allowed to stray from the questions, and we noted these down as well.
 9. After the tester left, the recording was watched again and anything of interest was noted.
 8. The recording and notes were uploaded to shared google drive.
-
-Description of the querying and observational methods used, including: description of the participants (how many, demographics), description of the methodology (which techniques did you use, what did you have participants do, how did you record the data), and feedback gathered.
 
 ### Documentation of changes
 Thankfully though, it seemed like in general our users knew what to do and the game was entertaining for them. But there were a lot of issues that came up. So firstly, we collated everyone's results using a Google Jamboard. 
@@ -249,7 +247,7 @@ Then, we put the information in a table and ordered it by priority. We prioritis
 
 | Solution | Problem | State |
 | :---         |     :---:      |          ---: |
-|Balance levels by changing number of fish, time limit, distance to fish| Could not complete level 2 but finished level 3 in first go | |
+|Balance levels by changing number of fish, time limit, distance to fish| Could not complete level 2 but finished level 3 in first go | Done |
 |Fix fish spinning| Fish would spin around when biting hook | Done |
 |Night level intro text| The user got confused why they could not see the fish | Done |
 |Iceberg level intro text| The user got confused when they feel off iceberg| Done |
@@ -259,13 +257,13 @@ Then, we put the information in a table and ordered it by priority. We prioritis
 |Show Casting power by making the forward direction indicator grow| Control of rod distance was difficult | Done |
 |Casting power up sound effect| Control of rod distance was difficult | Done |
 |Pop up for “keep going to get the best high score”| Player stopped playing once level threshold was reached | Done |
-|Goto to deep in water, respawn| Player was confused why they couldn't walk in water and then confused about that they could fall off iceberg| |
-|Pop up saying you can’t swim when fall in water| Player confused what happened when they fell off iceberg| |
+|Goto to deep in water, respawn| Player was confused why they couldn't walk in water and then confused about that they could fall off iceberg| Done |
+|Pop up saying you can’t swim when fall in water| Player confused what happened when they fell off iceberg| Done |
 |Make pause and button more consistent | The button did not change colour when hovered over and user didn't think they were buttons| Done |
 |Return button as home icon| Was confused at what the home button did from the icon| Done |
-|Make a celebration / credit scene| Felt unexcited when game finished and went back to main menu| |
+|Make a celebration / credit scene| Felt unexcited when game finished and went back to main menu| Done |
 |Check hook y pos lines up with water| The hook went underwater and the player thought the fish wasn't biting the hook| Done |
-|Reeling in mechanic| The player felt that the reeling in was jarring and that the game was to hard| |
+|Reeling in mechanic| The player felt that the reeling in was jarring and that the game was to hard| Done |
 |Confirmation to go back to home| The player accidentally clicked the back button instead of pause| Done |
 
 ## Technologies
