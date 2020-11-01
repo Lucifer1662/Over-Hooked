@@ -66,9 +66,9 @@ In order to catch fish you may want to move the player to get a better look at t
 There are three different kinds of fish in the game and each is represented with different colour. Different kinds of fish were allocated with different amount of socre. Small fish is worth 1 score, medium fish is worth 2 scores and large fish is worth 3 scores. So try you best to catch larger fish because they worth more scores!
 
 <p align="center">
-  <img src="Gifs/Small Fish.gif"  width="400" >
-  <img src="Gifs/Medium Fish.gif"  width="400" >
-  <img src="Gifs/Large Fish.gif"  width="400" >
+  <img src="Gifs/Small Fish.gif"  width="300" >
+  <img src="Gifs/Medium Fish.gif"  width="300" >
+  <img src="Gifs/Large Fish.gif"  width="300" >
 </p>
 
 * If you didn't catch the required number of fish before the timer ends, the menu will pop up telling you that you failed to complete the current level and you can't unlock the next level. Feel free to click the `Retry` button to have another shot.
