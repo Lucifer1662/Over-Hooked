@@ -1018,7 +1018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &485020660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1690,7 +1690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1044633314
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1973,7 +1973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1297967386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2599,7 +2599,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: "Chief\xBAProgrammer\xBA\xBA\xBA\xBA\xBALuke\xBAHawkins\nArt\xBADirector\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBAJessica\xBAHammer\nDemo\xBADirector\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBARenwei\xBA(Jackson)\xBAHu\nHook\xBAAdministrator\xBA\xBA\xBAXiaochen\xBA(Hans)\xBAHou\n\nSpecial\xBAThanks\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBAAll\xBAGame\xBATesters\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBALecturer\xBA&\xBATutors"
+  m_Text: "\xBA\xBA\xBA\xBA\xBAChief\xBAProgrammer\xBA\xBA\xBALuke\xBAHawkins\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBAArt\xBADirector\xBA\xBA\xBAJessica\xBAHammer\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBADemo\xBADirector\xBA\xBA\xBARenwei\xBA(Jackson)\xBAHu\n\xBA\xBA\xBAHook\xBAAdministrator\xBA\xBA\xBAXiaochen\xBA(Hans)\xBAHou\n\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBASpecial\xBAThanks\xBA\xBA\xBAAll\xBAGame\xBATesters\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBALecturer\xBA&\xBATutors"
 --- !u!222 &1557598651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2749,7 +2749,7 @@ MonoBehaviour:
   startButton: {fileID: 1012222251}
   InstructionButton: {fileID: 908120919}
   quitButton: {fileID: 2133564602}
-  testSwitch: 3
+  testSwitch: 2
 --- !u!114 &1664657640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3394,7 +3394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24821739, y: 0.26080993}
   m_AnchorMax: {x: 0.6814348, y: 0.6976484}
-  m_AnchoredPosition: {x: -1.3000946, y: 0.7374878}
+  m_AnchoredPosition: {x: -1.3000793, y: 0.7374878}
   m_SizeDelta: {x: -5.829468, y: -0.5249939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1931488157
