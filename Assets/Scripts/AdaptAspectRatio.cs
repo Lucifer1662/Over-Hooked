@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AdaptAspectRatio : MonoBehaviour
 {
-    private float transitionTime = 25;
+    public float transitionTime = 25;
     private Vector3 startPos;
     private Vector3 endPos;
     private float timer = 0;

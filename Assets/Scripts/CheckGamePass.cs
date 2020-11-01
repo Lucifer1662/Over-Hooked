@@ -14,6 +14,8 @@ public class CheckGamePass : MonoBehaviour
     public GameObject InstructionButton;
     public GameObject quitButton;
     private List<GameObject> buttons;
+
+    public GameObject skipButton;
     public int testSwitch;
     
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class CheckGamePass : MonoBehaviour
         // Check if the player has passed all levels
         if (this.GetComponent<SaveGamePass>().GetGamePass() == 1){
             credit.SetActive(true);
+            skipButton.SetActive(true);
             SetMenuTransparent();
             menu.SetActive(false);
         }else{
@@ -51,16 +54,22 @@ public class CheckGamePass : MonoBehaviour
             if (delay <= 8 && delay > 0) {
                 TitleFadeOut(2);
             }
+            // Skip button fading in
+            if (delay <= 6.5 && delay > 0) {
+                ButtonFadeIn(skipButton, 5);
+            }
             // Main menu comes back after the credit
             if (delay <= 0) {
                 credit.SetActive(false);
                 menu.SetActive(true);
                 TitleFadeIn(2);
                 MenuFadeIn(2);
+                ButtonFadeOut(skipButton, 5);
 
                 if (title.GetComponent<Image>().color.a >= 1) {
                     // Skip the credit scene when main menu is called from elsewhere
                     this.GetComponent<SaveGamePass>().SetGamePass(2);
+                    skipButton.SetActive(false);
                     this.gameObject.SetActive(false);
                 }
             }
@@ -68,6 +77,11 @@ public class CheckGamePass : MonoBehaviour
  
     }
 
+    // Skip the credit
+    public void Skip(){
+        credit.GetComponent<AdaptAspectRatio>().transitionTime = 1;
+        delay = 0;
+    }
 
 
 
@@ -91,25 +105,52 @@ public class CheckGamePass : MonoBehaviour
 
         foreach (GameObject item in buttons)
         {
-            Image buttonImage = item.GetComponent<Image>();
-            Text buttonText = item.transform.GetChild (0).gameObject.GetComponent<Text>();
-
-            buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, 0);
-            buttonText.color = new Color(buttonText.color.r, buttonText.color.g, buttonText.color.b, 0);
+            SetButtonTransparent(item);
         }
     }
 
-    // Fade in transition for each button
+    // Set single button transparent
+    private void SetButtonTransparent(GameObject button){
+
+        Image buttonImage = button.GetComponent<Image>();
+        Text buttonText = button.transform.GetChild (0).gameObject.GetComponent<Text>();
+
+        buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, 0);
+        buttonText.color = new Color(buttonText.color.r, buttonText.color.g, buttonText.color.b, 0);
+        
+    }
+
+    // Fade in transition for main menu button
     // Applys for both image and text under each button
     private void MenuFadeIn(float speed){
 
         foreach (GameObject item in buttons)
         {
-            Image buttonImage = item.GetComponent<Image>();
-            Text buttonText = item.transform.GetChild (0).gameObject.GetComponent<Text>();
+            ButtonFadeIn(item, speed);
+        }
+    }
 
+    // Fade in transition for a single button
+    private void ButtonFadeIn(GameObject button, float speed){
+        Image buttonImage = button.GetComponent<Image>();
+        Text buttonText = button.transform.GetChild (0).gameObject.GetComponent<Text>();
+
+        if (buttonImage.color.a < 1){
             buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, buttonImage.color.a + (speed * Time.deltaTime));
             buttonText.color = new Color(buttonText.color.r, buttonText.color.g, buttonText.color.b, buttonText.color.a + (speed * Time.deltaTime));
         }
     }
+
+    // Fade out transition for a single button
+    private void ButtonFadeOut(GameObject button, float speed){
+        Image buttonImage = button.GetComponent<Image>();
+        Text buttonText = button.transform.GetChild (0).gameObject.GetComponent<Text>();
+
+        if (buttonImage.color.a > 0){
+            buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, buttonImage.color.a - (speed * Time.deltaTime));
+            buttonText.color = new Color(buttonText.color.r, buttonText.color.g, buttonText.color.b, buttonText.color.a - (speed * Time.deltaTime));
+        }
+    }
+
+    
 }
