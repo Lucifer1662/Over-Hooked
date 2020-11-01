@@ -98,6 +98,9 @@ public class MoveBackToStart : MonoBehaviour
                 player.GetComponent<PlayerMovement>().enabled = false;
                 StartCoroutine(delayEnd());
             }
+        }else if(cantSwimText.name == "TutorialText"){
+            text = "PLEASE STAY ON THE ISLAND\nI CANNOT SWIM";
+            createPopUp();
         }
     }
 
