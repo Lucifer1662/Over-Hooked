@@ -74,17 +74,20 @@ In order to catch fish you may want to move the player to get a better look at t
 ### Unique hook operations to enhance the gaming experience
 
 **Hook moves in the air**
-This functionality is specifically designed for this game; you can fine-tune the hooks' direction (when you cast) according to the position of your mouse. It makes the game feel smooth and more fun since you can now make your casts much more accurate. Meanwhile, moving the hook in the air let the player get involved at all time, not just "waiting" after casting the hook. It largely lowers the difficulty of the game, and the design greatly increases the fault tolerance rate of aiming, making it suitable for everyone to play and less frustrating.
+This functionality is specifically designed for this game, you can fine-tune the hook's direction (when you cast) according to the position of your `mouse`. It makes the game feel smooth and more fun since you can now make your casts much more accurate. Meanwhile, moving the hook in the air let the player get involved at all time, not just "waiting" after casting the hook. It largely lowers the difficulty of the game, and the design greatly increases the fault tolerance rate of aiming, making it suitable for everyone to play and less frustrating.
 
 The Delta value between the position of the mouse in the world and the hook desides which direction should the hook moves. Accleration is also invloved to make the movement feel more realistic and dynamic.
 
-(GIFs here)
+<p align="center">
+  <img src="Gifs/moveinair.gif"  width="400" >
+</p>
 
 **Reeling back**
 This desgin is particularly added according to the feedbacks and evaluation of testings nearly at the end of the game development, it makes the flexibility of the game to another level, despite you could move the hook in the air, you can also reel it back after it falls into water. We choose to use the `scroll wheel` to achieve this function, rather than keys or buttons, keep the players' attention on the mouse, also mimic the reeling movement in the real world, the stepless adjustment using the `scroll wheel` further improves the player's control and interaction with the game.
 
-(GIFs here)
-
+<p align="center">
+  <img src="Gifs/reelback.gif"  width="400" >
+</p>
 
 ## How objects and entities were modelled
 Overall, our vision for the aesthetic of the game was a simple cartoony style. We decided to stick to a low poly style as best as we could, since it has the potential to look really good and it is not as taxing on the computer (due to smaller vertex counts). Furthermore, if certain assets we wanted were not available online then modelling our own (with unfortunately limited artistic skills) was an option because of the simplicity of the style. 
