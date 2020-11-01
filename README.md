@@ -237,11 +237,19 @@ The use of this shader in this scene does 2 important things. 1 it brings the fi
 </p>
 
 ## Querying and evaluation (Demographics required)
+### Participant Demographics
+A total of **13** people participated voluntarily in either Cooperative Evaluation or Interview as part of the User Evaluation with beta version of our game. The gender ratio of our participants is relatively balanced with 6 participants (55%) identified as female and 5 (45%) participants identified as male. The average age of our participants is **20.1** (*Min*: 18, *Max*: 21). We also chose out participants from various cultural backgrounds and with different gaming habits. Participants were asked briefly about their gaming habits and we categorised them roughly into two categories in terms of whether they usually play games or not. As the graph showed below, 40% of them play games while 60% do not play games. The purpose of seeking high variety in our participants is to have a better understanding of our game no matter their gender or whether they usually play games.
+
+<p align="center">
+  <img src="Gifs/Gender Ratio.png"  width="300" >
+  <img src="Gifs/Gamer Proportion.png"  width="300" >
+</p>
+
 ### Querying and observational methods
 #### Observational Method: Cooperative Evaluation
 We chose Cooperative Evaluation for our Observational Method. We figure that this technique would have advantanges over Think Aloud as this gave us the ability to clarify and have a dialog about the game, it was also easier to use which we needed as a lot of our testers were over Zoom.  We used a mix of recording data styles; we recorded the screen and audio and used paper and pencil for notes if there was time.
 
-7 participants:
+**8** participants:
 
 The testing procedure went as follows: 
 1. Send them a copy of the game (if online)
@@ -252,10 +260,10 @@ The testing procedure went as follows:
 6. If the user was unable to complete a level, we showed them to the "Unlock All" button. This turned out to be a huge success, as some players could not complete level 2 but could complete level 3.
 7. The recording and notes were uploaded to shared google drive.
 
-#### Querying Method: Interviews
+#### Querying Method: Interview
 We chose Interviews for our Querying Method. This we chose over Questionnaires as it required less work for the tester and we did not need any other documents sent to them.
 
-6 particpants: 
+**5** particpants (excluding those have done Cooperative Evaluation): 
 
 The testing procedure went as follows: 
 1. Send them a copy of the game (if online)
