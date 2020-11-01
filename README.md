@@ -63,7 +63,7 @@ In order to catch fish you may want to move the player to get a better look at t
   <img src="Gifs/Catch Fish.gif"  width="400" >
 </p>
 
-* If you didn't catch the required number of fish before the timer ends, the menu will pop up telling you failed to complete the current level and unable to unlock the next level. Feel free to click the `Retry` button to have another shot.
+* If you didn't catch the required number of fish before the timer ends, the menu will pop up telling you that you failed to complete the current level and you can't unlock the next level. Feel free to click the `Retry` button to have another shot.
 * Otherwise, the level completion menu will pop up. Click the `Next` button to go to the next level, or `Retry` if you want to try again and beat your record.
 
 <p align="center">
@@ -71,12 +71,12 @@ In order to catch fish you may want to move the player to get a better look at t
   <img src="Gifs/Level Completion.png"  width="400" >
 </p>
 
-### Unique hook operations to enhance the gameing experience
+### Unique hook operations to enhance the gaming experience
 
 **Hook moves in the air**
-This functionality is specifically design for this game, the hook could change its direction according to the position of your mouse, it makes the game looks more natural since you could adjust the direction in the real world. Meanwhile, moving the hook in the air let the player get involved at all time, not just "waiting" after casting the hook, besides, it largely lower the difficulty of the game, and the design greatly increases the fault tolerance rate of aiming, makes it suitable for everyone to play.
+This functionality is specifically designed for this game; you can fine-tune the hooks' direction (when you cast) according to the position of your mouse. It makes the game feel smooth and more fun since you can now make your casts much more accurate. Meanwhile, moving the hook in the air let the player get involved at all time, not just "waiting" after casting the hook. It largely lowers the difficulty of the game, and the design greatly increases the fault tolerance rate of aiming, making it suitable for everyone to play and less frustrating.
 
-The Delta value between the position of the mouse in the world and the hook desides which direction should the hook moves, accleration also invloved to make the game closer to the reality.
+The Delta value between the position of the mouse in the world and the hook desides which direction should the hook moves. Accleration is also invloved to make the movement feel more realistic and dynamic.
 
 (GIFs here)
 
@@ -139,26 +139,26 @@ The buttons in the Main Menu and Level Selection were placed at the left side un
 The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. A few notable sound effects include splashes, which help to convey clear interactions with the water, UI sound effects, which give clear response to the player that an interaction has happened between them and a button, and timer sound effects, which draw the players attention to the timer when it is low/ended. Other sounds effects like the waves in the background just add ambience to create a more immersive world.
 
 ### Particle effects
- The first particle effects we added are bubbles and splashes. These both help to really convey the feeling of water.
+ The first particle effects we added are bubbles and splashes. These both help to really convey the feeling of water. 
 
 <p align="center">
   <img src="Gifs/Splash.gif"  height="200" >
   <img src="Gifs/Bubbles.gif"  height="200" >
 </p>
 
-The bubbles shoot particles behind the fish to give them some extra life and also so it is slightly easier to see them (for example on the night level). The direction of the particles changes automatically with the fishes direction since the particle system is a child of the fish it is attached to. The particles have negative gravity so they slowly rise upwards and they are set to generate in world space so it leaves more of a trail.
+The bubbles shoot particles behind the fish to give them some extra life and also so it is slightly easier to see them (for example on the night level). The direction of the particles changes automatically with the fishes direction since the particle system is a child of the fish it is attached to. The particles have negative gravity so they slowly rise upwards and they are set to generate in world space so it leaves more of a trail. 
 
-The splash is used when the hook lands in the water, and when the fish bites, giving clear visual feedback to the player that an interaction has happened between these objects. An accompanying splash sound is also played to complete the effect. The splash was made by setting the particle system to generating particles in a cone shape while being affected by gravity, then tweaking the values until it looked right. We also feel it is appropriate to mention how and why we spawned in the splash effect the way we did. We could have attached the particle effect as a child to the hook object, and then controlled the play and pause from a script, but this turned out to have multiple problems associated with it. This is because the hook gameobject gets deleted when the player reels in, but the splash should still continue on. So instead the splash particle effect (and sound) was made in to a prefab, and when the hook hits the water it spawns in this prefab game object in the position of the hook but NOT as a child. The particle effect and sound are set to play on start. Then the prefab has a ```Delay``` and ```DestroyGameobject``` script attached so it can self-delete when it is done playing the particle effect. This way, not only are the issues from before solved but it is also incredibly versatile and re-useable. This technique of spawning in prefabs and having them self-delete was also used for some other object such as the +1 particle effect.
+The splash is used when the hook lands in the water, and when the fish bites, giving clear visual feedback to the player that an interaction has happened between these objects. An accompanying splash sound is also played to complete the effect. The splash was made by setting the particle system to generating particles in a cone shape while being affected by gravity, then tweaking the values until it looked right. We also feel it is appropriate to mention how and why we spawned in the splash effect the way we did. We could have attached the particle effect as a child to the hook object, and then controlled the play and pause from a script, but this turned out to have multiple problems associated with it. This is because the hook gameobject gets deleted when the player reels in, but the splash should still continue on. So instead the splash particle effect (and sound) was made in to a prefab, and when the hook hits the water it spawns in this prefab game object in the position of the hook but NOT as a child. The particle effect and sound are set to play on start. Then the prefab has a ```Delay``` and ```DestroyGameobject``` script attached so it can self-delete when it is done playing the particle effect. This way, not only are the issues from before solved but it is also incredibly versatile and re-useable. This technique of spawning in prefabs and having them self-delete was also used for some other objects such as the +1 particle effect.
 
-We used the same sprite for both effects: the default square sprite. This was chosen because the hard edges matched with our style the best (rather than a soft circle). In both effects the opacity was faded out nearing the end of their lifespan so there was a smooth transition for when the effect dissapeared.
+We used the same sprite for both effects: the default square sprite. This was chosen because the hard edges matched with our style the best (rather than a soft circle). In both effects the opacity was faded out nearing the end of their lifespan so there was a smooth transition for when the effect dissapeared. A particle effect was necessary for this effect rather than animated gameobjects because it is much more efficient for the computer, and the physics simulations it provides makes it easy for us to implement.
 
-The other main particle effect is the +1 particle effect (it can do other numbers too!).
+The other main particle effect is the +1 particle effect (it can do any number, that is just a name for convenience).
 
 <p align="center">
   <img src="Gifs/+1.gif"  height="200" >
 </p>
 
-This particle effect has a separate camera that is looking at a text object somewhere in the scene, and then a ```RenderTexture``` is made from that, and that is what the particle effect uses for its material. This way the text is still a text object, NOT a photo, and so its text can be edited to any number we like. The purpose of this particle effect is to clearly indicate that the player's score increases, and with different amounts for different fish.
+This particle effect has a separate camera that is looking at a text object somewhere in the scene, and then a ```RenderTexture``` is made from that, and that is what the particle effect uses for its material. This way the text is still a text object, NOT a photo, and so its text can be edited to any number we like. The purpose of this particle effect is to clearly indicate that the player's score increases, and with different amounts for different fish. Why a particle effect? Well, it was much easier to get the effect looking right by playing with the particle effect values rather than creating an animation, and also a particle effect provides slight variation each time it runs, preventing the animation from being stale. 
 
 ## How the graphics pipeline and camera motion was handled
 
