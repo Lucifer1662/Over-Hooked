@@ -25,8 +25,8 @@ Click the link to watch Gameplay Demo of [**Overhooked**](https://youtu.be/bX3Bj
 
 | Name | Tasks | State |
 | :---         |     :---:      |          ---: |
-| Xiaochen Hou    | Fish Movements and Hook Detection, Hook Operations, Player Spawning     |  Done |
-| Jackson Hu    | Fish Spawning, Level Selection Menu, Pause Button, Gameplay Video     |  Done |
+| Xiaochen (Hans) Hou    | Fish Movements and Hook Detection, Hook Operations, Player Spawning     |  Done |
+| Renwei (Jackson) Hu    | Fish Spawning, Level Selection Menu, Pause Button, Gameplay Video     |  Done |
 | Luke Hawkins    | Fishing, Player and Camera Movement, Shaders, Level Complete UI     |  Done |
 | Jessica Hammer  | Sound Effects, Main Menu, Score and Timer, Island Layout, Particle Effects     |  Done |
 
