@@ -204,7 +204,7 @@ The height map was an integral part of making this shader work, although it was 
 #### Why a Shader?
 The main reason for this to be done on the shader was for efficiency and quality. If dynamic water was to be implemented in a Script it would require us to create/alter a new texture every frame, that would stretch across all the water, this would require a massive texture to not look grainy. Instead, with the use of a shader, this can be done in parallel and in screen space, only requiring the pixels that will be visible in the camera frustum to be computed, resulting in higher performance and better quality.  
 
-#### FlatShaded Water (old)
+### FlatShaded Water (old)
 This shader was originally designed to produce water similar to the current version with the main difference of having sharp edges. However since we were displacing the vertices in the vertex shader, the normals needed to be recaculated, this had to be done in the ```Geometry Shader```, as flat shaded normals need all three vertices that make up a triangle to have the same normal vector, as well as triangles not sharing vertices. The problem we ran into was not all GPU's support the geometry shader. This forced us to make a fallback shader for this instance. After discussion we decided to just use the fallback shader and not have to worry about two different versions of water being present. 
 
 <p align="center">
@@ -255,7 +255,7 @@ The testing procedure went as follows:
 7. The recording and notes were uploaded to shared google drive.
 
 #### Querying Method: Interview
-We chose Interviews for our Querying Method. This we chosen over Questionnaires as it required less work for the tester and we did not need any other documents sent to them. It also allows for a more open-ended discussion.
+We chose Interviews for our Querying Method. This we chosen over Questionnaires as it required less work for the tester and we did not need any other documents sent to them. It also allows for a more open-ended discussion. This Interview method counteracts the disadvantage posed in Cooperative Evaluation of which the user changes behaviour from the act of being watched, as we left the room and recorded their screen only, minimising this change in behaviour. 
 
 **5** particpants (excluding those have done Cooperative Evaluation): 
 
@@ -268,6 +268,8 @@ The testing procedure went as follows:
 8. The conversation was allowed to stray from the questions, and we noted these down as well.
 9. After the tester left, the recording was watched again and anything of interest was noted.
 8. The recording and notes were uploaded to shared google drive.
+
+
 
 ### Documentation of changes
 Thankfully though, it seemed like in general our users knew what to do and the game was entertaining for them. But there were a lot of issues that came up. So firstly, we collated everyone's results using a Google Jamboard. 
