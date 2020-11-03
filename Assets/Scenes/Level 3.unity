@@ -835,6 +835,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
       value: set_enabled
       objectReference: {fileID: 0}
+    - target: {fileID: 3792525235173094059, guid: c945641a67acadb409ebf7f1e67c823f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4960269482820342712, guid: c945641a67acadb409ebf7f1e67c823f,
         type: 3}
       propertyPath: currentScoreDisplay
@@ -3077,7 +3082,7 @@ RectTransform:
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.23817964, y: 0.12111905}
-  m_AnchorMax: {x: 0.76100004, y: 0.75}
+  m_AnchorMax: {x: 0.76100004, y: 0.79700005}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
