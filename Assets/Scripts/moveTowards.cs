@@ -55,9 +55,9 @@ public class moveTowards : MonoBehaviour
             rotationFactor = 5f;
         }
         else if (this.name == "FishMedium(Clone)"){
-            rotationFactor = 4f;
+            rotationFactor = 5f;
         }else {
-            rotationFactor = 3f;
+            rotationFactor = 5f;
         }
         
         if ((newPosition - transform.position) != Vector3.zero){
