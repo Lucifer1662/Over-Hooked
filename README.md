@@ -40,7 +40,7 @@ This game is intended to be played with a keyboard and mouse. Once the main menu
   <img src="Gifs/Main Menu.gif"  width="400" >
 </p>
 
-Then, select which level you would like to play. At the start, only one level will be avaliable to select. The other levels become unlocked as you progress through the game.
+Then, select which level you would like to play. At the start, only one level will be available to select. The other levels become unlocked as you progress through the game.
 
 <p align="center">
   <img src="Gifs/Level Selection.gif"  width="400" >
@@ -80,14 +80,14 @@ There are three different kinds of fish in the game and each is represented with
 **Hook moves in the air**
 You can fine-tune the hook's direction (when you cast) according to the position of your `mouse`. It is not essential to complete the game, but if used it makes the game feel smooth and more fun since you can now make your casts much more accurate. Meanwhile, moving the hook in the air let the player get involved at all time, not just "waiting" after casting the hook. It largely lowers the difficulty of the game, and the design greatly increases the fault tolerance rate of aiming, making it suitable for everyone to play and less frustrating.
 
-The Delta value between the position of the mouse in the world and the hook desides which direction should the hook moves. Accleration is also invloved to make the movement feel more realistic and dynamic.
+The Delta value between the position of the mouse in the world and the hook decides which direction should the hook moves. Acceleration is also involved to make the movement feel more realistic and dynamic.
 
 <p align="center">
   <img src="Gifs/moveinair.gif"  width="400" >
 </p>
 
 **Reeling back**
-This gameplay mechanic was added according to the feedback we got from testing, nearing the end of the game development. It provides another way to easily catch fish more accurately. Despite the fact that you could move the hook in the air, now you can also reel it back after it falls into water. This mechanic is really useful when you accidentally cast too far and just want to move the hook backwards a bit, without re-casting. We choose to use the `scroll wheel` to achieve this function, rather than keys or buttons, keep the players' attention on the mouse, also mimic the reeling movement in the real world, the stepless adjustment using the `scroll wheel` further improves the player's control and interaction with the game.
+This gameplay mechanic was added according to the feedback we got from testing, nearing the end of the game development. It provides another way to easily catch fish more accurately. Despite the fact that you could move the hook in the air, now you can also reel it back after it falls into water. This mechanic is really useful when you accidentally cast too far and just want to move the hook backwards a bit, without re-casting. We choose to use the `scroll wheel` to achieve this function, rather than keys or buttons, keep the players' attention on the mouse, also mimic the reeling movement in the real world, the step-less adjustment using the `scroll wheel` further improves the player's control and interaction with the game.
 
 <p align="center">
   <img src="Gifs/reelback.gif"  width="400" >
@@ -123,14 +123,14 @@ We also made our own panels for the UI since we wanted the buttons to have a rou
   <img src="Gifs/Level Selection.png"  width="400" >
 </p>
 
-For the buttons and pop-up windows, we implemented round shape and highlighted colour. Contrast colour was used to indicate the element is interactable, for instance, the text will turn to primrose yellow when the cursor is hovering over the button. The `Timer` would also turn to red when the time reaches ten or less. The red colour is really suitable to attract player's attention and send a warning about time limit.
+For the buttons and pop-up windows, we implemented round shape and highlighted colour. Contrast colour was used to indicate the element is interactive, for instance, the text will turn to primrose yellow when the cursor is hovering over the button. The `Timer` would also turn to red when the time reaches ten or less. The red colour is really suitable to attract player's attention and send a warning about time limit.
 
 <p align="center">
   <img src="Gifs/Level Completion.png"  width="400" >
 </p>
 
 **Game Design Convention**  
-We followed the conventions of game design for our UI elements. The `Pause` and `Home` buttons were represented with pause icon on music player and home icon to avoid any misunderstanding. A few `Fish icons` were embeded near the fishing score to convey clear information to the player as well.
+We followed the conventions of game design for our UI elements. The `Pause` and `Home` buttons were represented with pause icon on music player and home icon to avoid any misunderstanding. A few `Fish icons` were embedded near the fishing score to convey clear information to the player as well.
 
 <p align="center">
   <img src="Gifs/Fish Score.png"  width="200" >
@@ -139,11 +139,11 @@ We followed the conventions of game design for our UI elements. The `Pause` and 
 </p>
 
 **Element Layout**  
-In order to prevent the player from clicking the `Home` button during the game accidently, we implemented a pop-up window asking for the confirmation. This was one of the improvements we made after the user evaluation process because several testers clicked the `Home` button by mistake and the level should start over again. 
+In order to prevent the player from clicking the `Home` button during the game accidentally, we implemented a pop-up window asking for the confirmation. This was one of the improvements we made after the user evaluation process because several testers clicked the `Home` button by mistake and the level should start over again. 
 The buttons in the Main Menu and Level Selection were placed at the left side under the game title. The right side was the preview of our island which makes it very clear to the player where the buttons are. Also the camera transition and animations on the background provided an enjoyable and immersive experience. The button layout during the game was at the corner of screen. For example, the `Pause` and `Home` buttons were placed on the upper right corner which is easy to reach.
 
 ### Sound
-The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding synthy electronic sounds. A few notable sound effects include splashes, which help to convey clear interactions with the water, UI sound effects, which give clear response to the player that an interaction has happened between them and a button, and timer sound effects, which draw the players attention to the timer when it is low/ended. Other sounds effects like the waves in the background just add ambience to create a more immersive world.
+The sound effects/music were mostly sourced from the internet (see references) with post-processing adjustments made in Logic Pro. It was often the case where sound clips had to be spliced, faded out or combined to produce the final result. Reverb, spread and equalisation was also sometimes added. A few sound effects (fish collection sound, level completion sound) were made from scratch. We tried to keep the sound effects sounding natural, avoiding "synthy" electronic sounds. A few notable sound effects include splashes, which help to convey clear interactions with the water, UI sound effects, which give clear response to the player that an interaction has happened between them and a button, and timer sound effects, which draw the players attention to the timer when it is low/ended. Other sounds effects like the waves in the background just add ambience to create a more immersive world.
 
 ### Particle effects
  The first particle effects we added are bubbles and splashes. These both help to really convey the feeling of water. 
@@ -157,7 +157,7 @@ The bubbles shoot particles behind the fish to give them some extra life and als
 
 The splash is used when the hook lands in the water, and when the fish bites, giving clear visual feedback to the player that an interaction has happened between these objects. An accompanying splash sound is also played to complete the effect. The splash was made by setting the particle system to generating particles in a cone shape while being affected by gravity, then tweaking the values until it looked right. We also feel it is appropriate to mention how and why we spawned in the splash effect the way we did. We could have attached the particle effect as a child to the hook object, and then controlled the play and pause from a script, but this turned out to have multiple problems associated with it. This is because the hook gameobject gets deleted when the player reels in, but the splash should still continue on. So instead the splash particle effect (and sound) was made in to a prefab, and when the hook hits the water it spawns in this prefab game object in the position of the hook but NOT as a child. The particle effect and sound are set to play on start. Then the prefab has a ```Delay``` and ```DestroyGameobject``` script attached so it can self-delete when it is done playing the particle effect. This way, not only are the issues from before solved but it is also incredibly versatile and re-useable. This technique of spawning in prefabs and having them self-delete was also used for some other objects such as the +1 particle effect.
 
-We used the same sprite for both effects: the default square sprite. This was chosen because the hard edges matched with our style the best (rather than a soft circle). In both effects the opacity was faded out nearing the end of their lifespan so there was a smooth transition for when the effect dissapeared. A particle effect was necessary for this effect rather than animated gameobjects because it is much more efficient for the computer, and the physics simulations it provides makes it easy for us to implement.
+We used the same sprite for both effects: the default square sprite. This was chosen because the hard edges matched with our style the best (rather than a soft circle). In both effects the opacity was faded out nearing the end of their lifespan so there was a smooth transition for when the effect disappeared. A particle effect was necessary for this effect rather than animated gameobjects because it is much more efficient for the computer, and the physics simulations it provides makes it easy for us to implement.
 
 The other main particle effect is the +1 particle effect (it can do any number, that is just a name for convenience).
 
@@ -205,7 +205,7 @@ The height map was an integral part of making this shader work, although it was 
 The main reason for this to be done on the shader was for efficiency and quality. If dynamic water was to be implemented in a Script it would require us to create/alter a new texture every frame, that would stretch across all the water, this would require a massive texture to not look grainy. Instead, with the use of a shader, this can be done in parallel and in screen space, only requiring the pixels that will be visible in the camera frustum to be computed, resulting in higher performance and better quality.  
 
 ### FlatShaded Water (old)
-This shader was originally designed to produce water similar to the current version with the main difference of having sharp edges. However since we were displacing the vertices in the vertex shader, the normals needed to be recaculated, this had to be done in the ```Geometry Shader```, as flat shaded normals need all three vertices that make up a triangle to have the same normal vector, as well as triangles not sharing vertices. The problem we ran into was not all GPU's support the geometry shader. This forced us to make a fallback shader for this instance. After discussion we decided to just use the fallback shader and not have to worry about two different versions of water being present. 
+This shader was originally designed to produce water similar to the current version with the main difference of having sharp edges. However since we were displacing the vertices in the vertex shader, the normals needed to be recalculated, this had to be done in the ```Geometry Shader```, as flat shaded normals need all three vertices that make up a triangle to have the same normal vector, as well as triangles not sharing vertices. The problem we ran into was not all GPU's support the geometry shader. This forced us to make a fallback shader for this instance. After discussion we decided to just use the fallback shader and not have to worry about two different versions of water being present. 
 
 <p align="center">
   <img src="Gifs/Old Water.gif" width="400" >
@@ -241,7 +241,7 @@ A total of **13** people participated voluntarily in either Cooperative Evaluati
 
 ### Querying and observational methods
 #### Observational Method: Cooperative Evaluation
-We chose Cooperative Evaluation for our Observational Method. We figured that this technique would have some advantanges over Think Aloud as this gave us the ability to clarify things and talk to the players throughout, it was also easier to use which we needed as a lot of our testers were over Zoom.  We used a mix of recording data styles; we recorded the screen and audio and used paper and pencil for notes if there was time.
+We chose Cooperative Evaluation for our Observational Method. We figured that this technique would have some advantages over Think Aloud as this gave us the ability to clarify things and talk to the players throughout, it was also easier to use which we needed as a lot of our testers were over Zoom.  We used a mix of recording data styles; we recorded the screen and audio and used paper and pencil for notes if there was time.
 
 **8** participants:
 
@@ -254,28 +254,39 @@ The testing procedure went as follows:
 6. If the user was unable to complete a level, we showed them to the "Unlock All" button. This turned out to be a huge success, as some players could not complete level 2 but could complete level 3.
 7. The recording and notes were uploaded to shared google drive.
 
+Some examples of notes can be found in /Observable
+
+
 #### Querying Method: Interview
 We chose Interviews for our Querying Method. This we chosen over Questionnaires as it required less work for the tester and we did not need any other documents sent to them. It also allows for a more open-ended discussion. This Interview method counteracts the disadvantage posed in Cooperative Evaluation of which the user changes behaviour from the act of being watched, as we left the room and recorded their screen only, minimising this change in behaviour. 
 
-**5** particpants (excluding those have done Cooperative Evaluation): 
+**5** participants (excluding those have done Cooperative Evaluation): 
 
 The testing procedure went as follows: 
 1. Send them a copy of the game (if online)
 2. Started a zoom session and recorded the zoom session (if online)
 3. They started to play the game, while we didn't watch.
-6. If we came back and saw they were stuck we told them about the "Unlock All" button.
-7. Afterwards we used predetermined questions to ask them and noted down their answers
-8. The conversation was allowed to stray from the questions, and we noted these down as well.
-9. After the tester left, the recording was watched again and anything of interest was noted.
+4. If we came back and saw they were stuck we told them about the "Unlock All" button.
+5. Afterwards we used predetermined questions to ask them and noted down their answers
+6. The conversation was allowed to stray from the questions, and we noted these down as well.
+7. After the tester left, the recording was watched again and anything of interest was noted.
 8. The recording and notes were uploaded to shared google drive.
 
+Some examples of notes can be found in /Query
+
+#### Helpful testing mechanics
+These were handy when the users were unable to complete certain levels and otherwise would never have reached level 3 and receive feedback.
+<p align="center">
+  <img src="Gifs/UnlockAll.png"  width="200" >
+  <img src="Gifs/UnlockLevelMenu.png"  width="500" >
+</p>
 
 
 ### Documentation of changes
 Thankfully though, it seemed like in general our users knew what to do and the game was entertaining for them. But there were a lot of issues that came up. So firstly, we collated everyone's results using a Google Jamboard. 
 
 <p align="center">
-  <img src="Gifs/Feedback.png"  width="500" >
+  <img src="Gifs/Feedback.png"  width="200" >
 </p>
 
 Then, we put the information in a table and ordered it by priority. We prioritised the things further up the top of the list, they were commonly a problem to all the users. This included things like visual bugs, levels being way too hard or user misunderstandings with some features. 
