@@ -13,7 +13,7 @@ public class FishMovement : MonoBehaviour
     private Vector3 newPosition;
 
     private Vector3 spawnLocation;
-    private float range = 15;
+    private float range = 8;
 
     private RaycastHit hit;
 

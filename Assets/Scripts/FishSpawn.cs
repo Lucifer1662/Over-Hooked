@@ -9,7 +9,7 @@ public class FishSpawn : MonoBehaviour
     public GameObject fishMedium;
     public GameObject fishLarge;
     public int maxFish;
-    private float rangeLimit = 60;
+    private float rangeLimit = 70;
     private float landSize;
 
     private int currentFish = 0;
