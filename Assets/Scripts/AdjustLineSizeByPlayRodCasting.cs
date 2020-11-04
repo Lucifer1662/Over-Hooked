@@ -24,7 +24,6 @@ public class AdjustLineSizeByPlayRodCasting : MonoBehaviour
     void Update()
     {
         float percent = rod.percentageCasting();
-        Debug.Log(startWidthInitial);
         line.SetPosition(1, Vector3.forward * 7 * (1 + percent * (maxMultipler - 1)));
         line.startWidth = startWidthInitial * (1 + percent * (maxMultipler - 1));
         line.endWidth = endWidthInitial * (1 + percent * (maxMultipler-1));

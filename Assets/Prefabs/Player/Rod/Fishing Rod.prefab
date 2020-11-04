@@ -221,13 +221,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5733610b0496e664e88fea517717b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castForce: 12
+  castForce: 10
   castDuration: 1
   lure: {fileID: 5486918608734313258, guid: 00303528276de3a4e8f8481c9efeb7a3, type: 3}
   spawnPos: {fileID: 8667175485376819215}
   castAngle: 20
   hookInstance: {fileID: 0}
   spawnCastSound: {fileID: 141600364767183114}
+  powerupSound: {fileID: 0}
   rod: {fileID: 5636445959718233937}
   isBeingHeldDown: 0
   castedEvent:

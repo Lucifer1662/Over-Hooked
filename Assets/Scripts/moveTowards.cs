@@ -16,15 +16,12 @@ public class moveTowards : MonoBehaviour
         curHook = GameObject.FindGameObjectWithTag("Hook");
         if (curHook != null){
 			if (closeEnough() && curHook.transform.position.y <= 0.7) {
-                Debug.Log("Go Towards");
 				GetComponent<FishMovement> ().enabled = false;
 				var target = curHook.transform.position;
 				target.y = transform.position.y;
                 if(notTooClose()){
                     transform.position += transform.forward * speed * Time.deltaTime;
 				    changeDirection(target);
-                }else {
-                    Debug.Log("Too close, stop moving");
                 }
 				
 			}
