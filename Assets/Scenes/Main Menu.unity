@@ -768,11 +768,21 @@ PrefabInstance:
       propertyPath: targets.Array.data[0]
       value: 
       objectReference: {fileID: 912653973}
+    - target: {fileID: 8043817182456520133, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1664657640}
+    - target: {fileID: 8080853051076362886, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3cdef3e4213d91498c1eb9d29ae1297, type: 3}
 --- !u!1 &247423131 stripped
@@ -2811,13 +2821,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 3
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: "\xBA\xBA\xBA\xBA\xBAChief\xBAProgrammer\xBA\xBA\xBALuke\xBAHawkins\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBAArt\xBADirector\xBA\xBA\xBAJessica\xBAHammer\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBADemo\xBADirector\xBA\xBA\xBARenwei\xBA(Jackson)\xBAHu\n\xBA\xBA\xBAHook\xBAAdministrator\xBA\xBA\xBAXiaochen\xBA(Hans)\xBAHou\n\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBASpecial\xBAThanks\xBA\xBA\xBAAll\xBAGame\xBATesters\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBALecturer\xBA&\xBATutors"
+  m_Text: "\xBA\xBA\xBA\xBA\xBAChief\xBAProgrammer\xBA\xBA\xBALuke\xBAHawkins\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBAArt\xBADirector\xBA\xBA\xBAJessica\xBAHammer\xBA\xBA\xBA\xBA\xBA\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBADemo\xBADirector\xBA\xBA\xBARenwei\xBA(Jackson)\xBAHu\xBA\n\xBA\xBA\xBA\xBAHook\xBAAdministrator\xBA\xBA\xBAXiaochen\xBA(Hans)\xBAHou\xBA\xBA\n\n\xBA\xBA\xBA\xBA\xBA\xBA\xBASpecial\xBAThanks\xBA\xBA\xBAAll\xBAGame\xBATesters\xBA\xBA\xBA\xBA\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBALecturer\xBA&\xBATutors\xBA"
 --- !u!222 &1557598651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3613,7 +3623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24821739, y: 0.26080993}
   m_AnchorMax: {x: 0.6814348, y: 0.6976484}
-  m_AnchoredPosition: {x: -1.3000793, y: 0.7374878}
+  m_AnchoredPosition: {x: -1.3000488, y: 0.7374878}
   m_SizeDelta: {x: -5.829468, y: -0.5249939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1931488157
