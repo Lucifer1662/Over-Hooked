@@ -3038,7 +3038,7 @@ MonoBehaviour:
   InstructionButton: {fileID: 908120919}
   quitButton: {fileID: 2133564602}
   skipButton: {fileID: 109569320}
-  testSwitch: 2
+  testSwitch: 0
 --- !u!114 &1664657640
 MonoBehaviour:
   m_ObjectHideFlags: 0
