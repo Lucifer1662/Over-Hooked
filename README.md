@@ -269,13 +269,19 @@ The testing procedure went as follows:
 9. After the tester left, the recording was watched again and anything of interest was noted.
 8. The recording and notes were uploaded to shared google drive.
 
+#### Helpful testing mechanices
+These were handy when the users were unable to complete certain levels and otherwise would never have reached level 3 and recieve feedback.
+<p align="center">
+  <img src="Gifs/UnlockAll.png"  width="200" >
+  <img src="Gifs/UnlockLevelMenu.png"  width="500" >
+</p>
 
 
 ### Documentation of changes
 Thankfully though, it seemed like in general our users knew what to do and the game was entertaining for them. But there were a lot of issues that came up. So firstly, we collated everyone's results using a Google Jamboard. 
 
 <p align="center">
-  <img src="Gifs/Feedback.png"  width="500" >
+  <img src="Gifs/Feedback.png"  width="200" >
 </p>
 
 Then, we put the information in a table and ordered it by priority. We prioritised the things further up the top of the list, they were commonly a problem to all the users. This included things like visual bugs, levels being way too hard or user misunderstandings with some features. 
