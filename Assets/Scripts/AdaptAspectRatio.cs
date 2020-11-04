@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AdaptAspectRatio : MonoBehaviour
 {
-    private float transitionTime = 25;
+    public float transitionTime = 25;
     private Vector3 startPos;
     private Vector3 endPos;
     private float timer = 0;
@@ -13,8 +13,8 @@ public class AdaptAspectRatio : MonoBehaviour
     void Start()
     {
         // Check current window size 
-        float width = GetGameView().x;
-        float height = GetGameView().y;
+        float width = Screen.width;
+        float height = Screen.height;
         //Debug.Log("width is: " + width);
         //Debug.Log("height is: " + height);
 
@@ -37,13 +37,4 @@ public class AdaptAspectRatio : MonoBehaviour
         }
     }
 
-    // Get actual window size under different aspect ratio
-    private Vector2 GetGameView()
-    {
-        System.Type T = System.Type.GetType("UnityEditor.GameView,UnityEditor");
-        System.Reflection.MethodInfo getSizeOfMainGameView =
-            T.GetMethod("GetSizeOfMainGameView",System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-        System.Object resolution = getSizeOfMainGameView.Invoke(null, null);
-        return (Vector2)resolution;
-    }
 }

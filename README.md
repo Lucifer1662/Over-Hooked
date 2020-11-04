@@ -1,11 +1,7 @@
 **The University of Melbourne**
 # COMP30019 – Graphics and Interaction
 
-Final Electronic Submission (project): **4pm, Fri. 6 November**
-
-Do not forget **One member** of your group must submit a text file to the LMS (Canvas) by the due date which includes the commit ID of your final submission.
-
-You can add a link to your Gameplay Video here but you must have already submit it by **4pm, Sun. 25 October**
+Click the link to watch Gameplay Demo of [**Overhooked**](https://youtu.be/bX3BjRGSv8Q)
 
 # Project-2 README
 
@@ -23,8 +19,8 @@ You can add a link to your Gameplay Video here but you must have already submit 
 
 | Name | Tasks | State |
 | :---         |     :---:      |          ---: |
-| Xiaochen Hou    | Fish Movements and Hook Detection, Hook Operations, Player Spawning     |  Done |
-| Jackson Hu    | Fish Spawning, Level Selection Menu, Pause Button, Gameplay Video     |  Done |
+| Xiaochen (Hans) Hou    | Fish Movements and Hook Detection, Hook Operations, Player Spawning     |  Done |
+| Renwei (Jackson) Hu    | Fish Spawning, Level Selection Menu, Pause Button, Gameplay Video     |  Done |
 | Luke Hawkins    | Fishing, Player and Camera Movement, Shaders, Level Complete UI     |  Done |
 | Jessica Hammer  | Sound Effects, Main Menu, Score and Timer, Island Layout, Particle Effects     |  Done |
 
@@ -56,11 +52,19 @@ When you are in the level, it is time to start catching some fish. Keep an eye o
   <img src="Gifs/In Game.png"  width="400" >
 </p>
 
-In order to catch fish you may want to move the player to get a better look at the water. Use the `WASD` keys to move and point with the `Mouse` the direction you want to look at. If you are looking in the direction of a fish, then left click, hold, and release to cast the fishing rod. The longer you hold down left click the further out the line will be cast. Once the fish bites (when you hear the sound effect) then click again to pull the fish back in.
+In order to catch fish you may want to move the player to get a better look at the water. Use the `WASD` keys to move and point with the `Mouse` the direction you want to look at. If you are looking in the direction of a fish, then left click, hold, and release to cast the fishing rod. The longer you hold down left click the further out the line will be cast. Once the fish bites (when you hear the sound/splash effect) then click again to pull the fish back in.
 
 <p align="center">
   <img src="Gifs/Rod Casting.gif"  width="400" >
   <img src="Gifs/Catch Fish.gif"  width="400" >
+</p>
+
+There are three different kinds of fish in the game and each is represented with different size. Different kinds of fish were allocated with different amount of points. Small fish is worth 1 point, medium fish is worth 2 points and large fish is worth 3 points. So try your best to catch larger fish because they are worth more points!
+
+<p align="center">
+  <img src="Gifs/Small Fish.gif"  width="300" >
+  <img src="Gifs/Medium Fish.gif"  width="300" >
+  <img src="Gifs/Large Fish.gif"  width="300" >
 </p>
 
 * If you didn't catch the required number of fish before the timer ends, the menu will pop up telling you that you failed to complete the current level and you can't unlock the next level. Feel free to click the `Retry` button to have another shot.
@@ -74,7 +78,7 @@ In order to catch fish you may want to move the player to get a better look at t
 ### Unique hook operations to enhance the gaming experience
 
 **Hook moves in the air**
-This functionality is specifically designed for this game, you can fine-tune the hook's direction (when you cast) according to the position of your `mouse`. It makes the game feel smooth and more fun since you can now make your casts much more accurate. Meanwhile, moving the hook in the air let the player get involved at all time, not just "waiting" after casting the hook. It largely lowers the difficulty of the game, and the design greatly increases the fault tolerance rate of aiming, making it suitable for everyone to play and less frustrating.
+You can fine-tune the hook's direction (when you cast) according to the position of your `mouse`. It is not essential to complete the game, but if used it makes the game feel smooth and more fun since you can now make your casts much more accurate. Meanwhile, moving the hook in the air let the player get involved at all time, not just "waiting" after casting the hook. It largely lowers the difficulty of the game, and the design greatly increases the fault tolerance rate of aiming, making it suitable for everyone to play and less frustrating.
 
 The Delta value between the position of the mouse in the world and the hook desides which direction should the hook moves. Accleration is also invloved to make the movement feel more realistic and dynamic.
 
@@ -83,7 +87,7 @@ The Delta value between the position of the mouse in the world and the hook desi
 </p>
 
 **Reeling back**
-This desgin is particularly added according to the feedbacks and evaluation of testings nearly at the end of the game development, it makes the flexibility of the game to another level, despite you could move the hook in the air, you can also reel it back after it falls into water. We choose to use the `scroll wheel` to achieve this function, rather than keys or buttons, keep the players' attention on the mouse, also mimic the reeling movement in the real world, the stepless adjustment using the `scroll wheel` further improves the player's control and interaction with the game.
+This gameplay mechanic was added according to the feedback we got from testing, nearing the end of the game development. It provides another way to easily catch fish more accurately. Despite the fact that you could move the hook in the air, now you can also reel it back after it falls into water. This mechanic is really useful when you accidentally cast too far and just want to move the hook backwards a bit, without re-casting. We choose to use the `scroll wheel` to achieve this function, rather than keys or buttons, keep the players' attention on the mouse, also mimic the reeling movement in the real world, the stepless adjustment using the `scroll wheel` further improves the player's control and interaction with the game.
 
 <p align="center">
   <img src="Gifs/reelback.gif"  width="400" >
@@ -200,7 +204,7 @@ The height map was an integral part of making this shader work, although it was 
 #### Why a Shader?
 The main reason for this to be done on the shader was for efficiency and quality. If dynamic water was to be implemented in a Script it would require us to create/alter a new texture every frame, that would stretch across all the water, this would require a massive texture to not look grainy. Instead, with the use of a shader, this can be done in parallel and in screen space, only requiring the pixels that will be visible in the camera frustum to be computed, resulting in higher performance and better quality.  
 
-#### FlatShaded Water (old)
+### FlatShaded Water (old)
 This shader was originally designed to produce water similar to the current version with the main difference of having sharp edges. However since we were displacing the vertices in the vertex shader, the normals needed to be recaculated, this had to be done in the ```Geometry Shader```, as flat shaded normals need all three vertices that make up a triangle to have the same normal vector, as well as triangles not sharing vertices. The problem we ran into was not all GPU's support the geometry shader. This forced us to make a fallback shader for this instance. After discussion we decided to just use the fallback shader and not have to worry about two different versions of water being present. 
 
 <p align="center">
@@ -227,11 +231,19 @@ The use of this shader in this scene does 2 important things. 1 it brings the fi
 </p>
 
 ## Querying and evaluation (Demographics required)
+### Participant Demographics
+A total of **13** people participated voluntarily in either Cooperative Evaluation or Interview as part of the User Evaluation with beta version of our game. The gender ratio of our participants is relatively balanced with 7 participants (54%) identified as male and 6 (46%) participants identified as female. The average age of our participants is **20.1** (*Min*: 18, *Max*: 21). We also chose out participants from various cultural backgrounds and with different gaming habits. Participants were asked briefly about their gaming habits and we categorised them roughly into two categories in terms of whether they usually play games or not. As the graph showed below, 62% of them play games while 38% do not play games. The purpose of seeking high variety in our participants is to have a better understanding of our game no matter their gender or whether they usually play games.
+
+<p align="center">
+  <img src="Gifs/Gender Ratio.png"  width="300" >
+  <img src="Gifs/Gamer Proportion.png"  width="300" >
+</p>
+
 ### Querying and observational methods
 #### Observational Method: Cooperative Evaluation
-We chose Cooperative Evaluation for our Observational Method. We figure that this technique would have advantanges over Think Aloud as this gave us the ability to clarify and have a dialog about the game, it was also easier to use which we needed as a lot of our testers were over Zoom.  We used a mix of recording data styles; we recorded the screen and audio and used paper and pencil for notes if there was time.
+We chose Cooperative Evaluation for our Observational Method. We figured that this technique would have some advantanges over Think Aloud as this gave us the ability to clarify things and talk to the players throughout, it was also easier to use which we needed as a lot of our testers were over Zoom.  We used a mix of recording data styles; we recorded the screen and audio and used paper and pencil for notes if there was time.
 
-7 participants:
+**8** participants:
 
 The testing procedure went as follows: 
 1. Send them a copy of the game (if online)
@@ -242,20 +254,22 @@ The testing procedure went as follows:
 6. If the user was unable to complete a level, we showed them to the "Unlock All" button. This turned out to be a huge success, as some players could not complete level 2 but could complete level 3.
 7. The recording and notes were uploaded to shared google drive.
 
-#### Querying Method: Interviews
-We chose Interviews for our Querying Method. This we chose over Questionnaires as it required less work for the tester and we did not need any other documents sent to them.
+#### Querying Method: Interview
+We chose Interviews for our Querying Method. This we chosen over Questionnaires as it required less work for the tester and we did not need any other documents sent to them. It also allows for a more open-ended discussion. This Interview method counteracts the disadvantage posed in Cooperative Evaluation of which the user changes behaviour from the act of being watched, as we left the room and recorded their screen only, minimising this change in behaviour. 
 
-6 particpants: 
+**5** particpants (excluding those have done Cooperative Evaluation): 
 
 The testing procedure went as follows: 
 1. Send them a copy of the game (if online)
 2. Started a zoom session and recorded the zoom session (if online)
 3. They started to play the game, while we didn't watch.
 6. If we came back and saw they were stuck we told them about the "Unlock All" button.
-7. Afterwards we used predetermined questions to ask them and noted down there answers
+7. Afterwards we used predetermined questions to ask them and noted down their answers
 8. The conversation was allowed to stray from the questions, and we noted these down as well.
 9. After the tester left, the recording was watched again and anything of interest was noted.
 8. The recording and notes were uploaded to shared google drive.
+
+
 
 ### Documentation of changes
 Thankfully though, it seemed like in general our users knew what to do and the game was entertaining for them. But there were a lot of issues that came up. So firstly, we collated everyone's results using a Google Jamboard. 
