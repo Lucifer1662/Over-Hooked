@@ -254,6 +254,9 @@ The testing procedure went as follows:
 6. If the user was unable to complete a level, we showed them to the "Unlock All" button. This turned out to be a huge success, as some players could not complete level 2 but could complete level 3.
 7. The recording and notes were uploaded to shared google drive.
 
+Some examples of notes can be found in /Observable
+
+
 #### Querying Method: Interview
 We chose Interviews for our Querying Method. This we chosen over Questionnaires as it required less work for the tester and we did not need any other documents sent to them. It also allows for a more open-ended discussion. This Interview method counteracts the disadvantage posed in Cooperative Evaluation of which the user changes behaviour from the act of being watched, as we left the room and recorded their screen only, minimising this change in behaviour. 
 
@@ -268,6 +271,8 @@ The testing procedure went as follows:
 6. The conversation was allowed to stray from the questions, and we noted these down as well.
 7. After the tester left, the recording was watched again and anything of interest was noted.
 8. The recording and notes were uploaded to shared google drive.
+
+Some examples of notes can be found in /Query
 
 #### Helpful testing mechanics
 These were handy when the users were unable to complete certain levels and otherwise would never have reached level 3 and receive feedback.
