@@ -3580,6 +3580,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4419120550869478313, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
+        type: 3}
+      propertyPath: m_Text
+      value: "Time allowed: \n1 min 15 sec"
+      objectReference: {fileID: 0}
     - target: {fileID: 4783554087269692943, guid: 87e9fa3a9ea2740bd9ab318a1d096f92,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3971,7 +3976,7 @@ PrefabInstance:
     - target: {fileID: 8794255658178933233, guid: 8a7849e945ab9430bb918d4825fb442a,
         type: 3}
       propertyPath: timeLeft
-      value: 90
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 8794255658178933233, guid: 8a7849e945ab9430bb918d4825fb442a,
         type: 3}
