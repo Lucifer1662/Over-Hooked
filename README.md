@@ -151,6 +151,8 @@ void Update(){
 
 The new position for fish movement which was generated at the start of each tick cycle is a bit different from the new position generated when the fish was spawned. The new position here would be generated around the spawning position of current fish within a certain radius so that each fish would only move within certain range instead of moving around the whole map. 
 
+The fish would automatically detect if there was bait nearby and move towards to bite the hook. Different kinds of fish would have different detection radius and larger fish has the smallest detection radius so that it was designed to make it harder to catch the larger fish.
+
 ### Lighting
 The lighting was another important factor that helped to tie objects in the whole scene together. By setting the ambient light to a light pink colour, this got rid of muddy shadows and gave the screen a slight cool tint. A directional light in each scene then provided some shadows for a bit of extra dimension.
 
