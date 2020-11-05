@@ -477,10 +477,10 @@ RectTransform:
   m_Father: {fileID: 1866038567}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22018822, y: 0.1822579}
-  m_AnchorMax: {x: 1, y: 0.93500006}
-  m_AnchoredPosition: {x: -59, y: 0.5}
-  m_SizeDelta: {x: 0.8689575, y: -0.9540405}
+  m_AnchorMin: {x: 0.14067252, y: 0.186}
+  m_AnchorMax: {x: 0.9253358, y: 0.931165}
+  m_AnchoredPosition: {x: 2, y: 0.5}
+  m_SizeDelta: {x: -3.1310425, y: 3.0459595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &132667394
 MonoBehaviour:
@@ -2199,10 +2199,10 @@ RectTransform:
   m_Father: {fileID: 1866038567}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.45659414, y: 0.808}
-  m_AnchorMax: {x: 0.76000005, y: 0.90523094}
-  m_AnchoredPosition: {x: -57.5, y: -0.5}
-  m_SizeDelta: {x: -1.8465576, y: 1.5968933}
+  m_AnchorMin: {x: 0.38681406, y: 0.808}
+  m_AnchorMax: {x: 0.6828317, y: 0.90523094}
+  m_AnchoredPosition: {x: 0.5, y: -0.5}
+  m_SizeDelta: {x: 4.1534424, y: 1.5968933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336571457
 MonoBehaviour:
@@ -3079,10 +3079,10 @@ RectTransform:
   m_Father: {fileID: 1866038567}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.28918824, y: 0.279}
-  m_AnchorMax: {x: 0.9244649, y: 0.7404161}
-  m_AnchoredPosition: {x: -58.429016, y: 1.0999756}
-  m_SizeDelta: {x: -1.1655884, y: 0.394989}
+  m_AnchorMin: {x: 0.19867478, y: 0.2598351}
+  m_AnchorMax: {x: 0.8638142, y: 0.7888247}
+  m_AnchoredPosition: {x: 3.0820007, y: 1.5}
+  m_SizeDelta: {x: -2.076233, y: -1.3368835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1774200016
 MonoBehaviour:
@@ -3116,16 +3116,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- Use WASD to move
+  m_Text: '- Use [WASD] to move, and [mouse] to look around
 
-    - Use mouse to look around
+    - [Left click] When
+    fish is biting in order to catch a fish
 
-    - Catch the required
-    number of fish to proceed to the next level!
+    - Catch the required number of fish
+    to proceed to the next level!
 
-    - Enjoy <3
+    - Want extra precision when casting? You can
+    slightly alter the direction of the cast by moving the [mouse] where you want
+    it to go
 
-'
+    - Can also reel in by using [scroll]
+
+    - Enjoy!'
 --- !u!222 &1774200017
 CanvasRenderer:
   m_ObjectHideFlags: 0
