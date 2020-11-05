@@ -111,6 +111,46 @@ The water, sadly, was one of the exceptions to the low poly aesthetic because al
 
 The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and colours. These assets help to construct a little world for the player to play the levels in, making it feel more real and immersive.
 
+### Fish spawning & movement
+Fishes were spawned at the start of each level with given number limit for each type. Different kinds of fish were spawned within certain valid area range. For instance, the small fish would be spawned near the shore while larger fish would be spawned further away from the terrian. Before each fish was spawned, the random generated spawning position would be checked to ensure the fish would be located outside the terrain while also satisfy the distance range of its given type. Here we used `Raycast` to determine whether the new generated location would have conflict with the terrain. 
+
+```C#
+// Determine whether the spawn position is terrain 
+private bool determineTerrain(Vector3 newLocation){
+    bool terrain = false;
+    Vector3 castLocation = new Vector3(newLocation.x, newLocation.y + 100, newLocation.z);
+    Physics.Raycast(castLocation, newLocation - castLocation, out hit, 1000);
+    
+    // If distance is <100 then position is "inside" terrain
+    if(hit.distance < 100){
+        terrain = true;
+    }
+    return terrain;
+}
+```
+The fish movement is performed in terms of `Tick`. Each fish was allocated with a random rotation and initial tick time (same for all) when it was spawned. The time would start to count down once the fish has spawned. The fish would move to the given new position with random generated speed according to its type for the first 2/3 of the tick time. Then it would pause and stay at the current position for the rest 1/3 tick time before the next tick cycle starts. When the tick timer reached 0, a new position would be generated for the fish to move towards and a new random tick time would be asigned for the current tick cycle.
+
+```C#
+void Update(){
+    // Time's up, change new direction
+    tickCountdown -= Time.deltaTime;
+    if (tickCountdown < 0.0f)
+    {
+        initialTick = Random.Range(6, 10);
+        tickCountdown = initialTick;
+        newPosition = GenerateNewPosition(); 
+    }
+    
+    // Move after each direction change 
+    // And pause for 1/3 tick time
+    else if (tickCountdown > initialTick/3){
+        move(speed, newPosition);
+    }
+}
+```
+
+The new position for fish movement which was generated at the start of each tick cyle is a bit different than the new position generated when the fish was spawned. The new position here would be generated around the spawning position of current fish within a certain radius so that each fish would only move within certain range instead of moving around the whole map. 
+
 ### Lighting
 The lighting was another important factor that helped to tie objects in the whole scene together. By setting the ambient light to a light pink colour, this got rid of muddy shadows and gave the screen a slight cool tint. A directional light in each scene then provided some shadows for a bit of extra dimension.
 
