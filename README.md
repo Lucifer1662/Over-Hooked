@@ -77,7 +77,7 @@ There are three different kinds of fish in the game and each is represented with
 
 ### Unique hook operations to enhance the gaming experience
 
-**Hook moves in the air**
+**Hook moves in the air**  
 You can fine-tune the hook's direction (when you cast) according to the position of your `mouse`. It is not essential to complete the game, but if used it makes the game feel smooth and more fun since you can now make your casts much more accurate. Meanwhile, moving the hook in the air let the player get involved at all time, not just "waiting" after casting the hook. It largely lowers the difficulty of the game, and the design greatly increases the fault tolerance rate of aiming, making it suitable for everyone to play and less frustrating.
 
 The Delta value between the position of the mouse in the world and the hook decides which direction should the hook moves. Acceleration is also involved to make the movement feel more realistic and dynamic.
@@ -86,7 +86,7 @@ The Delta value between the position of the mouse in the world and the hook deci
   <img src="Gifs/moveinair.gif"  width="400" >
 </p>
 
-**Reeling back**
+**Reeling back**  
 This gameplay mechanic was added according to the feedback we got from testing, nearing the end of the game development. It provides another way to easily catch fish more accurately. Despite the fact that you could move the hook in the air, now you can also reel it back after it falls into water. This mechanic is really useful when you accidentally cast too far and just want to move the hook backwards a bit, without re-casting. We choose to use the `scroll wheel` to achieve this function, rather than keys or buttons, keep the players' attention on the mouse, also mimic the reeling movement in the real world, the step-less adjustment using the `scroll wheel` further improves the player's control and interaction with the game.
 
 <p align="center">
@@ -286,7 +286,7 @@ These were handy when the users were unable to complete certain levels and other
 Thankfully though, it seemed like in general our users knew what to do and the game was entertaining for them. But there were a lot of issues that came up. So firstly, we collated everyone's results using a Google Jamboard. 
 
 <p align="center">
-  <img src="Gifs/Feedback.png"  width="200" >
+  <img src="Gifs/Feedback.png"  width="600" >
 </p>
 
 Then, we put the information in a table and ordered it by priority. We prioritised the things further up the top of the list, they were commonly a problem to all the users. This included things like visual bugs, levels being way too hard or user misunderstandings with some features. 
@@ -314,7 +314,7 @@ Then, we put the information in a table and ordered it by priority. We prioritis
 
 ## Technologies
 Project is created with:
-* Unity 2019.4.3f1
+* Unity 2019.4.6f1
 
 ## References
 The following assets that we used in the game are NOT ours.
