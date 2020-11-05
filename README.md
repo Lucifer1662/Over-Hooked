@@ -230,7 +230,7 @@ The use of this shader in this scene does 2 important things. 1 it brings the fi
   <img src="Gifs/TreeWiggle.gif"  width="400" >
 </p>
 
-## Querying and evaluation (Demographics required)
+## Querying and evaluation
 ### Participant Demographics
 A total of **13** people participated voluntarily in either Cooperative Evaluation or Interview as part of the User Evaluation with beta version of our game. The gender ratio of our participants is relatively balanced with 7 participants (54%) identified as male and 6 (46%) participants identified as female. The average age of our participants is **20.1** (*Min*: 18, *Max*: 21). We also chose out participants from various cultural backgrounds and with different gaming habits. Participants were asked briefly about their gaming habits and we categorised them roughly into two categories in terms of whether they usually play games or not. As the graph showed below, 62% of them play games while 38% do not play games. The purpose of seeking high variety in our participants is to have a better understanding of our game no matter their gender or whether they usually play games.
 
@@ -254,7 +254,7 @@ The testing procedure went as follows:
 6. If the user was unable to complete a level, we showed them to the "Unlock All" button. This turned out to be a huge success, as some players could not complete level 2 but could complete level 3.
 7. The recording and notes were uploaded to shared google drive.
 
-Some examples of notes can be found in /Observable
+Some examples of notes can be found in [/Obersvational](Obersvational/)
 
 
 #### Querying Method: Interview
@@ -272,7 +272,7 @@ The testing procedure went as follows:
 7. After the tester left, the recording was watched again and anything of interest was noted.
 8. The recording and notes were uploaded to shared google drive.
 
-Some examples of notes can be found in /Query
+Some examples of notes can be found in [/Query](Query/)
 
 #### Helpful testing mechanics
 These were handy when the users were unable to complete certain levels and otherwise would never have reached level 3 and receive feedback.
