@@ -477,10 +477,10 @@ RectTransform:
   m_Father: {fileID: 1866038567}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22018822, y: 0.1822579}
-  m_AnchorMax: {x: 1, y: 0.93500006}
-  m_AnchoredPosition: {x: -59, y: 0.5}
-  m_SizeDelta: {x: 0.8689575, y: -0.9540405}
+  m_AnchorMin: {x: 0.14067252, y: 0.186}
+  m_AnchorMax: {x: 0.9253358, y: 0.931165}
+  m_AnchoredPosition: {x: 2, y: 0.5}
+  m_SizeDelta: {x: -3.1310425, y: 3.0459595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &132667394
 MonoBehaviour:
@@ -633,6 +633,16 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1192336257}
+    - target: {fileID: 4800307796566123802, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800307797787004949, guid: f3cdef3e4213d91498c1eb9d29ae1297,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4800307798065241490, guid: f3cdef3e4213d91498c1eb9d29ae1297,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -753,56 +763,11 @@ PrefabInstance:
       propertyPath: fader
       value: 
       objectReference: {fileID: 29806125}
-    - target: {fileID: 6146422333367813067, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.82600003
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146422333367813067, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146422333367813067, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146422333367813067, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.13168572
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146422333367813067, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146422333367813067, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146422333367813067, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.8683144
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146422333367813067, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.21100001
-      objectReference: {fileID: 0}
     - target: {fileID: 6686550331834644289, guid: f3cdef3e4213d91498c1eb9d29ae1297,
         type: 3}
       propertyPath: targets.Array.data[0]
       value: 
       objectReference: {fileID: 912653973}
-    - target: {fileID: 7717564385324894490, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_Text
-      value: Back
-      objectReference: {fileID: 0}
     - target: {fileID: 8043817182456520133, guid: f3cdef3e4213d91498c1eb9d29ae1297,
         type: 3}
       propertyPath: m_IsActive
@@ -810,34 +775,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1664657640}
-    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: SetGamePass
-      objectReference: {fileID: 0}
-    - target: {fileID: 8080853051076362880, guid: f3cdef3e4213d91498c1eb9d29ae1297,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8080853051076362886, guid: f3cdef3e4213d91498c1eb9d29ae1297,
         type: 3}
       propertyPath: m_IsActive
@@ -2259,10 +2199,10 @@ RectTransform:
   m_Father: {fileID: 1866038567}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.45659414, y: 0.808}
-  m_AnchorMax: {x: 0.76000005, y: 0.90523094}
-  m_AnchoredPosition: {x: -57.5, y: -0.5}
-  m_SizeDelta: {x: -1.8465576, y: 1.5968933}
+  m_AnchorMin: {x: 0.38681406, y: 0.808}
+  m_AnchorMax: {x: 0.6828317, y: 0.90523094}
+  m_AnchoredPosition: {x: 0.5, y: -0.5}
+  m_SizeDelta: {x: 4.1534424, y: 1.5968933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336571457
 MonoBehaviour:
@@ -2881,13 +2821,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 3
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: "\xBA\xBA\xBA\xBA\xBAChief\xBAProgrammer\xBA\xBA\xBALuke\xBAHawkins\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBAArt\xBADirector\xBA\xBA\xBAJessica\xBAHammer\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBADemo\xBADirector\xBA\xBA\xBARenwei\xBA(Jackson)\xBAHu\n\xBA\xBA\xBAHook\xBAAdministrator\xBA\xBA\xBAXiaochen\xBA(Hans)\xBAHou\n\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBASpecial\xBAThanks\xBA\xBA\xBAAll\xBAGame\xBATesters\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBALecturer\xBA&\xBATutors"
+  m_Text: "\xBA\xBA\xBA\xBA\xBAChief\xBAProgrammer\xBA\xBA\xBALuke\xBAHawkins\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBAArt\xBADirector\xBA\xBA\xBAJessica\xBAHammer\xBA\xBA\xBA\xBA\xBA\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBADemo\xBADirector\xBA\xBA\xBARenwei\xBA(Jackson)\xBAHu\xBA\n\xBA\xBA\xBA\xBAHook\xBAAdministrator\xBA\xBA\xBAXiaochen\xBA(Hans)\xBAHou\xBA\xBA\n\n\xBA\xBA\xBA\xBA\xBA\xBA\xBASpecial\xBAThanks\xBA\xBA\xBAAll\xBAGame\xBATesters\xBA\xBA\xBA\xBA\n\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBA\xBALecturer\xBA&\xBATutors\xBA"
 --- !u!222 &1557598651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3038,7 +2978,7 @@ MonoBehaviour:
   InstructionButton: {fileID: 908120919}
   quitButton: {fileID: 2133564602}
   skipButton: {fileID: 109569320}
-  testSwitch: 0
+  testSwitch: 2
 --- !u!114 &1664657640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3139,10 +3079,10 @@ RectTransform:
   m_Father: {fileID: 1866038567}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.28918824, y: 0.279}
-  m_AnchorMax: {x: 0.9244649, y: 0.7404161}
-  m_AnchoredPosition: {x: -58.429016, y: 1.0999756}
-  m_SizeDelta: {x: -1.1655884, y: 0.394989}
+  m_AnchorMin: {x: 0.19867478, y: 0.2598351}
+  m_AnchorMax: {x: 0.8638142, y: 0.7888247}
+  m_AnchoredPosition: {x: 3.0820007, y: 1.5}
+  m_SizeDelta: {x: -2.076233, y: -1.3368835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1774200016
 MonoBehaviour:
@@ -3176,16 +3116,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- Use WASD to move
+  m_Text: '- Use [WASD] to move, and [mouse] to look around
 
-    - Use mouse to look around
+    - [Left click] When
+    fish is biting in order to catch a fish
 
-    - Catch the required
-    number of fish to proceed to the next level!
+    - Catch the required number of fish
+    to proceed to the next level!
 
-    - Enjoy <3
+    - Want extra precision when casting? You can
+    slightly alter the direction of the cast by moving the [mouse] where you want
+    it to go
 
-'
+    - Can also reel in by using [scroll]
+
+    - Enjoy!'
 --- !u!222 &1774200017
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3683,7 +3628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24821739, y: 0.26080993}
   m_AnchorMax: {x: 0.6814348, y: 0.6976484}
-  m_AnchoredPosition: {x: -1.3000793, y: 0.7374878}
+  m_AnchoredPosition: {x: -1.3000488, y: 0.7374878}
   m_SizeDelta: {x: -5.829468, y: -0.5249939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1931488157

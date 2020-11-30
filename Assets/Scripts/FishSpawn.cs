@@ -9,7 +9,7 @@ public class FishSpawn : MonoBehaviour
     public GameObject fishMedium;
     public GameObject fishLarge;
     public int maxFish;
-    private float rangeLimit = 60;
+    private float rangeLimit = 70;
     private float landSize;
 
     private int currentFish = 0;
@@ -76,14 +76,11 @@ public class FishSpawn : MonoBehaviour
         // Instantiate new fish
         if ((randomFish == 2) && (++largeFishNumber <= largeFishLimit)){
             createFish(fishLarge, fishPosition);
-            //Debug.Log("current large fish number is: " + largeFishNumber + " --- large fish number limit is: " + largeFishLimit);
         }else if ((randomFish == 1) && (++mediumFishNumber <= mediumFishLimit)){
             createFish(fishMedium, fishPosition);
-            //Debug.Log("current medium fish number is: " + mediumFishNumber + " --- medium fish number limit is: " + mediumFishLimit);
         }else{
             createFish(fishSmall, fishPosition);
             smallFishNumber++;
-            //Debug.Log("current small fish number is: " + smallFishNumber);
         }
         
 	}

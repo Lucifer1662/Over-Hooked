@@ -77,7 +77,7 @@ There are three different kinds of fish in the game and each is represented with
 
 ### Unique hook operations to enhance the gaming experience
 
-**Hook moves in the air**
+**Hook moves in the air**  
 You can fine-tune the hook's direction (when you cast) according to the position of your `mouse`. It is not essential to complete the game, but if used it makes the game feel smooth and more fun since you can now make your casts much more accurate. Meanwhile, moving the hook in the air let the player get involved at all time, not just "waiting" after casting the hook. It largely lowers the difficulty of the game, and the design greatly increases the fault tolerance rate of aiming, making it suitable for everyone to play and less frustrating.
 
 The Delta value between the position of the mouse in the world and the hook decides which direction should the hook moves. Acceleration is also involved to make the movement feel more realistic and dynamic.
@@ -86,7 +86,7 @@ The Delta value between the position of the mouse in the world and the hook deci
   <img src="Gifs/moveinair.gif"  width="400" >
 </p>
 
-**Reeling back**
+**Reeling back**  
 This gameplay mechanic was added according to the feedback we got from testing, nearing the end of the game development. It provides another way to easily catch fish more accurately. Despite the fact that you could move the hook in the air, now you can also reel it back after it falls into water. This mechanic is really useful when you accidentally cast too far and just want to move the hook backwards a bit, without re-casting. We choose to use the `scroll wheel` to achieve this function, rather than keys or buttons, keep the players' attention on the mouse, also mimic the reeling movement in the real world, the step-less adjustment using the `scroll wheel` further improves the player's control and interaction with the game.
 
 <p align="center">
@@ -110,6 +110,48 @@ The modelling process for these objects began with creating primitive meshes in 
 The water, sadly, was one of the exceptions to the low poly aesthetic because although possible to create, it required the geometry shader to look good, which is not always supported (for example on Macs). The water shader will be discussed in detail later. 
 
 The rest of the main assets (skybox, trees, grass, shells, font) were from the asset store (see references) and were chosen primarily because of their simple, low-poly style and colours. These assets help to construct a little world for the player to play the levels in, making it feel more real and immersive.
+
+### Fish spawning & movement
+Fishes were spawned at the start of each level with given number limit for each type. Different kinds of fish were spawned within certain valid area range. For instance, the small fish would be spawned near the shore while larger fish would be spawned further away from the terrain. Before each fish was spawned, the random generated spawning position would be checked to ensure the fish would be located outside the terrain while also satisfy the distance range of its given type. Here we used `Raycast` to determine whether the new generated location would have conflict with the terrain. 
+
+```C#
+// Determine whether the spawn position is terrain 
+private bool determineTerrain(Vector3 newLocation){
+    bool terrain = false;
+    Vector3 castLocation = new Vector3(newLocation.x, newLocation.y + 100, newLocation.z);
+    Physics.Raycast(castLocation, newLocation - castLocation, out hit, 1000);
+    
+    // If distance is <100 then position is "inside" terrain
+    if(hit.distance < 100){
+        terrain = true;
+    }
+    return terrain;
+}
+```
+The fish movement is performed in terms of `Tick`. Each fish was allocated with a random rotation and initial tick time (same for all) when it was spawned. The time would start to count down once the fish has spawned. The fish would move to the given new position with random generated speed according to its type for the first 2/3 of the tick time. Then it would pause and stay at the current position for the rest 1/3 tick time before the next tick cycle starts. When the tick timer reached 0, a new position would be generated for the fish to move towards and a new random tick time would be assigned for the current tick cycle.
+
+```C#
+void Update(){
+    // Time's up, change new direction
+    tickCountdown -= Time.deltaTime;
+    if (tickCountdown < 0.0f)
+    {
+        initialTick = Random.Range(6, 10);
+        tickCountdown = initialTick;
+        newPosition = GenerateNewPosition(); 
+    }
+    
+    // Move after each direction change 
+    // And pause for 1/3 tick time
+    else if (tickCountdown > initialTick/3){
+        move(speed, newPosition);
+    }
+}
+```
+
+The new position for fish movement which was generated at the start of each tick cycle is a bit different from the new position generated when the fish was spawned. The new position here would be generated around the spawning position of current fish within a certain radius so that each fish would only move within certain range instead of moving around the whole map. 
+
+The fish would automatically detect if there was bait nearby and move towards to bite the hook. Different kinds of fish would have different detection radius and larger fish has the smallest detection radius so that it was designed to make it harder to catch the larger fish.
 
 ### Lighting
 The lighting was another important factor that helped to tie objects in the whole scene together. By setting the ambient light to a light pink colour, this got rid of muddy shadows and gave the screen a slight cool tint. A directional light in each scene then provided some shadows for a bit of extra dimension.
@@ -230,7 +272,7 @@ The use of this shader in this scene does 2 important things. 1 it brings the fi
   <img src="Gifs/TreeWiggle.gif"  width="400" >
 </p>
 
-## Querying and evaluation (Demographics required)
+## Querying and evaluation
 ### Participant Demographics
 A total of **13** people participated voluntarily in either Cooperative Evaluation or Interview as part of the User Evaluation with beta version of our game. The gender ratio of our participants is relatively balanced with 7 participants (54%) identified as male and 6 (46%) participants identified as female. The average age of our participants is **20.1** (*Min*: 18, *Max*: 21). We also chose out participants from various cultural backgrounds and with different gaming habits. Participants were asked briefly about their gaming habits and we categorised them roughly into two categories in terms of whether they usually play games or not. As the graph showed below, 62% of them play games while 38% do not play games. The purpose of seeking high variety in our participants is to have a better understanding of our game no matter their gender or whether they usually play games.
 
@@ -254,7 +296,7 @@ The testing procedure went as follows:
 6. If the user was unable to complete a level, we showed them to the "Unlock All" button. This turned out to be a huge success, as some players could not complete level 2 but could complete level 3.
 7. The recording and notes were uploaded to shared google drive.
 
-Some examples of notes can be found in /Observable
+Some examples of notes can be found in [/Obersvational](Obersvational/)
 
 
 #### Querying Method: Interview
@@ -272,7 +314,7 @@ The testing procedure went as follows:
 7. After the tester left, the recording was watched again and anything of interest was noted.
 8. The recording and notes were uploaded to shared google drive.
 
-Some examples of notes can be found in /Query
+Some examples of notes can be found in [/Query](Query/)
 
 #### Helpful testing mechanics
 These were handy when the users were unable to complete certain levels and otherwise would never have reached level 3 and receive feedback.
@@ -286,7 +328,7 @@ These were handy when the users were unable to complete certain levels and other
 Thankfully though, it seemed like in general our users knew what to do and the game was entertaining for them. But there were a lot of issues that came up. So firstly, we collated everyone's results using a Google Jamboard. 
 
 <p align="center">
-  <img src="Gifs/Feedback.png"  width="200" >
+  <img src="Gifs/Feedback.png"  width="600" >
 </p>
 
 Then, we put the information in a table and ordered it by priority. We prioritised the things further up the top of the list, they were commonly a problem to all the users. This included things like visual bugs, levels being way too hard or user misunderstandings with some features. 
@@ -314,7 +356,7 @@ Then, we put the information in a table and ordered it by priority. We prioritis
 
 ## Technologies
 Project is created with:
-* Unity 2019.4.3f1
+* Unity 2019.4.6f1
 
 ## References
 The following assets that we used in the game are NOT ours.

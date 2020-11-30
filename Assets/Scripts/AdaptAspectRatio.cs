@@ -15,8 +15,6 @@ public class AdaptAspectRatio : MonoBehaviour
         // Check current window size 
         float width = Screen.width;
         float height = Screen.height;
-        //Debug.Log("width is: " + width);
-        //Debug.Log("height is: " + height);
 
         // Set position under screen
         transform.localPosition = new Vector3(transform.localPosition.x, -height, transform.localPosition.z);
